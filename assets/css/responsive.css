@@ -783,6 +783,63 @@
   }
 }
 
+@media only screen and (min-width: 308px) and (max-width: 554px) {
+  .dropdown .dropdown-text {
+    margin-right: 81%;
+  }
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 73%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-next {
+    right: 35%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-prev {
+    left: 35%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-next {
+    right: 35%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-prev {
+    left: 35%;
+  }
+}
+
+@media only screen and (max-width: 274px) {
+  .dropdown .dropdown-text {
+    margin-right: 60%;
+  }
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 40%;
+  }
+}
+
+@media only screen and (max-width: 368px) and (min-width: 302px) {
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 55%;
+  }
+  .dropdown .dropdown-text {
+    margin-right: 70%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-next {
+    right: 35%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-prev {
+    left: 35%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-next {
+    right: 35%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-prev {
+    left: 35%;
+  }
+}
+
+@media only screen and (min-width: 334px) and (max-width: 372px) {
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 70%;
+  }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .dropdown .dropdown-text {
     margin-right: 80%;
