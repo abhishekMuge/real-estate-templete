@@ -330,14 +330,22 @@ jQuery(
     owl.owlCarousel();
 
     $(".property-banner").click(function () {
-      //   owl.trigger("next.owl.carousel");
       owl.trigger("to.owl.carousel", [0, 500]);
+      $(".project-banner").removeClass("active-pill");
+      $(".dealers-banner").removeClass("active-pill");
+      $(".property-banner").addClass("active-pill");
     });
     $(".project-banner").click(function () {
       owl.trigger("to.owl.carousel", [1, 500]);
+      $(".property-banner").removeClass("active-pill");
+      $(".dealers-banner").removeClass("active-pill");
+      $(".project-banner").addClass("active-pill");
     });
     $(".dealers-banner").click(function () {
       owl.trigger("to.owl.carousel", [2, 500]);
+      $(".property-banner").removeClass("active-pill");
+      $(".project-banner").removeClass("active-pill");
+      $(".dealers-banner").addClass("active-pill");
     });
 
     // Tabs;

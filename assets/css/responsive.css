@@ -785,11 +785,27 @@
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .dropdown .dropdown-text {
-    margin-right: 76%;
+    margin-right: 80%;
   }
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 73%;
+  }
+
   .dropdown-menu {
     width: 60%;
     padding: 5px;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-next {
+    right: 40%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-prev {
+    left: 40%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-next {
+    right: 40%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-prev {
+    left: 40%;
   }
   .nav-top-area .right ul li {
     display: inline-block;
@@ -888,6 +904,10 @@
   .section-title .counter-item h3 .target {
     top: 9px;
   }
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 80%;
+  }
+
   /*----- Home Demo One -----*/
   /*-- Header --*/
   .header-area .right ul li .nice-select ul {

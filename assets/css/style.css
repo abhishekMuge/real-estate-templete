@@ -143,6 +143,19 @@ span.caret {
   width: 90%;
   padding: 5px;
 }
+.navbar-bar {
+  padding: 0 !important;
+}
+.active-pill {
+  color: #18253e !important;
+  background-color: #fff !important;
+}
+.pac-container {
+  border: none !important;
+}
+.advanced-form {
+  text-align: left !important;
+}
 
 .common-btn {
   display: inline-block;
@@ -169,7 +182,7 @@ span.caret {
 }
 
 .common-btn:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #18253e;
 }
 
@@ -1027,7 +1040,7 @@ span.caret {
 .apartment-area .owl-theme .owl-nav .owl-prev {
   position: absolute;
   top: 40%;
-  left: -5%;
+  left: -3%;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -1050,7 +1063,7 @@ span.caret {
 .apartment-area .owl-theme .owl-nav .owl-next {
   position: absolute;
   top: 40%;
-  right: -5%;
+  right: -3%;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -1657,7 +1670,7 @@ span.caret {
 .properties-area .owl-theme .owl-nav .owl-prev {
   position: absolute;
   top: 40%;
-  left: -5%;
+  left: -3%;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -1680,7 +1693,7 @@ span.caret {
 .properties-area .owl-theme .owl-nav .owl-next {
   position: absolute;
   top: 40%;
-  right: -5%;
+  right: -3%;
   width: 40px;
   height: 40px;
   text-align: center;
