@@ -791,16 +791,16 @@
     margin-right: 73%;
   }
   .apartment-area .owl-theme .owl-nav .owl-next {
-    right: 35%;
+    right: 36%;
   }
   .apartment-area .owl-theme .owl-nav .owl-prev {
-    left: 35%;
+    left: 36%;
   }
   .properties-area .owl-theme .owl-nav .owl-next {
-    right: 35%;
+    right: 36%;
   }
   .properties-area .owl-theme .owl-nav .owl-prev {
-    left: 35%;
+    left: 36%;
   }
 }
 
@@ -813,7 +813,7 @@
   }
 }
 
-@media only screen and (max-width: 368px) and (min-width: 302px) {
+@media only screen and (max-width: 368px) and (min-width: 301px) {
   .dropdown .dropdown-text.dropdown-text-lg {
     margin-right: 55%;
   }
@@ -837,6 +837,24 @@
 @media only screen and (min-width: 334px) and (max-width: 372px) {
   .dropdown .dropdown-text.dropdown-text-lg {
     margin-right: 70%;
+  }
+}
+
+@media only screen and (min-width: 278px) and (max-width: 294px) {
+  .dropdown .dropdown-text.dropdown-text-lg {
+    margin-right: 30%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-next {
+    right: 33%;
+  }
+  .apartment-area .owl-theme .owl-nav .owl-prev {
+    left: 33%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-next {
+    right: 33%;
+  }
+  .properties-area .owl-theme .owl-nav .owl-prev {
+    left: 33%;
   }
 }
 

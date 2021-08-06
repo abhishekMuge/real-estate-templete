@@ -156,7 +156,23 @@ span.caret {
 .advanced-form {
   text-align: left !important;
 }
-
+.form-control:focus {
+  border-color: rgb(206 212 218) !important;
+  box-shadow: none !important;
+}
+.input-addons {
+  color: white;
+  background-color: #f93e45;
+}
+.form-check-input:checked {
+  background-color: #f93e45;
+  border-color: #f93e45;
+}
+.form-check-input:focus {
+  border-color: #d35a5c;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%);
+}
 .common-btn {
   display: inline-block;
   color: #fff;
