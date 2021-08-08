@@ -20,23 +20,23 @@ jQuery(
     $("select").niceSelect();
 
     // Banner Slider
-    $(".banner-slider").owlCarousel({
-      items: 1,
-      loop: true,
-      margin: 15,
-      singleItem: true,
-      nav: false,
-      dots: false,
-      smartSpeed: 1000,
-      autoplay: false,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: false,
-      mouseDrag: false,
-      //   navText: [
-      //     "<i class='bx bx-chevron-left'></i>",
-      //     "<i class='bx bx-chevron-right'></i>",
-      //   ],
-    });
+    // $(".banner-slider").owlCarousel({
+    //   items: 1,
+    //   loop: true,
+    //   margin: 15,
+    //   singleItem: true,
+    //   nav: false,
+    //   dots: false,
+    //   smartSpeed: 1000,
+    //   autoplay: false,
+    //   autoplayTimeout: 4000,
+    //   autoplayHoverPause: false,
+    //   mouseDrag: false,
+    //   //   navText: [
+    //   //     "<i class='bx bx-chevron-left'></i>",
+    //   //     "<i class='bx bx-chevron-right'></i>",
+    //   //   ],
+    // });
 
     // Apartment Slider
     $(".apartment-slider").owlCarousel({
@@ -329,25 +329,6 @@ jQuery(
     var owl = $(".banner-slider");
     owl.owlCarousel();
 
-    $(".property-banner").click(function () {
-      owl.trigger("to.owl.carousel", [0, 500]);
-      $(".project-banner").removeClass("active-pill");
-      $(".dealers-banner").removeClass("active-pill");
-      $(".property-banner").addClass("active-pill");
-    });
-    $(".project-banner").click(function () {
-      owl.trigger("to.owl.carousel", [1, 500]);
-      $(".property-banner").removeClass("active-pill");
-      $(".dealers-banner").removeClass("active-pill");
-      $(".project-banner").addClass("active-pill");
-    });
-    $(".dealers-banner").click(function () {
-      owl.trigger("to.owl.carousel", [2, 500]);
-      $(".property-banner").removeClass("active-pill");
-      $(".project-banner").removeClass("active-pill");
-      $(".dealers-banner").addClass("active-pill");
-    });
-
     // Tabs;
     // $(".tab ul.tabs").addClass("active").find("> li:eq(0)").addClass("current");
     // $(".tab ul.tabs li a").on("click", function (g) {
@@ -417,6 +398,8 @@ jQuery(
   })(jQuery)
 );
 
+$("div#range-slider").rangeslider();
+
 //nested menu
 document.addEventListener("DOMContentLoaded", function () {
   // make it as accordion for smaller screens
@@ -460,9 +443,7 @@ function initMap() {
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("google_location_autocomplete"),
     {
-      types: ["establishment"],
-      componentRestrictions: { country: ["IN"] },
-      fields: ["place_id", "geometry", "name"],
+      types: ["geocode"],
     }
   );
   autocomplete.addEventListener("place_changed", onPlaceChanged);
@@ -470,10 +451,5 @@ function initMap() {
 
 function onPlaceChanged() {
   let place = autocomplete.getPlace();
-  if (!place.geometry) {
-    document.getElementById("google_location_autocomplete").placeholder =
-      "Enter the place";
-  } else {
-    document.getElementById("details").innerHTML = place.name;
-  }
+  console.log(place);
 }

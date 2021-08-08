@@ -140,7 +140,7 @@ span.caret {
   background-color: white !important;
 }
 .dropdown-menu {
-  width: 90%;
+  width: 100%;
   padding: 5px;
 }
 .navbar-bar {
@@ -163,6 +163,9 @@ span.caret {
 .input-addons {
   color: white;
   background-color: #f93e45;
+}
+.form-check {
+  margin: 10px !important;
 }
 .form-check-input:checked {
   background-color: #f93e45;
@@ -735,11 +738,11 @@ span.caret {
   overflow: hidden;
 }
 
-.banner-area .owl-theme .owl-nav {
+.banner-area {
   margin-top: 0;
 }
 
-.banner-area .owl-theme .owl-nav .owl-prev {
+/* .banner-area .owl-theme .owl-nav .owl-prev {
   position: absolute;
   top: 48%;
   left: 30px;
@@ -783,9 +786,9 @@ span.caret {
   color: #fff !important;
   background-color: #f93e45 !important;
   border: 1px solid #f93e45;
-}
+} */
 
-.banner-area .owl-item.active .banner-content h1 {
+.banner-area .banner-content h1 {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -796,16 +799,17 @@ span.caret {
   animation-delay: 0.7s;
 }
 
-.banner-area .banner-slider-item {
-  height: 800px;
+.banner-area {
+  height: 100vh;
   background-size: cover;
   background-position: center center;
+  background-image: url("../images/banner/banner1.jpg");
   background-repeat: no-repeat;
   position: relative;
   text-align: center;
 }
 
-.banner-area .banner-slider-item:before {
+/* .banner-area .banner-slider-item:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -814,7 +818,7 @@ span.caret {
   left: 0;
   background-color: #18253e;
   opacity: 0.8;
-}
+} */
 
 .banner-area .tab .tabs_item {
   display: none;
@@ -824,15 +828,15 @@ span.caret {
   display: block;
 }
 
-.banner-slider-img-one {
+.banner-one {
   background-image: url("../images/banner/banner1.jpg");
 }
 
-.banner-slider-img-two {
+.banner-two {
   background-image: url("../images/banner/banner2.jpg");
 }
 
-.banner-slider-img-three {
+.banner-three {
   background-image: url("../images/banner/banner3.jpg");
 }
 
@@ -859,6 +863,7 @@ span.caret {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10rem;
 }
 
 .banner-content form .banner-form-tag {
