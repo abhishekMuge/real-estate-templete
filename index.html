@@ -258,7 +258,7 @@
     <!-- Banner -->
    <div class="banner-area">
     <div class="container">
-        <div class="banner-content">
+      <div class="banner-content">
           <h1 class="banner-content-heading">Home Is The Starting Place Of Love, Hope And Dreams</h1>
 
           <div class="tab slides-category-list-tab">
@@ -276,6 +276,33 @@
                   <a href="#" class="dealers-banner">Dealers</a>
                 </li>
               </ul>
+
+              <div class="tab-option">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label white" for="inlineCheckbox1">
+                    New Booking
+                    <span class="sub-text">
+                      (New Launch)
+                    </span>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label white" for="inlineCheckbox1">
+                    <b>Pre-Booking</b>
+                    <span class="sub-text">
+                      (Under Construction)
+                    </span>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label white" for="inlineCheckbox1">
+                    Ready To Move
+                  </label>
+                </div>
+              </div>
 
               <div class="tab_content">
                 <div class="tabs_item">
@@ -546,136 +573,213 @@
                       </button>
                     </div>
 
-                    <div class="row">
-                      <div class="col-lg-16 mt-4">
-                        <div class="button-area-advanced">
-                          <button
-                            data-toggle="collapse"
-                            data-target="#collapseExample1"
-                            aria-expanded="false"
-                            aria-controls="collapseExample1"
-                            class="btn common-btn btn-block"
-                            type="button"
-                          >
-                            <i class="fa fa-sliders-h"></i>
-                            Advanced Search
-                          </button>
-                          <div class="collapse" id="collapseExample1">
-                            <div>
-                              <div data-role="main" class="ui-content">
-                                <form class="mt-2">
-                                  <hr />
-                                  <div class="advanced-form">
-                                    <div>
-                                      <label for="price">Price</label>
-                                    </div>
-                                        <div data-role="rangeslider">
-  <label for="range-1a">Rangeslider:</label>
-  <input name="range-1a" id="range-1a" min="0" max="100" value="0" type="range" />
-  <label for="range-1b">Rangeslider:</label>
-  <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range" />
-</div>
-                                                                           
-                                    <hr />
-                                    <div class="mt-4">
-                                      <label for="area-field">Area: </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >1 Option</label
-                                      >
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >2 Option</label
-                                      >
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >3 Option</label
-                                      >
-                                    </div>
-
-<!-- 
-                                                                        <hr />
-                                    <div class="mt-4">
-                                      <label for="area-field">Amenities: </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >1 Option</label
-                                      >
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >2 Option</label
-                                      >
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="inlineCheckbox1"
-                                        >3 Option</label
-                                      >
-                                    </div> -->
+                    <div class="price-range">
+                        <div class="collapse" id="collapseExample">
+                          <div class="card card-body text-left">
+                            <!-- <label for="customRange1" class="form-label">Price range</label>
+                            <input type="range" class="form-range" id="customRange1"> -->
 
 
+                            <div class="price-slider"><span>from
+                              <input type="number" value="5000" min="0" max="120000"/>	to
+                              <input type="number" value="50000" min="0" max="120000"/></span>
+                              <input value="25000" min="0" max="120000" step="500" type="range"/>
+                              <input value="50000" min="0" max="120000" step="500" type="range"/>
+                            </div>
 
-                                  </div>
-                                </form>
-                              </div>
+
+                          </div>
+                        </div>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
                             </div>
                           </div>
                         </div>
+              <div class="advanced-option">
+                <div>
+
+
+                  <div class="col-lg-3">
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-default dropdown-toggle"
+                            type="button"
+                            data-toggle="dropdown"
+                          >
+                            <a class="dropdown-text">Area</a>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            Option One
+                        </label>
+                    </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                            </li>
+                            <li class="dropdown-submenu">
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two <span class="caret"></span>
+                        </label>
+                    </div>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                </li>
+                                <li>
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                </li>
+                                <li class="dropdown-submenu">
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                  <ul class="dropdown-menu">
+                                    <li>
+                                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                    </li>
+                                    <li>
+                                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-default dropdown-toggle"
+                            type="button"
+                            data-toggle="dropdown"
+                          >
+                            <a class="dropdown-text">Amenities</a>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            Option One
+                        </label>
+                    </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                            </li>
+                            <li class="dropdown-submenu">
+                              <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two <span class="caret"></span>
+                        </label>
+                    </div>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                </li>
+                                <li>
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                </li>
+                                <li class="dropdown-submenu">
+                                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                  <ul class="dropdown-menu">
+                                    <li>
+                                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                    </li>
+                                    <li>
+                                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            OPtion two
+                        </label>
+                    </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                  </div>
+
+                  <div class="col-lg-3 mt-3">
+                    <button class="btn btn-default price-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Price
+                      <span class="text-pager"></span>
+                    </button>
+                  </div>
+
+                </div>
+                          
+              </div>
                       </div>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </form>
@@ -1852,6 +1956,13 @@
     <script src="assets/js/jquery-modal-video.min.js"></script>
 
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <!-- price-range assets -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
 
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
