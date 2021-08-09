@@ -924,6 +924,9 @@
     height: 320px;
     overflow-y: scroll;
   }
+  .banner-area {
+    height: 150vh;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
