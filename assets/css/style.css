@@ -47,6 +47,9 @@ h6 {
   color: #18253e;
   font-family: "Playfair Display", serif;
 }
+a {
+  text-decoration: none;
+}
 
 p {
   line-height: 1.7;
@@ -153,6 +156,7 @@ span.caret {
 }
 .dropdown-menu {
   width: 100%;
+  overflow: auto !important;
   padding: 5px;
   overflow: visible !important;
 }
