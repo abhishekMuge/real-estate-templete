@@ -1,40 +1,80 @@
+const API_URL =
+  "https://xy01re3rx2.execute-api.ap-south-1.amazonaws.com/Stage/search-data";
+
 //banner
 
 let banner = $(".banner-area");
 let bannerHeading = $(".banner-content-heading");
 let tabOption = $(".tab-option");
+let purposeDropdown = $(".purpose-optionList");
+const purposeOptionList = [
+  "New Booking(New Launch)",
+  "Pre-Booking(Under construction)",
+  "Ready to Move",
+  "Rent",
+  "Leave",
+  "Invesment",
+  "Consultancy",
+];
+
+$(document).ready(() => {
+  console.log("Erunning");
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", `${API_URL}`, true);
+  xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhttp.send();
+  xhttp.onreadystatechange = function () {
+    if (xhttp.status === 200) {
+      console.log("data");
+      console.log(xhttp.responseText);
+    } else {
+      console.log("error");
+      console.log(`error ${xhttp.status}`);
+    }
+  };
+});
 
 $(".property-banner").click(function () {
   $(".banner-area").addClass("banner-one");
   $(".banner-area").removeClass("banner-two banner-three");
-  bannerHeading.text("Home Is The Starting Place Of Love, Hope And Dreams");
+  bannerHeading.text("Find Your Dream Property");
 
-  tabOption.html(`
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label white" for="inlineCheckbox1">
-          New Booking
-            <span class="sub-text">
-              (New Launch)
-            </span>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label white" for="inlineCheckbox1">
-            Pre-Booking
-            <span class="sub-text">
-              (Under Construction)
-            </span>
+  purposeOptionList
+    .map((item) =>
+      purposeDropdown.html(
+        `
+       <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              New Booking
+              <br>
+              <span>(New Launch)</span>
+            </label>
+          </div>
+      </li>
+      <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              Pre-Booking
+              <br>
+              <span>(Under Construction)</span> 
+            </label>
+          </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Ready To move
           </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label white" for="inlineCheckbox1">
-            Ready To Move
-          </label>
-      </div>
-  `);
+        </div>
+      </li>
+      `
+      )
+    )
+    .join("");
 
   $(".project-banner").removeClass("active-pill");
   $(".dealers-banner").removeClass("active-pill");
@@ -45,22 +85,60 @@ $(".project-banner").click(function () {
   $(".banner-area").addClass("banner-two");
   $(".banner-area").removeClass("banner-one banner-three");
 
-  bannerHeading.text("Select Your Comfort Home From Our New Collection");
+  bannerHeading.text("Wild Your Aspiration With Buildano");
 
-  tabOption.html(`
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label white" for="inlineCheckbox1">
-          Rent
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label white" for="inlineCheckbox1">
+  purposeOptionList
+    .map((item) =>
+      purposeDropdown.html(
+        `
+       <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              New Booking
+              <br>
+              <span>(New Launch)</span>
+            </label>
+          </div>
+      </li>
+      <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              Pre-Booking
+              <br>
+              <span>(Under Construction)</span> 
+            </label>
+          </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Ready To move
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Rent
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
             Leave
           </label>
-      </div>
-  `);
+        </div>
+      </li>
+      `
+      )
+    )
+    .join("");
 
   $(".property-banner").removeClass("active-pill");
   $(".dealers-banner").removeClass("active-pill");
@@ -71,22 +149,71 @@ $(".dealers-banner").click(function () {
   $(".banner-area").addClass("banner-three");
   $(".banner-area").removeClass("banner-two banner-one");
 
-  bannerHeading.text("We Built Your Home To Keep Safe And Secure");
-
-  tabOption.html(`
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label white" for="inlineCheckbox1">
-          Invesment
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label white" for="inlineCheckbox1">
+  bannerHeading.text("Trust Your Trustee");
+  purposeDropdown.html(
+    `
+       <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              New Booking
+              <br>
+              <span>(New Launch)</span>
+            </label>
+          </div>
+      </li>
+      <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              Pre-Booking
+              <br>
+              <span>(Under Construction)</span> 
+            </label>
+          </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Ready To move
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Rent
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Leave
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Invesment
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
             Consultancy
           </label>
-      </div>
-  `);
+        </div>
+      </li>
+      `
+  );
 
   $(".property-banner").removeClass("active-pill");
   $(".project-banner").removeClass("active-pill");

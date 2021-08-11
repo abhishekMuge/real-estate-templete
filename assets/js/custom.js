@@ -437,19 +437,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // DOMContentLoaded  end
 
 //place api integration
-
-let autocomplete;
+let autoComplete;
 function initMap() {
-  autocomplete = new google.maps.places.Autocomplete(
+  autoComplete = new google.maps.places.Autocomplete(
     document.getElementById("google_location_autocomplete"),
     {
-      types: ["geocode"],
+      types: ["establishment"],
+      componentRestrictions: { country: ["IN"] },
+      fields: ["place_id", "geometry", "name"],
     }
   );
-  autocomplete.addEventListener("place_changed", onPlaceChanged);
-}
-
-function onPlaceChanged() {
-  let place = autocomplete.getPlace();
-  console.log(place);
 }
