@@ -1467,3 +1467,232 @@
                                         >3 Option</label
                                       >
                                     </div> -->
+
+
+
+$(function () {
+  //residental
+  $("#Residential").click(function () {
+    if ($(this).is(":checked")) {
+      $(".addon-nav").show();
+
+      //apt-opt
+      $("#apt-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          ApartmentFloor.map((item) =>
+            $(".addon-nav").append(
+              `
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `
+            )
+          );
+        } else {
+          $("#property-dropdown").css("display", "none");
+          $(".sub-otp").hide();
+        }
+      });
+
+      //house-opt
+      $("#house-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          House.map((item) =>
+            $(".addon-nav").append(
+              `
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `
+            )
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //home-opt
+      $("#home-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Home.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //classic-opt
+      $("#classic-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          ClassicLux.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //lux-opt
+      $("#lux-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          AdvancedLux.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //plot-opt
+      $("#plot-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Plot.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //island-opt
+      $("#island-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Island.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      // Shared-opt
+      $("#shared-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Shared.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+    }
+  });
+
+  // // Commercial
+
+  // $("#Commercial").click(function () {
+  //   if ($(this).is(":checked")) {
+  //     $(".comm-nav").show();
+  //     $(".comm-nav").empty();
+  //     commOPT.map((item) =>
+  //       $(".comm-nav").append(`
+  //       <li>
+  //         <div class="form-check">
+  //           <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
+  //           <label class="form-check-label" for="flexCheckIndeterminate">
+  //             ${item}
+  //           </label>
+  //         </div>
+  //       </li>
+  //       `)
+  //     );
+
+  //     $("#Office-opt").click(() => {
+  //       if ($(this).is(":checked")) {
+  //         $(".main-opt").hide();
+  //         $(".comm-nav").empty();
+  //         Office.map((item) =>
+  //           $(".addon-nav").append(`
+  //             <li class="sub-opt">
+  //               <div class="form-check">
+  //                 <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+  //                 <label class="form-check-label" for="flexCheckIndeterminate">
+  //                   ${item}
+  //                 </label>
+  //               </div>
+  //             </li>
+  //           `)
+  //         );
+  //         //end of if
+  //       }
+  //       //end of Office-opt
+  //     });
+  //     //end of if
+  //   }
+  // });
+
+  //end
+});

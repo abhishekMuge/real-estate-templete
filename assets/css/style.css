@@ -197,7 +197,7 @@ span.caret {
   width: 200px;
   background-color: white;
   border: 1px solid #ccc;
-  z-index: 999999;
+  z-index: 9999;
 }
 
 .back-otp div {
@@ -212,9 +212,25 @@ span.caret {
   font-size: 1.5rem;
   font-weight: bold;
 }
+.opt-header {
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
 
 .hidden-container .addon-nav {
   display: none;
+}
+.submenu-nav {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  background: white;
+  z-index: 999999;
+  left: 150px;
+}
+.addon-nav-disble {
+  display: none !important;
 }
 
 .navbar-bar {
