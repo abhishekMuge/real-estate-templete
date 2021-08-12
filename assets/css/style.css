@@ -75,6 +75,9 @@ a {
 p {
   line-height: 1.7;
 }
+ul li {
+  list-style: none;
+}
 
 p:last-child {
   margin-bottom: 0;
@@ -176,11 +179,44 @@ span.caret {
   background-color: white !important;
 }
 .dropdown-menu {
-  max-height: 500px;
+  max-height: 200px;
   width: 100%;
   overflow-y: scroll;
   padding: 5px;
 }
+
+.parent-container {
+  position: relative;
+}
+
+.hidden-container ul {
+  position: absolute;
+  /* padding: 20px; */
+  top: 50px;
+  left: 170px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 999999;
+}
+
+.back-otp div {
+  cursor: pointer;
+  padding: 0 20px;
+}
+.bx-chevron-left {
+  padding-top: 10px;
+}
+.back-otp div span {
+  margin-left: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hidden-container .addon-nav {
+  display: none;
+}
+
 .navbar-bar {
   padding: 0 !important;
 }

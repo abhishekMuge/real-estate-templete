@@ -1,22 +1,5 @@
 const API_URL =
   "https://xy01re3rx2.execute-api.ap-south-1.amazonaws.com/Stage/search-data";
-
-//banner
-
-let banner = $(".banner-area");
-let bannerHeading = $(".banner-content-heading");
-let tabOption = $(".tab-option");
-let purposeDropdown = $(".purpose-optionList");
-const purposeOptionList = [
-  "New Booking(New Launch)",
-  "Pre-Booking(Under construction)",
-  "Ready to Move",
-  "Rent",
-  "Leave",
-  "Invesment",
-  "Consultancy",
-];
-
 $(document).ready(() => {
   console.log("Erunning");
   var xhttp = new XMLHttpRequest();
@@ -34,6 +17,503 @@ $(document).ready(() => {
   };
 });
 
+//banner
+
+let banner = $(".banner-area");
+let bannerHeading = $(".banner-content-heading");
+let tabOption = $(".tab-option");
+let purposeDropdown = $(".purpose-optionList");
+let Agricultural = $("#Agricultural");
+let Institutional = $("#Institutional");
+let Industrial = $("#Industrial");
+let Commercial = $("#Commercial");
+//residental OPT
+let ApartmentFloor = [
+  "ALL",
+  "Builder floor",
+  "Convertible apartment",
+  "Garden apartment",
+  "High rise apartment",
+  "Loft apartment",
+  "Low rise apartment",
+  "Residential apartment",
+  "Serviced apartment",
+  "Studio apartment",
+];
+let House = [
+  "Carriage/coach house",
+  "Contemporary residential house",
+  "Cottage",
+  "Dome/round house",
+  "Duplex",
+  "Floating home/houseboat",
+  "In-law/basement suite",
+  "Single-family house",
+  "Tree house",
+  "Triplex",
+  "Underground house/bunker",
+  "Villa",
+  "Yurt",
+];
+let Home = [
+  "Cabin",
+  "Colonial home",
+  "Container home",
+  "Craftsman home",
+  "French country home",
+  "Greek revival home",
+  "Mediterranean home",
+  "Mid-century modern home",
+  "Mobile home",
+  "Ranch home",
+  "Split-level home",
+  "Town home",
+  "Tudor home",
+  "Victorian home",
+];
+
+let ClassicLux = [
+  "Castle",
+  "Cave",
+  "Chateau",
+  "Fort",
+  "Manor",
+  "Mansion",
+  "Palace",
+];
+
+let AdvancedLux = [
+  "Barndominium",
+  "Bungalow",
+  "Cape cod",
+  "Chalet",
+  "Penthouse",
+];
+
+let Plot = ["Government sector plot", "Plot in colony", "Private sector plot"];
+
+let Island = [
+  "Artificial island",
+  "Barrier island",
+  "Continental island",
+  "Coral island",
+  "Oceanic island",
+  "Tidal island",
+];
+
+let Shared = ["Condominium", "Co-op house"];
+
+//commercial OPt
+let commOPT = ["Office", "Retail", "Hospiyality", "Other"];
+let Office = [
+  "Bare shell office space",
+  "Co-working office space",
+  "Serviced office space",
+];
+
+let Retail = [
+  "Anchor store",
+  "Cafeteria",
+  "Commercial shop",
+  "Community retail center",
+  "Dispensary",
+  "Food court",
+  "Gymnasium",
+  "High street",
+  "Multiplex",
+  "Nursing home",
+  "Out parcel",
+  "Petrol pump",
+  "Regional mall",
+  "Restaurant",
+  "Retail power center",
+  "Retail store",
+  "Showroom",
+  "Sports facility",
+  "Strip/shopping center",
+];
+
+let Hospitality = [
+  "Banquet hall",
+  "Boutique",
+  "Boys PG",
+  "Casino",
+  "Co-ed PG",
+  "Extended stay hotel",
+  "Full service hotel",
+  "Girls PG",
+  "Limited service hotel",
+  "Public house",
+  "Resort",
+];
+let OtherCommercial = ["Mixed-use", "Special-purpose"];
+
+const purposeOptionList = [
+  "New Booking(New Launch)",
+  "Pre-Booking(Under construction)",
+  "Ready to Move",
+  "Rent",
+  "Leave",
+  "Invesment",
+  "Consultancy",
+];
+
+const amenitiesProps = [
+  "24/7 power backup",
+  "24/7 water supply",
+  "24x7 security",
+  "Aerobics centre",
+  "Amphitheatre",
+  "Atm",
+  "Badminton court",
+  "Banquet hall",
+  "Bar/chill-out lounge",
+  "Barbecue",
+  "Basketball court",
+  "Billiards",
+  "Bowling alley",
+  "Bus stand",
+  "Business lounge",
+  "Cafeteria",
+  "Car parking",
+  "Card room",
+  "Carrom",
+  "Cctv camera security",
+  "Changing area",
+  "Children's play area",
+  "Cigar lounge",
+  "Clinic",
+  "Club house",
+  "Concierge service",
+  "Conference room",
+  "Creche/day care",
+  "Cricket pitch",
+  "Dispensary",
+  "Distributed generation availability",
+  "Dock",
+  "Earthquake resistant",
+  "Entrance lobby",
+  "Escalators",
+  "Fire fighting systems",
+  "Flower garden",
+  "Food court",
+  "Foosball",
+  "Football",
+  "Fountain",
+  "Gated community",
+  "Gazebo",
+  "Golf course",
+  "Grade a building",
+  "Grocery shop",
+  "Gymnasium",
+  "Helipad",
+  "Hospital",
+  "Indoor games",
+  "Infinity pool",
+  "Intercom",
+  "Internal street lights",
+  "Jacuzzi",
+  "Jogging track",
+  "Landscape garden",
+  "Laundry",
+  "Lawn tennis court",
+  "Library",
+  "Lift(s)",
+  "Lounge",
+  "Maintenance staff",
+  "Medical centre",
+  "Metro",
+  "Mini theatre",
+  "Multipurpose court",
+  "Multipurpose hall",
+  "Open space",
+  "Paved compound",
+  "Pool table",
+  "Power back up lift",
+  "Private airport",
+  "Property staff",
+  "Railway Station",
+  "Rain water harvesting",
+  "Reading lounge",
+  "Reflexology park",
+  "Restaurant",
+  "Salon",
+  "Sauna",
+  "School",
+  "Security cabin",
+  "Senior citizen sitout",
+  "Sewage treatment plant",
+  "Shopping centre",
+  "Solar water heating",
+  "Spa",
+  "Squash court",
+  "Steam room",
+  "Sun deck",
+  "Swimming pool",
+  "Table tennis",
+  "Terrace garden",
+  "Theatre",
+  "Toddler pool",
+  "Valet parking",
+  "Vastu compliant",
+  "Video door security",
+  "Waiting lounge",
+  "Water softener plant",
+  "Wi-fi connectivity",
+  "Yoga/meditation area",
+];
+
+//nested dropdown
+$(function () {
+  //residental
+  $("#Residential").click(function () {
+    if ($(this).is(":checked")) {
+      $(".addon-nav").show();
+
+      //apt-opt
+      $("#apt-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          ApartmentFloor.map((item) =>
+            $(".addon-nav").append(
+              `
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `
+            )
+          );
+        } else {
+          $("#property-dropdown").css("display", "none");
+          $(".sub-otp").hide();
+        }
+      });
+
+      //house-opt
+      $("#house-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          House.map((item) =>
+            $(".addon-nav").append(
+              `
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `
+            )
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //home-opt
+      $("#home-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Home.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //classic-opt
+      $("#classic-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          ClassicLux.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //lux-opt
+      $("#lux-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          AdvancedLux.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //plot-opt
+      $("#plot-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Plot.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      //island-opt
+      $("#island-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Island.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+
+      // Shared-opt
+      $("#shared-opt").click(function () {
+        if ($(this).is(":checked")) {
+          $(".main-opt").hide();
+          Shared.map((item) =>
+            $(".addon-nav").append(`
+              <li class="sub-opt">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    ${item}
+                  </label>
+                </div>
+              </li>
+            `)
+          );
+        } else {
+          $(".sub-otp").hide();
+        }
+      });
+    }
+  });
+
+  // // Commercial
+
+  // $("#Commercial").click(function () {
+  //   if ($(this).is(":checked")) {
+  //     $(".comm-nav").show();
+  //     $(".comm-nav").empty();
+  //     commOPT.map((item) =>
+  //       $(".comm-nav").append(`
+  //       <li>
+  //         <div class="form-check">
+  //           <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
+  //           <label class="form-check-label" for="flexCheckIndeterminate">
+  //             ${item}
+  //           </label>
+  //         </div>
+  //       </li>
+  //       `)
+  //     );
+
+  //     $("#Office-opt").click(() => {
+  //       if ($(this).is(":checked")) {
+  //         $(".main-opt").hide();
+  //         $(".comm-nav").empty();
+  //         Office.map((item) =>
+  //           $(".addon-nav").append(`
+  //             <li class="sub-opt">
+  //               <div class="form-check">
+  //                 <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+  //                 <label class="form-check-label" for="flexCheckIndeterminate">
+  //                   ${item}
+  //                 </label>
+  //               </div>
+  //             </li>
+  //           `)
+  //         );
+  //         //end of if
+  //       }
+  //       //end of Office-opt
+  //     });
+  //     //end of if
+  //   }
+  // });
+
+  //end
+});
+
+//nested-dropdown back btn
+$(function () {
+  $(".back-otp").click(() => {
+    $(".main-opt").show();
+  });
+});
+
+$(document).ready(() => {
+  amenitiesProps
+    .map((prop) =>
+      $(".amenities-opt-conatiner").append(`
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            ${prop}
+          </label>
+        </div>
+      </li>
+    `)
+    )
+    .join("");
+});
 $(".property-banner").click(function () {
   $(".banner-area").addClass("banner-one");
   $(".banner-area").removeClass("banner-two banner-three");
