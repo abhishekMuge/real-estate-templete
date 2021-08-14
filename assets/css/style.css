@@ -148,6 +148,17 @@ button:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.btn-custom {
+  background-color: #b30000 !important;
+  color: white;
+}
+.btn-custom:hover {
+  color: rgba(255, 255, 255, 0.89) !important;
+}
+.btn-custom:focus {
+  outline: none;
+  border: none;
+}
 .white {
   color: #be0003;
 }
@@ -820,7 +831,8 @@ span.caret {
 /*-- Banner --*/
 
 /* //slider */
-.price-slider {
+.price-slider,
+.area-slider {
   text-align: left !important;
   width: 100%;
   margin: auto;
@@ -829,16 +841,20 @@ span.caret {
   height: 6em;
 }
 .price-slider svg,
-.price-slider input[type="range"] {
+.price-slider input[type="range"],
+.area-slider svg,
+.area-slider input[type="range"] {
   position: absolute;
   left: 0;
   bottom: 0;
 }
 input[type="number"] {
   border: 1px solid #ddd;
-  text-align: center;
-  font-size: 1.6em;
+  text-align: left;
+  font-size: 1.2em;
+  border: none;
   -moz-appearance: textfield;
+  opacity: 0;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -934,6 +950,11 @@ input[type="range"]::-ms-thumb {
   border-radius: 25px;
   background: #a13236;
   cursor: pointer;
+}
+
+.min-span,
+.max-span {
+  color: #000;
 }
 /* /wnd */
 

@@ -52,6 +52,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Snifty - Real Estate Group HTML Template</title>
 
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
@@ -256,7 +257,7 @@
     <!-- End Navbar -->
 
     <!-- Banner -->
-   <div class="banner-area">
+  <div class="banner-area">
     <div class="container">
       <div class="banner-content mt-6">
           <h1 class="banner-content-heading">Find Your Dream Property</h1>
@@ -308,33 +309,39 @@
                           >
                             <a>Purpose</a>
                           </button>
-                          <ul class="dropdown-menu purpose-optionList">
+                          <ul class="dropdown-menu purpose-optionList" id="purpose-optionList">
+                            <li class="m-2">
+                                <input class="form-control" type="text" value="" autocomplete="off"  onkeyup="filterList('purpose')" id="purpose-optionList-input">
+                            </li>
                             <li>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                              <div class="form-check" data-item-id="new booking">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
                                   <label class="form-check-label" for="flexCheckIndeterminate">
-                                      New Booking
-                                      <br>
-                                      <span>(New Launch)</span>
+                                     <span>
+                                       New Booking(New Launch)
+                                     </span>
                                   </label>
                               </div>
                             </li>
                             <li>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                                  <label class="form-check-label" for="flexCheckIndeterminate">
-                                      Pre-Booking
-                                      <br>
-                                      <span>(Under Construction)</span> 
-                                  </label>
+                              <div class="form-check" data-item-id="pre booking">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+                                <label class="form-check-label" for="flexCheckIndeterminate">
+                                    <span>
+                                      Pre Booking 
+                                    (Under Construction)
+                                    </span>
+                                </label>
                               </div>
                             </li>
                             
                             <li>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                              <div class="form-check" data-item-id="ready to move">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
                                   <label class="form-check-label" for="flexCheckIndeterminate">
-                                      Ready To move
+                                      <span>
+                                        Ready To move
+                                      </span>
                                   </label>
                               </div>
                             </li>
@@ -352,14 +359,21 @@
                             <a>Property Type</a
                             >
                           </button>
-                          <ul class="dropdown-menu" id="property-dropdown">
+                          <ul class="dropdown-menu" id="property-type-optionList">
+                            <li class="m-2">
+                                <input class="form-control" type="text" value="" autocomplete="off"  onkeyup="filterProperty()" id="property-type-optionList-input">
+                            </li>
                             <li>
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="Residential">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
-                                    Residential
+                                    <span>
+                                      Residential
+                                    </span>
                                 </label>
                               </div>
+                              <ul class="residental-dropdown">
+                              </ul>
                             </li>
 
 
@@ -367,18 +381,26 @@
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="Commercial">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
-                                  Commercial
+                                  <span>
+                                    Commercial
+                                  </span>
                                 </label>
                               </div>
+                               <ul class="commercial-dropdown">
+                              </ul>
                             </li>
 
                             <li>
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="Industrial">
                                   <label class="form-check-label" for="flexCheckIndeterminate">
-                                    Industrial
+                                    <span>
+                                      Industrial
+                                    </span>
                                   </label>
                               </div>
+                              <ul class="industrial-dropdown">
+                              </ul>
                             </li>
 
 
@@ -386,9 +408,13 @@
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="Institutional">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
-                                  Institutional
+                                  <span>
+                                    Institutional
+                                  </span>
                                 </label>
                               </div>
+                              <ul class="institutional-dropdown">
+                              </ul>
                             </li>
 
 
@@ -396,9 +422,13 @@
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="Agricultural">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
-                                  Agricultural
+                                  <span>
+                                    Agricultural
+                                  </span>
                                 </label>
                               </div>
+                              <ul class="agricultural-dropdown">
+                              </ul>
                             </li>
 
                           </ul>
@@ -421,193 +451,152 @@
                       </button>
                     </div>
 
-                    <div class="price-range">
-                        <div class="collapse" id="collapseExample">
-                          <div class="card card-body text-left">
-                            <!-- <label for="customRange1" class="form-label">Price range</label>
-                            <input type="range" class="form-range" id="customRange1"> -->
 
-
-                            <div class="price-slider"><span>Min
-                              <input type="number" value="5000" min="0" max="120000"/>	Max
-                              <input type="number" value="50000" min="0" max="120000"/></span>
-                              <input value="25000" min="0" max="120000" step="500" type="range"/>
-                              <input value="50000" min="0" max="1200000" step="500" type="range"/>
-                            </div>
-
-
-                          </div>
-                        </div>
-                    </div>
-
-                  </div>
-                </form>
-              </div>
-            </div>
-                          </div>
-                        </div>
-              <div class="advanced-option">
-                <div class="row d-flexalign-items-center">
-
-
-                  <div class="col-lg-3">
-                        <div class="dropdown">
-                          <button
-                            class="d-inline-flex align-items-center justify-content-between px-5 p-4 btn btn-default dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <a>Area</a>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            Option One
-                        </label>
-                    </div>
-                            </li>
-                            <li>
-                              <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                            </li>
-                            <li class="dropdown-submenu">
-                              <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two <span class="caret"></span>
-                        </label>
-                    </div>
-                              <ul class="dropdown-menu">
-                                <li>
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                </li>
-                                <li>
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                </li>
-                                <li class="dropdown-submenu">
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                  <ul class="dropdown-menu">
-                                    <li>
-                                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                    </li>
-                                    <li>
-                                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                        <div class="dropdown">
-                          <button
-                            class="d-inline-flex align-items-center justify-content-between px-5 p-4 btn btn-default dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <a>Amenities</a>
-                          </button>
-                          <ul class="dropdown-menu amenities-opt-conatiner">
-                            <!-- <li class="dropdown-submenu">
-                              <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two <span class="caret"></span>
-                        </label>
-                    </div>
-                              <ul class="dropdown-menu">
-                                <li>
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                </li>
-                                <li>
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                </li>
-                                <li class="dropdown-submenu">
-                                  <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                  <ul class="dropdown-menu">
-                                    <li>
-                                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                    </li>
-                                    <li>
-                                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                            OPtion two
-                        </label>
-                    </div>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </li> -->
-                          </ul>
-                        </div>
-                  </div>
-
-                  <div class="col-lg-3 mt-3">
-                    <button class="btn p-4 btn-default price-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Price
-                      <span class="text-pager"></span>
-                    </button>
-                  </div>
 
                 </div>
-                          
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+          <div class="advanced-option-list">  
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="dropdown">
+                  <button
+                  class="d-inline-flex align-items-center justify-content-between px-5 p-4 btn btn-default dropdown-toggle"
+                  id="area-btn"
+                  type="button"
+                  >
+                  <a>Area</a>
+                  </button>
+                </div>
               </div>
+              <!-- //area-dropdown -->
+              <div class="col-lg-3">
+                <div class="dropdown">
+                  <button
+                  class="d-inline-flex align-items-center justify-content-between px-5 p-4 btn btn-default dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                  >
+                  <a>Amenities</a>
+                  </button>
+                  <ul class="dropdown-menu amenities-opt-conatiner"  id="amenities-optionList">
+                    <li class="m-2">
+                      <input class="form-control" type="text" value=""  autocomplete="off" onkeyup="filterList('amenities')" id="amenities-optionList-input">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //amenities-dropdown -->
+              <div class="col-lg-3">
+                <div class="dropdown">
+                  <button
+                  class="d-inline-flex align-items-center justify-content-between px-5 p-4 btn btn-default dropdown-toggle"
+                  type="button"
+                  id="price-btn"
+                  >
+                  <a>Price</a>
+                  </button>
+                </div>
+              </div>
+              <!-- //price -->
+              <div class="col-lg-3 d-flex hide-btn-container justify-content-end align-items-center">
+                <button class="btn hide-btn btn-custom px-4 py-2">
+                  <i class="far fa-window-close"></i>
+                </button>
+              </div>
+              <!-- //hide btn -->
+            </div>
+          </div>
+
+     
+
+          <div class="advanced-option">
+            <div class="row d-flex align-items-center justify-content-end">
+              <div class="col-lg-4 mt-3">
+                <button class="btn d-inline-flex align-items-center justify-content-evenly p-4 btn-default price-btn advanced-option-btn" type="button">
+                  <i class="fas fa-th mr-6"></i>
+                  <span>Advanced Option</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="slider row" style="margin-bottom: 40px;">
+            <div class="col-lg-5">
+            <div class="price-slider mb-4 mt-3">
+              <div class="price-range">
+                <div>
+                  <div class="card card-body text-left">
+                    <!-- <label for="customRange1" class="form-label">Price range</label>
+                    <input type="range" class="form-range" id="customRange1"> -->
+                    <div class="price-slider text-left">
+                      <label for="price">Price</label>
+                      <br>
+                      <input id="price-value" type="number" value="5000" min="0" max="120000" readonly/> 
+                      <input id="price-value" type="number" value="50000" min="0" max="120000" readonly/>
+                      <br>
+                      <span><b>Min: </b></span>
+                      <span class="min-span">$0</span>
+                      <input id="price-ranger" value="25000" min="0" max="120000" step="500" type="range"/>
+                      <span class="ml-2"><b>Max: </b></span>
+                      <span class="max-span">$0</span>
+                      <input  id="price-ranger" value="50000" min="0" max="1200000" step="500" type="range"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- //area-slider -->
+          <div class="col-lg-5 mt-3 mb-3">
+            <div class="area-slider">
+              <div class="area-range">
+                <div>
+                  <div class="card card-body text-left">
+                    <div class="area-slider text-left">
+                      <div class="d-inline-flex align-items-center justify-content-between mb-3">
+                        <label for="area" style="margin-right: 20px;">Area</label>
+                          <select>
+                            <option value="square metre">square metre</option>
+                            <option value="square metre">acre</option>
+                            <option value="square metre">square metre</option>
+                          </select>
+                          <div style="margin-left: 20px;">
+                            <span><b>Min: </b></span>
+                            <span class="min-span" >$0</span>
+                            <span class="ml-2"><b>Max: </b></span>
+                            <span class="max-span mb-6" >$0</span>
+                          </div>
+                          <br>
+                      </div>
+                      <input id="area-value" type="number" value="5000" min="0" max="120000" readonly/> 
+                      <input id="area-value" type="number" value="50000" min="0" max="120000" readonly/>
+                      <br>
+                      
+                      <input id="area-ranger" value="25000" min="0" max="120000" step="500" type="range"/>
+                      <input id="area-ranger" value="50000" min="0" max="1200000" step="500" type="range"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+              <!-- //price-slider -->
+          
+
+
+
                       </div>
                     </div>
                   </div>
@@ -1789,7 +1778,7 @@
 
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
     <!-- price-range assets -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>

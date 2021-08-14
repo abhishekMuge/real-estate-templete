@@ -398,7 +398,7 @@ jQuery(
   })(jQuery)
 );
 
-$("div#range-slider").rangeslider();
+// $("div#range-slider").rangeslider();
 
 //nested menu
 document.addEventListener("DOMContentLoaded", function () {

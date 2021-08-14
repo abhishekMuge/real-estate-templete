@@ -1,21 +1,21 @@
-const API_URL =
-  "https://xy01re3rx2.execute-api.ap-south-1.amazonaws.com/Stage/search-data";
-$(document).ready(() => {
-  console.log("Erunning");
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", `${API_URL}`, true);
-  xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-  xhttp.send();
-  xhttp.onreadystatechange = function () {
-    if (xhttp.status === 200) {
-      console.log("data");
-      console.log(xhttp.responseText);
-    } else {
-      console.log("error");
-      console.log(`error ${xhttp.status}`);
-    }
-  };
-});
+// const API_URL =
+//   "https://xy01re3rx2.execute-api.ap-south-1.amazonaws.com/Stage/search-data";
+// $(document).ready(() => {
+//   console.log("Erunning");
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.open("GET", `${API_URL}`, true);
+//   xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+//   xhttp.send();
+//   xhttp.onreadystatechange = function () {
+//     if (xhttp.status === 200) {
+//       console.log("data");
+//       console.log(xhttp.responseText);
+//     } else {
+//       console.log("error");
+//       console.log(`error ${xhttp.status}`);
+//     }
+//   };
+// });
 
 //banner
 
@@ -261,9 +261,6 @@ const amenitiesProps = [
   "Yoga/meditation area",
 ];
 
-
-
-
 //Industrial
 let Industrial = [
   "Bulk warehouse",
@@ -287,39 +284,20 @@ let Agricultural = [
   "Infill land",
 ];
 
-//nested dropdown
-// Residential
+// //nested dropdown
+// // Residential
 $(function () {
   $("#Residential").click(function () {
     if ($(this).is(":checked")) {
-      // $("#property-dropdown").css("display", "block ");
-      $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Residential
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      $(".addon-nav").append(`
-      <li class="back-otp">
-        <div class="d-inilin-flex align-items-center justify-content-center">
-          <i class="bx bx-chevron-left"></i>
-            <span class="">back</span>
-        </div>
-      </li>
-      `);
       Residential.map((item) =>
-        $(".addon-nav").append(`
+        $(".residental-dropdown").append(`
         <li class="main-opt">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
             <label class="form-check-label" for="flexCheckIndeterminate">
-              ${item}
+              <span>
+                ${item}
+              </span>
             </label>
           </div>
         </li>
@@ -329,38 +307,20 @@ $(function () {
   });
 });
 
-// Commercial
+// // Commercial
 $(function () {
   $("#Commercial").click(function () {
     if ($(this).is(":checked")) {
-      $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Commercial
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      $(".addon-nav").append(`
-      <li class="back-otp">
-        <div class="d-inilin-flex align-items-center justify-content-center">
-          <i class="bx bx-chevron-left"></i>
-            <span class="">back</span>
-        </div>
-      </li>
-      `);
       commOPT.map((item) =>
-        $(".addon-nav").append(
+        $(".commercial-dropdown").append(
           `
             <li class="main-opt">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
-                  ${item}
+                  <span>
+                    ${item}
+                  </span>
                 </label>
               </div>
             </li>
@@ -371,38 +331,20 @@ $(function () {
   });
 });
 
-// // Industrial
+// // // Industrial
 $(function () {
   $("#Industrial").click(function () {
     if ($(this).is(":checked")) {
-      $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Industrial
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      $(".addon-nav").append(`
-      <li class="back-otp">
-        <div class="d-inilin-flex align-items-center justify-content-center">
-          <i class="bx bx-chevron-left"></i>
-            <span class="">back</span>
-        </div>
-      </li>
-      `);
       Industrial.map((item) =>
-        $(".addon-nav").append(
+        $(".industrial-dropdown").append(
           `
             <li class="main-opt">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
-                  ${item}
+                  <span>
+                    ${item}
+                  </span>
                 </label>
               </div>
             </li>
@@ -413,38 +355,20 @@ $(function () {
   });
 });
 
-// // Institutional
+// // // Institutional
 $(function () {
   $("#Institutional").click(function () {
     if ($(this).is(":checked")) {
-      $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Institutional
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      $(".addon-nav").append(`
-      <li class="back-otp">
-        <div class="d-inilin-flex align-items-center justify-content-center">
-          <i class="bx bx-chevron-left"></i>
-            <span class="">back</span>
-        </div>
-      </li>
-      `);
       Institutional.map((item) =>
-        $(".addon-nav").append(
+        $(".institutional-dropdown").append(
           `
             <li class="main-opt">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
-                  ${item}
+                 <span>
+                    ${item}
+                  </span>
                 </label>
               </div>
             </li>
@@ -455,38 +379,20 @@ $(function () {
   });
 });
 
-// //Agricultural
+// // //Agricultural
 $(function () {
   $("#Agricultural").click(function () {
     if ($(this).is(":checked")) {
-      $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Agricultural
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      $(".addon-nav").append(`
-      <li class="back-otp">
-        <div class="d-inilin-flex align-items-center justify-content-center">
-          <i class="bx bx-chevron-left"></i>
-            <span class="">back</span>
-        </div>
-      </li>
-      `);
       Agricultural.map((item) =>
-        $(".addon-nav").append(
+        $(".agricultural-dropdown").append(
           `
             <li class="main-opt">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
-                  ${item}
+                  <span>
+                    ${item}
+                  </span>
                 </label>
               </div>
             </li>
@@ -497,56 +403,70 @@ $(function () {
   });
 });
 
-//submenu
-// //Agricultural
-$(function () {
-  $("#Apartment-Floor-opt").click(function () {
-    if ($(this).is(":checked")) {
-      console.log("run");
-      // $(".addon-nav").show();
-      $(".addon-nav").html(
-        `
-        <li class="main-opt">
-          <div class="form-check">
-            <h5 class="opt-header">
-              Apartment/Floor-opt
-            </h5>
-          </div>
-        </li>
-      `
-      );
-      // $(".addon-nav").append(`
-      // <li class="back-otp">
-      //   <div class="d-inilin-flex align-items-center justify-content-center">
-      //     <i class="bx bx-chevron-left"></i>
-      //       <span class="">back</span>
-      //   </div>
-      // </li>
-      // `);
-      // ApartmentFloor.map((item) =>
-      //   $(".addon-nav").append(
-      //     `
-      //       <li class="main-opt">
-      //         <div class="form-check">
-      //           <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
-      //           <label class="form-check-label" for="flexCheckIndeterminate">
-      //             ${item}
-      //           </label>
-      //         </div>
-      //       </li>
-      // `
-      //   )
-      // );
+// property filter
+function filterProperty() {
+  var input, ul, li, data, span, txtValue;
+  input = document.getElementById("property-type-optionList-input");
+  data = input.value.toUpperCase();
+  ul = document.querySelector("#property-type-optionList");
+  li = ul.getElementsByTagName("li");
+  // console.log(data, li);
+
+  for (let i = 0; i < li.length; i++) {
+    span = li[i].getElementsByTagName("span");
+    if (span.length > 0) {
+      txtValue = span.item(0).textContent;
+      console.log(txtValue);
+      // if (txtValue.toUpperCase().indexOf(data) > -1) {
+      //   li[i].style.display = "";
+      // } else {
+      //   li[i].style.display = "none";
+      // }
     }
-  });
+  }
+}
+
+//serch filter
+function filterList(forList) {
+  var input, filter, ul, li, span, i, txtValue;
+  input = document.getElementById(`${forList}-optionList-input`);
+  filter = input.value.toUpperCase();
+  ul = document.getElementById(`${forList}-optionList`);
+  // console.log(ul);
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    span = li[i].getElementsByTagName("span");
+    if (span.length > 0) {
+      txtValue = span.item(0).textContent;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+}
+
+$(".advanced-option-list").hide();
+
+//advanced-option-list
+$(".advanced-option-btn").click(() => {
+  if (!$(".advanced-option-list").is(":visible")) {
+    $(".advanced-option-list").toggle();
+    $(".advanced-option").toggle();
+  } else {
+    $(".advanced-option-list").toggle();
+  }
 });
 
-// nested-dropdown back btn
-// (function () {
-//   $(".back-otp").click(function () {
-//     $("ul.addon-nav").attr("style", "display: none");
-//   });
-// });
+$(".hide-btn").click(() => {
+  if ($(".advanced-option-list").is(":visible")) {
+    $(".advanced-option-list").toggle();
+    $(".slider").hide();
+    $(".advanced-option").toggle();
+  }
+});
 
 $(document).ready(() => {
   amenitiesProps
@@ -556,7 +476,9 @@ $(document).ready(() => {
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
           <label class="form-check-label" for="flexCheckIndeterminate">
+            <span>  
             ${prop}
+            </span>
           </label>
         </div>
       </li>
@@ -750,12 +672,13 @@ $(".dealers-banner").click(function () {
   $(".dealers-banner").addClass("active-pill");
 });
 
+//price-slider
 (function () {
   var parent = document.querySelector(".price-slider");
   if (!parent) return;
 
-  var rangeS = parent.querySelectorAll("input[type=range]"),
-    numberS = parent.querySelectorAll("input[type=number]");
+  var rangeS = parent.querySelectorAll("#price-ranger");
+  var numberS = parent.querySelectorAll("#price-value");
 
   rangeS.forEach(function (el) {
     el.oninput = function () {
@@ -768,6 +691,18 @@ $(".dealers-banner").click(function () {
 
       numberS[0].value = slide1;
       numberS[1].value = slide2;
+      $(".min-span").text(
+        slide1.toLocaleString("en-IN", {
+          style: "currency",
+          currency: "INR",
+        })
+      );
+      $(".max-span").text(
+        slide2.toLocaleString("en-IN", {
+          style: "currency",
+          currency: "INR",
+        })
+      );
     };
   });
 
@@ -787,3 +722,64 @@ $(".dealers-banner").click(function () {
     };
   });
 })();
+
+//area slider
+(function () {
+  var parent = document.querySelector(".area-slider");
+  if (!parent) return;
+
+  var rangeS = parent.querySelectorAll("#area-ranger"),
+    numberS = parent.querySelectorAll("#area-value");
+  var slide1, slide2;
+
+  rangeS.forEach(function (el) {
+    el.oninput = function () {
+      slide1 = parseFloat(rangeS[0].value);
+      slide2 = parseFloat(rangeS[1].value);
+
+      if (slide1 > slide2) {
+        [slide1, slide2] = [slide2, slide1];
+      }
+
+      numberS[0].value = slide1;
+      numberS[1].value = slide2;
+      $(".min-span").text(
+        slide1.toLocaleString("en-IN", {
+          style: "currency",
+          currency: "INR",
+        })
+      );
+      $(".max-span").text(
+        slide2.toLocaleString("en-IN", {
+          style: "currency",
+          currency: "INR",
+        })
+      );
+    };
+  });
+
+  numberS.forEach(function (el) {
+    el.oninput = function () {
+      var number1 = parseFloat(numberS[0].value),
+        number2 = parseFloat(numberS[1].value);
+
+      if (number1 > number2) {
+        var tmp = number1;
+        numberS[0].value = number2;
+        numberS[1].value = tmp;
+      }
+
+      rangeS[0].value = number1;
+      rangeS[1].value = number2;
+    };
+  });
+})();
+
+$(".price-slider").hide();
+$(".area-slider").hide();
+$("#area-btn").click(function () {
+  $(".area-slider").toggle();
+});
+$("#price-btn").click(function () {
+  $(".price-slider").toggle();
+});
