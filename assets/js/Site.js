@@ -24,8 +24,7 @@ let bannerHeading = $(".banner-content-heading");
 let tabOption = $(".tab-option");
 let purposeDropdown = $(".purpose-optionList");
 
-//residental OPT
-let Residential = [
+let propfilterOpt = [
   "Apartment-Floor",
   "House",
   "Home",
@@ -34,9 +33,6 @@ let Residential = [
   "Plot",
   "Island",
   "Shared",
-];
-let ApartmentFloor = [
-  "ALL",
   "Builder floor",
   "Convertible apartment",
   "Garden apartment",
@@ -46,8 +42,6 @@ let ApartmentFloor = [
   "Residential apartment",
   "Serviced apartment",
   "Studio apartment",
-];
-let House = [
   "Carriage/coach house",
   "Contemporary residential house",
   "Cottage",
@@ -61,8 +55,6 @@ let House = [
   "Underground house/bunker",
   "Villa",
   "Yurt",
-];
-let Home = [
   "Cabin",
   "Colonial home",
   "Container home",
@@ -77,8 +69,6 @@ let Home = [
   "Town home",
   "Tudor home",
   "Victorian home",
-];
-let ClassicLux = [
   "Castle",
   "Cave",
   "Chateau",
@@ -86,33 +76,29 @@ let ClassicLux = [
   "Manor",
   "Mansion",
   "Palace",
-];
-let AdvancedLux = [
   "Barndominium",
   "Bungalow",
   "Cape cod",
   "Chalet",
   "Penthouse",
-];
-let Plot = ["Government sector plot", "Plot in colony", "Private sector plot"];
-let Island = [
+  "Government sector plot",
+  "Plot in colony",
+  "Private sector plot",
   "Artificial island",
   "Barrier island",
   "Continental island",
   "Coral island",
   "Oceanic island",
   "Tidal island",
-];
-let Shared = ["Condominium", "Co-op house"];
-
-//commercial OPt
-let commOPT = ["Office", "Retail", "Hospiyality", "Other"];
-let Office = [
+  "Condominium",
+  "Co-op house",
+  "Office",
+  "Retail",
+  "Hospiyality",
+  "Other",
   "Bare shell office space",
   "Co-working office space",
   "Serviced office space",
-];
-let Retail = [
   "Anchor store",
   "Cafeteria",
   "Commercial shop",
@@ -132,8 +118,6 @@ let Retail = [
   "Showroom",
   "Sports facility",
   "Strip/shopping center",
-];
-let Hospitality = [
   "Banquet hall",
   "Boutique",
   "Boys PG",
@@ -145,8 +129,55 @@ let Hospitality = [
   "Limited service hotel",
   "Public house",
   "Resort",
+  "Mixed-use",
+  "Special-purpose",
+  "New Booking(New Launch)",
+  "Pre-Booking(Under construction)",
+  "Ready to Move",
+  "Rent",
+  "Leave",
+  "Invesment",
+  "Consultancy",
+  "Bulk warehouse",
+  "Cold storage",
+  "Flex warehouse",
+  "Heavy manufacturing",
+  "Industrial Plot",
+  "Industrial land",
+  "Light assembly",
+  "Mining",
+  "Coaching-center",
+  "College",
+  "Hospital",
+  "School",
+  "Brownfield land",
+  "Farmhouse",
+  "Greenfield /agricultural land",
+  "Infill land",
 ];
-let OtherCommercial = ["Mixed-use", "Special-purpose"];
+
+//Industrial
+let Industrial = [
+  "Bulk warehouse",
+  "Cold storage",
+  "Flex warehouse",
+  "Heavy manufacturing",
+  "Industrial Plot",
+  "Industrial land",
+  "Light assembly",
+  "Mining",
+];
+
+//Institutional
+let Institutional = ["Coaching-center", "College", "Hospital", "School"];
+
+//Agricultural
+let Agricultural = [
+  "Brownfield land",
+  "Farmhouse",
+  "Greenfield /agricultural land",
+  "Infill land",
+];
 const purposeOptionList = [
   "New Booking(New Launch)",
   "Pre-Booking(Under construction)",
@@ -261,84 +292,29 @@ const amenitiesProps = [
   "Yoga/meditation area",
 ];
 
-//Industrial
-let Industrial = [
-  "Bulk warehouse",
-  "Cold storage",
-  "Flex warehouse",
-  "Heavy manufacturing",
-  "Industrial Plot",
-  "Industrial land",
-  "Light assembly",
-  "Mining",
-];
+$("#Residential-dropdown").hide();
+$("#Commercial-dropdown").hide();
 
-//Institutional
-let Institutional = ["Coaching-center", "College", "Hospital", "School"];
-
-//Agricultural
-let Agricultural = [
-  "Brownfield land",
-  "Farmhouse",
-  "Greenfield /agricultural land",
-  "Infill land",
-];
-
-// //nested dropdown
-// // Residential
-$(function () {
-  $("#Residential").click(function () {
-    if ($(this).is(":checked")) {
-      Residential.map((item) =>
-        $(".residental-dropdown").append(`
-        <li class="main-opt">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
-            <label class="form-check-label" for="flexCheckIndeterminate">
-              <span>
-                ${item}
-              </span>
-            </label>
-          </div>
-        </li>
-        `)
-      );
-    }
-  });
+$("#Residential").click(function () {
+  if ($(this).is(":checked")) {
+    $("#Residential-dropdown").toggle();
+  }
 });
 
-// // Commercial
-$(function () {
-  $("#Commercial").click(function () {
-    if ($(this).is(":checked")) {
-      commOPT.map((item) =>
-        $(".commercial-dropdown").append(
-          `
-            <li class="main-opt">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
-                <label class="form-check-label" for="flexCheckIndeterminate">
-                  <span>
-                    ${item}
-                  </span>
-                </label>
-              </div>
-            </li>
-      `
-        )
-      );
-    }
-  });
+$("#Commercial").click(function () {
+  if ($(this).is(":checked")) {
+    $("#Commercial-dropdown").toggle();
+  }
 });
 
-// // // Industrial
+// // Industrial
 $(function () {
   $("#Industrial").click(function () {
     if ($(this).is(":checked")) {
       Industrial.map((item) =>
         $(".industrial-dropdown").append(
           `
-            <li class="main-opt">
+            <li class="item">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
@@ -355,14 +331,14 @@ $(function () {
   });
 });
 
-// // // Institutional
+// // Institutional
 $(function () {
   $("#Institutional").click(function () {
     if ($(this).is(":checked")) {
       Institutional.map((item) =>
         $(".institutional-dropdown").append(
           `
-            <li class="main-opt">
+            <li class="item">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
@@ -379,14 +355,14 @@ $(function () {
   });
 });
 
-// // //Agricultural
+// //Agricultural
 $(function () {
   $("#Agricultural").click(function () {
     if ($(this).is(":checked")) {
       Agricultural.map((item) =>
         $(".agricultural-dropdown").append(
           `
-            <li class="main-opt">
+            <li class="item">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
@@ -405,23 +381,19 @@ $(function () {
 
 // property filter
 function filterProperty() {
-  var input, ul, li, data, span, txtValue;
-  input = document.getElementById("property-type-optionList-input");
-  data = input.value.toUpperCase();
-  ul = document.querySelector("#property-type-optionList");
-  li = ul.getElementsByTagName("li");
-  // console.log(data, li);
+  var input = document.getElementById(`property-type-optionList-input`);
+  var filter = input.value.toUpperCase();
+  var li = document.querySelectorAll(`.item`);
 
-  for (let i = 0; i < li.length; i++) {
-    span = li[i].getElementsByTagName("span");
+  for (i = 0; i < li.length; i++) {
+    let span = li[i].getElementsByTagName("span");
     if (span.length > 0) {
-      txtValue = span.item(0).textContent;
-      console.log(txtValue);
-      // if (txtValue.toUpperCase().indexOf(data) > -1) {
-      //   li[i].style.display = "";
-      // } else {
-      //   li[i].style.display = "none";
-      // }
+      let txtValue = span.item(0).textContent;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
     }
   }
 }
@@ -460,13 +432,13 @@ $(".advanced-option-btn").click(() => {
   }
 });
 
-$(".hide-btn").click(() => {
-  if ($(".advanced-option-list").is(":visible")) {
-    $(".advanced-option-list").toggle();
-    $(".slider").hide();
-    $(".advanced-option").toggle();
-  }
-});
+// $(".hide-btn").click(() => {
+//   if ($(".advanced-option-list").is(":visible")) {
+//     $(".advanced-option-list").toggle();
+//     $(".slider").hide();
+//     $(".advanced-option").toggle();
+//   }
+// });
 
 $(document).ready(() => {
   amenitiesProps
@@ -691,13 +663,13 @@ $(".dealers-banner").click(function () {
 
       numberS[0].value = slide1;
       numberS[1].value = slide2;
-      $(".min-span").text(
+      $(".min-span-price").text(
         slide1.toLocaleString("en-IN", {
           style: "currency",
           currency: "INR",
         })
       );
-      $(".max-span").text(
+      $(".max-span-price").text(
         slide2.toLocaleString("en-IN", {
           style: "currency",
           currency: "INR",
@@ -743,18 +715,8 @@ $(".dealers-banner").click(function () {
 
       numberS[0].value = slide1;
       numberS[1].value = slide2;
-      $(".min-span").text(
-        slide1.toLocaleString("en-IN", {
-          style: "currency",
-          currency: "INR",
-        })
-      );
-      $(".max-span").text(
-        slide2.toLocaleString("en-IN", {
-          style: "currency",
-          currency: "INR",
-        })
-      );
+      $(".min-span-area").text(slide1);
+      $(".max-span-area").text(slide2);
     };
   });
 
@@ -775,11 +737,11 @@ $(".dealers-banner").click(function () {
   });
 })();
 
-$(".price-slider").hide();
-$(".area-slider").hide();
-$("#area-btn").click(function () {
-  $(".area-slider").toggle();
-});
-$("#price-btn").click(function () {
-  $(".price-slider").toggle();
-});
+// $(".price-slider").hide();
+// // $(".area-slider").hide();
+// $("#area-btn").click(function () {
+//   $(".area-slider").toggle();
+// });
+// $("#price-btn").click(function () {
+//   $(".price-slider").toggle();
+// });
