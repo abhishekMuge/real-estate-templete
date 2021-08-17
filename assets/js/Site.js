@@ -316,7 +316,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
+                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                   <span>
                     ${item}
@@ -340,7 +340,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
+                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                  <span>
                     ${item}
@@ -364,7 +364,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${item}-opt">
+                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                   <span>
                     ${item}
@@ -381,21 +381,58 @@ $(function () {
 
 // property filter
 function filterProperty() {
-  var input = document.getElementById(`property-type-optionList-input`);
+  var input = document.getElementById("property-type-optionList-input");
   var filter = input.value.toUpperCase();
   var li = document.querySelectorAll(`.item`);
-
-  for (i = 0; i < li.length; i++) {
-    let span = li[i].getElementsByTagName("span");
-    if (span.length > 0) {
-      let txtValue = span.item(0).textContent;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
+  let filterList = document.querySelectorAll(".filter-item");
+  for (let i = 0; i < li.length; i++) {
+    li[i].style.display = "none";
+  }
+  for (let i = 0; i < propfilterOpt.length; i++) {
+    if (
+      propfilterOpt[i].toUpperCase().indexOf(filter) > -1 ||
+      filter.length < 0
+    ) {
+      $(".filter-list").prepend(
+        `
+      <li class="filter-item">
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="filter-opt">
+        <label class="form-check-label" for="flexCheckIndeterminate">
+        <span>
+        ${propfilterOpt[i]}
+        </span>
+        </label>
+        </div>
+        </li>
+      `
+      );
     }
   }
+  if (filter.length < 0) {
+    for (let i = 0; i < li.length; i++) {
+      li[i].style.display = "block";
+    }
+    for (let j = 0; j < filterList.length; i++) {
+      filterList[i].style.display = "none";
+    }
+  }
+
+  // for (i = 0; i < li.length; i++) {
+  //   if (li[i].childNodes) {
+  //     let innerUL = li[i].childNodes[1];
+  //     console.log(innerUL);
+  //   }
+  //   //   let span = li[i].getElementsByTagName("span");
+  //   //   if (span.length > 0) {
+  //   //     let txtValue = span.item(0).textContent;
+  //   //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //   //       li[i].style.display = "";
+  //   //     } else {
+  //   //       li[i].style.display = "none";
+  //   //     }
+  //   //   }
+  // }
 }
 
 //serch filter
@@ -446,7 +483,7 @@ $(document).ready(() => {
       $(".amenities-opt-conatiner").append(`
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="${prop}" id="flexCheckIndeterminate">
           <label class="form-check-label" for="flexCheckIndeterminate">
             <span>  
             ${prop}
@@ -469,8 +506,8 @@ $(".property-banner").click(function () {
         `
        <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="New_Booking(New_Launch)" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               New Booking
               <br>
               <span>(New Launch)</span>
@@ -479,8 +516,8 @@ $(".property-banner").click(function () {
       </li>
       <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="Pre-Booking" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               Pre-Booking
               <br>
               <span>(Under Construction)</span> 
@@ -489,8 +526,8 @@ $(".property-banner").click(function () {
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Ready To move" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Ready To move
           </label>
         </div>
@@ -517,8 +554,8 @@ $(".project-banner").click(function () {
         `
        <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="New_Booking(New_Launch)" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               New Booking
               <br>
               <span>(New Launch)</span>
@@ -527,8 +564,8 @@ $(".project-banner").click(function () {
       </li>
       <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="Pre-Booking" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               Pre-Booking
               <br>
               <span>(Under Construction)</span> 
@@ -537,24 +574,24 @@ $(".project-banner").click(function () {
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Ready To move" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Ready To move
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Rent" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Rent
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Leave" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Leave
           </label>
         </div>
@@ -578,8 +615,8 @@ $(".dealers-banner").click(function () {
     `
        <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="New_Booking(New_Launch)" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               New Booking
               <br>
               <span>(New Launch)</span>
@@ -588,8 +625,8 @@ $(".dealers-banner").click(function () {
       </li>
       <li>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
+            <input class="form-check-input" type="checkbox" value="Pre-Booking" id="purpose-check">
+            <label class="form-check-label" for="purpose-check">
               Pre-Booking
               <br>
               <span>(Under Construction)</span> 
@@ -598,40 +635,40 @@ $(".dealers-banner").click(function () {
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Ready To move" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Ready To move
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Rent" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Rent
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Leave" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Leave
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Invesment" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Invesment
           </label>
         </div>
       </li>
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-          <label class="form-check-label" for="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="Consultancy" id="purpose-check">
+          <label class="form-check-label" for="purpose-check">
             Consultancy
           </label>
         </div>
@@ -737,11 +774,9 @@ $(".dealers-banner").click(function () {
   });
 })();
 
-// $(".price-slider").hide();
-// // $(".area-slider").hide();
-// $("#area-btn").click(function () {
-//   $(".area-slider").toggle();
-// });
-// $("#price-btn").click(function () {
-//   $(".price-slider").toggle();
-// });
+//form submit
+function submitFormHandler(e) {
+  e.preventDefault();
+  var purpose_drop = document.querySelectorAll("#purpose-check");
+  console.log(purpose_drop[0].value);
+}
