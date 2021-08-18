@@ -312,7 +312,7 @@
                             </li>
                             <li>
                               <div class="form-check" data-item-id="new booking">
-                                <input class="form-check-input" type="checkbox" value="New Booking(New Launch)" id="purpose-check" />
+                                <input class="form-check-input" type="checkbox" value="New_Booking" id="purpose-check" />
                                   <label class="form-check-label" for="purpose-check">
                                      <span>
                                        New Booking(New Launch)
@@ -322,7 +322,7 @@
                             </li>
                             <li>
                               <div class="form-check" data-item-id="pre booking">
-                                <input class="form-check-input" type="checkbox" value="Pre Booking (Under Construction)" id="purpose-check" />
+                                <input class="form-check-input" type="checkbox" value="Pre_Booking" id="purpose-check" />
                                 <label class="form-check-label" for="purpose-check">
                                     <span>
                                       Pre Booking 
@@ -334,7 +334,7 @@
                             
                             <li>
                               <div class="form-check" data-item-id="ready to move">
-                                <input class="form-check-input" type="checkbox" value="Ready To move" id="purpose-check" />
+                                <input class="form-check-input" type="checkbox" value="Ready_To_move" id="purpose-check" />
                                   <label class="form-check-label" for="purpose-check">
                                       <span>
                                         Ready To move
@@ -360,10 +360,11 @@
                             <li class="m-2">
                                 <input class="form-control" type="text" value="" autocomplete="off"  onkeyup="filterProperty()" id="property-type-optionList-input">
                             </li>
-                            <div class="filter-list">
-                              <li class="item">
+                            <div class="filter-list"></div>
+                            <div class="main-list">
+                            <li class="item">
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Residential" id="Residential">
+                                <input class="form-check-input property-type" type="checkbox" value="Residential" id="Residential">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
                                     <span>
                                       Residential
@@ -373,17 +374,17 @@
                               <ul class="sub-dropdown" id="Residential-dropdown">
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Apartment/Floor">
+                                    <input class="form-check-input residential" type="checkbox" value="Apartment/Floor" id="Apartment-Floor">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Apartment/Floor
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="Apartment-Floor-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Builder floor">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Builder floor">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Builder floor
@@ -393,7 +394,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Convertible apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Convertible apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Convertible apartment
@@ -403,7 +404,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Garden apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Garden apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Garden apartment
@@ -413,7 +414,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="High rise apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="High rise apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             High rise apartment
@@ -423,7 +424,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Loft apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Loft apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Loft apartment
@@ -433,7 +434,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Low rise apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Low rise apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Low rise apartment
@@ -443,7 +444,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Residential apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Residential apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Residential apartment
@@ -453,7 +454,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Serviced apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Serviced apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Serviced apartment
@@ -463,7 +464,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Studio apartment">
+                                        <input class="form-check-input apartment-floor" type="checkbox" value="Studio apartment">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Studio apartment
@@ -475,17 +476,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Home">
+                                    <input class="form-check-input residential" type="checkbox" value="Home" id="home">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Home
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="home-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Cabin">
+                                        <input class="form-check-input home" type="checkbox" value="Cabin">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Cabin
@@ -495,7 +496,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Colonial_home>
+                                        <input class="form-check-input home" type="checkbox" value="Colonial_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Colonial home
@@ -505,7 +506,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="container_home">
+                                        <input class="form-check-input home" type="checkbox" value="container_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Container home
@@ -515,7 +516,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Craftsman_home">
+                                        <input class="form-check-input home" type="checkbox" value="Craftsman_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Craftsman home
@@ -525,7 +526,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="French_country_home">
+                                        <input class="form-check-input home" type="checkbox" value="French_country_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             French country home
@@ -535,7 +536,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Greek_revival_home">
+                                        <input class="form-check-input home" type="checkbox" value="Greek_revival_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Greek revival home
@@ -545,7 +546,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterranean_home">
+                                        <input class="form-check-input home" type="checkbox" value="Mediterranean_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Mediterranean home
@@ -555,7 +556,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mid-century modern home">
+                                        <input class="form-check-input home" type="checkbox" value="Mid-century modern home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Mid-century modern home
@@ -565,7 +566,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="mobile_home">
+                                        <input class="form-check-input home" type="checkbox" value="mobile_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Mobile home
@@ -575,7 +576,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="ranch_home">
+                                        <input class="form-check-input home" type="checkbox" value="ranch_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Ranch home
@@ -585,7 +586,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Split-level home">
+                                        <input class="form-check-input home" type="checkbox" value="Split-level home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Split-level home
@@ -595,7 +596,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="town_home">
+                                        <input class="form-check-input home" type="checkbox" value="town_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Town home
@@ -605,7 +606,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Tudor_home">
+                                        <input class="form-check-input home" type="checkbox" value="Tudor_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Tudor home
@@ -615,7 +616,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Victorian_home">
+                                        <input class="form-check-input home" type="checkbox" value="Victorian_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Victorian home
@@ -627,17 +628,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Classic_Luxury">
+                                    <input class="form-check-input residential" type="checkbox" value="Classic_Luxury" id="classic-luxury">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Classic Luxury
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="classic-luxury-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Castle">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Castle">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Castle
@@ -647,7 +648,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Cave">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Cave">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Cave
@@ -657,7 +658,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Chateau">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Chateau">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Chateau
@@ -667,7 +668,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Fort">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Fort">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Fort
@@ -677,7 +678,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manor">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Manor">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Manor
@@ -687,7 +688,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mansion">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Mansion">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Mansion
@@ -697,7 +698,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Palace">
+                                        <input class="form-check-input classic_luxury" type="checkbox" value="Palace">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Palace
@@ -709,17 +710,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Advanced_Luxury">
+                                    <input class="form-check-input residential" type="checkbox" value="Advanced_Luxury" id="Advanced-Luxury">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Advanced Luxury
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="Advanced-Luxurysub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Barndominium">
+                                        <input class="form-check-input advanced_luxury" type="checkbox" value="Barndominium">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Barndominium
@@ -729,7 +730,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Bungalow">
+                                        <input class="form-check-input advanced_luxury" type="checkbox" value="Bungalow">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Bungalow
@@ -739,7 +740,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Cape_cod">
+                                        <input class="form-check-input advanced_luxury" type="checkbox" value="Cape_cod">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Cape cod
@@ -749,7 +750,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Chalet">
+                                        <input class="form-check-input advanced_luxury" type="checkbox" value="Chalet">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Chalet
@@ -759,7 +760,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Penthouse">
+                                        <input class="form-check-input advanced_luxury" type="checkbox" value="Penthouse">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Penthouse
@@ -772,17 +773,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="plot">
+                                    <input class="form-check-input residential" type="checkbox" value="plot" id="plot">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Plot
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="plot-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Government_sector_plot">
+                                        <input class="form-check-input plot" type="checkbox" value="Government_sector_plot">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Government sector plot
@@ -792,7 +793,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Plot_in_colony">
+                                        <input class="form-check-input plot" type="checkbox" value="Plot_in_colony">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Plot in colony
@@ -802,7 +803,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Private_sector_plot">
+                                        <input class="form-check-input plot" type="checkbox" value="Private_sector_plot">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Private sector plot
@@ -814,17 +815,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Island">
+                                    <input class="form-check-input residential" type="checkbox" value="Island" id="island">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Island
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="island-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Artificial_island">
+                                        <input class="form-check-input island" type="checkbox" value="Artificial_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Artificial island
@@ -834,7 +835,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Barrier_island">
+                                        <input class="form-check-input island" type="checkbox" value="Barrier_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Barrier island
@@ -844,7 +845,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Continental_island>
+                                        <input class="form-check-input island" type="checkbox" value="Continental_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Continental island
@@ -854,7 +855,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Coral_island">
+                                        <input class="form-check-input island" type="checkbox" value="Coral_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Coral island
@@ -864,7 +865,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Oceanic_island">
+                                        <input class="form-check-input island" type="checkbox" value="Oceanic_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Oceanic island
@@ -874,7 +875,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Tidal_island">
+                                        <input class="form-check-input island" type="checkbox" value="Tidal_island">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Tidal island
@@ -886,17 +887,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Shared" >
+                                    <input class="form-check-input residential" type="checkbox" value="Shared" id="shared">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Shared
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="shared-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Condominium" >
+                                        <input class="form-check-input shared" type="checkbox" value="Condominium" >
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Condominium
@@ -906,7 +907,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Co-op_house" >
+                                        <input class="form-check-input shared" type="checkbox" value="Co-op_house" >
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Co-op house
@@ -920,7 +921,7 @@
                             </li>
                             <li class="item">
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Commercial" id="Commercial">
+                                <input class="form-check-input property-type" type="checkbox" value="Commercial" id="Commercial">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
                                   <span>
                                     Commercial
@@ -930,17 +931,17 @@
                                <ul class="sub-dropdown" id="Commercial-dropdown">
                                  <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Office">
+                                    <input class="form-check-input commercial" type="checkbox" value="Office"id="office">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Office
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="Office-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Bare_shell_office_space">
+                                        <input class="form-check-input office" type="checkbox" value="Bare_shell_office_space">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Bare shell office space
@@ -950,7 +951,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Co-working_office_space">
+                                        <input class="form-check-input office" type="checkbox" value="Co-working_office_space">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Co-working office space
@@ -960,7 +961,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Serviced_office_space">
+                                        <input class="form-check-input office" type="checkbox" value="Serviced_office_space">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Serviced office space
@@ -972,17 +973,17 @@
                                 </li>
                                  <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="retail">
+                                    <input class="form-check-input commercial" type="checkbox" value="retail" id="retail">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Retail
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="retail-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Anchor_store">
+                                        <input class="form-check-input retail" type="checkbox" value="Anchor_store">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Anchor store
@@ -992,7 +993,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Cafeteria>
+                                        <input class="form-check-input retail" type="checkbox" value="Cafeteria">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Cafeteria
@@ -1002,7 +1003,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Commercial_shop">
+                                        <input class="form-check-input retail" type="checkbox" value="Commercial_shop">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Commercial shop
@@ -1012,7 +1013,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Community_retail_center">
+                                        <input class="form-check-input retail" type="checkbox" value="Community_retail_center">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Community retail center
@@ -1022,7 +1023,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Dispensary">
+                                        <input class="form-check-input retail" type="checkbox" value="Dispensary">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Dispensary
@@ -1032,7 +1033,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=" Food_court">
+                                        <input class="form-check-input retail" type="checkbox" value=" Food_court">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Food court
@@ -1042,7 +1043,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Gymnasium">
+                                        <input class="form-check-input retail" type="checkbox" value="Gymnasium">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Gymnasium
@@ -1052,7 +1053,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="High_stree">
+                                        <input class="form-check-input retail" type="checkbox" value="High_stree">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             High street
@@ -1062,7 +1063,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Multiplex">
+                                        <input class="form-check-input retail" type="checkbox" value="Multiplex">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Multiplex
@@ -1072,7 +1073,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Nursing_home">
+                                        <input class="form-check-input retail" type="checkbox" value="Nursing_home">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Nursing home
@@ -1082,7 +1083,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Out_parcel">
+                                        <input class="form-check-input retail" type="checkbox" value="Out_parcel">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Out parcel
@@ -1092,7 +1093,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Petrol_pump">
+                                        <input class="form-check-input retail" type="checkbox" value="Petrol_pump">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Petrol pump
@@ -1102,7 +1103,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Regional_mall">
+                                        <input class="form-check-input retail" type="checkbox" value="Regional_mall">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Regional mall
@@ -1112,7 +1113,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Retail_power_center">
+                                        <input class="form-check-input retail" type="checkbox" value="Retail_power_center">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Retail power center
@@ -1122,7 +1123,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Retail_store">
+                                        <input class="form-check-input retail" type="checkbox" value="Retail_store">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Retail store
@@ -1132,7 +1133,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Showroom">
+                                        <input class="form-check-input retail" type="checkbox" value="Showroom">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Showroom
@@ -1142,7 +1143,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Sports_facility">
+                                        <input class="form-check-input retail" type="checkbox" value="Sports_facility">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Sports facility
@@ -1152,7 +1153,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Strip/shopping_center">
+                                        <input class="form-check-input retail" type="checkbox" value="Strip/shopping_center">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Strip/shopping center
@@ -1164,17 +1165,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Hospitality">
+                                    <input class="form-check-input commercial" type="checkbox" value="Hospitality" id="hospitality">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Hospitality
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="hospitality-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Banquet_hall" >
+                                        <input class="form-check-input hospitality" type="checkbox" value="Banquet_hall" >
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Banquet hall
@@ -1184,7 +1185,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Boutique">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Boutique">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Boutique
@@ -1194,7 +1195,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Boys_pg">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Boys_pg">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Boys PG
@@ -1204,7 +1205,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Casino">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Casino">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Casino
@@ -1214,7 +1215,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Co-ed_pg">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Co-ed_pg">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Co-ed PG
@@ -1224,7 +1225,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Extended_stay_hotel">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Extended_stay_hotel">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Extended stay hotel
@@ -1234,7 +1235,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Full_service_hotel">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Full_service_hotel">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Full service hotel
@@ -1244,7 +1245,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Girls_pg">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Girls_pg">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Girls PG
@@ -1254,7 +1255,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Limited_service_hotel">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Limited_service_hotel">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Limited service hotel
@@ -1264,7 +1265,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Public_house">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Public_house">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Public house
@@ -1274,7 +1275,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Resort">
+                                        <input class="form-check-input hospitality" type="checkbox" value="Resort">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Resort
@@ -1286,17 +1287,17 @@
                                 </li>
                                 <li class="item">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Others">
+                                    <input class="form-check-input commercial" type="checkbox" value="Others" id="others">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                       <span>
                                         Others
                                       </span>
                                     </label>
                                   </div>
-                                  <ul class="sub-dropdown">
+                                  <ul class="others-sub-dropdown">
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mixed-use">
+                                        <input class="form-check-input others" type="checkbox" value="Mixed-use">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Mixed-use
@@ -1306,7 +1307,7 @@
                                     </li>
                                     <li class="item">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Special-Purpose">
+                                        <input class="form-check-input others" type="checkbox" value="Special-Purpose">
                                         <label class="form-check-label" for="flexCheckIndeterminate">
                                           <span>
                                             Special-Purpose
@@ -1320,7 +1321,7 @@
                             </li>
                             <li class="item">
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Industrial" id="Industrial">
+                                <input class="form-check-input property-type" type="checkbox" value="Industrial" id="Industrial">
                                   <label class="form-check-label" for="flexCheckIndeterminate">
                                     <span>
                                       Industrial
@@ -1332,7 +1333,7 @@
                             </li>
                             <li class="item">
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Institutional" id="Institutional">
+                                <input class="form-check-input property-type" type="checkbox" value="Institutional" id="Institutional">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
                                   <span>
                                     Institutional
@@ -1344,7 +1345,7 @@
                             </li>
                             <li class="item">
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Agricultural" id="Agricultural">
+                                <input class="form-check-input property-type" type="checkbox" value="Agricultural" id="Agricultural">
                                 <label class="form-check-label" for="flexCheckIndeterminate">
                                   <span>
                                     Agricultural

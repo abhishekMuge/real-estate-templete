@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>Snifty - Real Estate Group HTML Template</title>
 
@@ -357,18 +364,25 @@
               <div class="col-sm-6 col-lg-6">
                 <div class="property-item">
                   <div class="top">
-                    <div>
-                      <select name="" id="">
-                        <option value="">Whatsapp</option>
-                        <option value="">Mobile No</option>
-                        <option value="">Phone No</option>
-                      </select>
-                    </div>
+                    <span> New York </span>
                     <span>For Sell</span>
                     <img
                       src="assets/images/property/property1.jpg"
                       alt="Property"
+                      class="property-item-img"
                     />
+                    <div
+                      class="
+                        share-options
+                        d-inline-flex
+                        align-items-center
+                        justify-content-around
+                      "
+                    >
+                      <i class="fas fa-phone-square-alt share-options-item"></i>
+                      <i class="fas fa-phone-square-alt share-options-item"></i>
+                      <i class="fas fa-phone-square-alt share-options-item"></i>
+                    </div>
                   </div>
                   <div class="bottom">
                     <span>From $12,000.00</span>
@@ -385,6 +399,13 @@
                       <li>1800 SF</li>
                       <li>6 RM</li>
                     </ul>
+                    <button
+                      class="btn btn-primary mt-2"
+                      id="whislist-btn"
+                      onclick="addToWhislist(event)"
+                    >
+                      Whislist
+                    </button>
                   </div>
                 </div>
               </div>
@@ -464,8 +485,7 @@
                     </h3>
                     <a class="location" href="#">
                       <i class="bx bx-current-location"></i>
-                      300 B 1st View Road
-                      , New York
+                      300 B 1st View Road , New York
                     </a>
                     <ul>
                       <li>5 BD</li>
@@ -946,5 +966,6 @@
     <script src="assets/js/jquery-modal-video.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/Site.js"></script>
   </body>
 </html>

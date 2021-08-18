@@ -292,6 +292,7 @@ const amenitiesProps = [
   "Yoga/meditation area",
 ];
 
+//main-property-drop
 $("#Residential-dropdown").hide();
 $("#Commercial-dropdown").hide();
 
@@ -300,10 +301,77 @@ $("#Residential").click(function () {
     $("#Residential-dropdown").toggle();
   }
 });
-
 $("#Commercial").click(function () {
   if ($(this).is(":checked")) {
     $("#Commercial-dropdown").toggle();
+  }
+});
+//sub-property-drop
+$(".Apartment-Floor-sub-dropdown").hide();
+$(".home-sub-dropdown").hide();
+$(".classic-luxury-sub-dropdown").hide();
+$(".Advanced-Luxurysub-dropdown").hide();
+$(".plot-sub-dropdown").hide();
+$(".island-sub-dropdown").hide();
+$(".shared-sub-dropdown").hide();
+$(".Office-sub-dropdown").hide();
+$(".retail-sub-dropdown").hide();
+$(".hospitality-sub-dropdown").hide();
+$(".others-sub-dropdown").hide();
+
+$("#Apartment-Floor").click(function () {
+  if ($(this).is(":checked")) {
+    $(".Apartment-Floor-sub-dropdown").toggle();
+  }
+});
+$("#home").click(function () {
+  if ($(this).is(":checked")) {
+    $(".home-sub-dropdown").toggle();
+  }
+});
+$("#classic-luxury").click(function () {
+  if ($(this).is(":checked")) {
+    $(".classic-luxury-sub-dropdown").toggle();
+  }
+});
+$("#Advanced-Luxury").click(function () {
+  if ($(this).is(":checked")) {
+    $(".Advanced-Luxurysub-dropdown").toggle();
+  }
+});
+$("#plot").click(function () {
+  if ($(this).is(":checked")) {
+    $(".plot-sub-dropdown").toggle();
+  }
+});
+$("#island").click(function () {
+  if ($(this).is(":checked")) {
+    $(".island-sub-dropdown").toggle();
+  }
+});
+$("#shared").click(function () {
+  if ($(this).is(":checked")) {
+    $(".shared-sub-dropdown").toggle();
+  }
+});
+$("#office").click(function () {
+  if ($(this).is(":checked")) {
+    $(".Office-sub-dropdown").toggle();
+  }
+});
+$("#retail").click(function () {
+  if ($(this).is(":checked")) {
+    $(".retail-sub-dropdown").toggle();
+  }
+});
+$("#hospitality").click(function () {
+  if ($(this).is(":checked")) {
+    $(".hospitality-sub-dropdown").toggle();
+  }
+});
+$("#others").click(function () {
+  if ($(this).is(":checked")) {
+    $(".others-sub-dropdown").toggle();
   }
 });
 
@@ -316,7 +384,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
+                <input class="form-check-input industrial" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                   <span>
                     ${item}
@@ -340,7 +408,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
+                <input class="form-check-input institutional" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                  <span>
                     ${item}
@@ -364,7 +432,7 @@ $(function () {
           `
             <li class="item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="${item}" id="${item}-opt">
+                <input class="form-check-input agricultural" type="checkbox" value="${item}" id="${item}-opt">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                   <span>
                     ${item}
@@ -383,16 +451,11 @@ $(function () {
 function filterProperty() {
   var input = document.getElementById("property-type-optionList-input");
   var filter = input.value.toUpperCase();
-  var li = document.querySelectorAll(`.item`);
-  let filterList = document.querySelectorAll(".filter-item");
-  for (let i = 0; i < li.length; i++) {
-    li[i].style.display = "none";
-  }
+  var mainList = document.querySelector(".main-list");
+  let filterList = document.querySelector(".filter-list");
+  mainList.style.display = "none";
   for (let i = 0; i < propfilterOpt.length; i++) {
-    if (
-      propfilterOpt[i].toUpperCase().indexOf(filter) > -1 ||
-      filter.length < 0
-    ) {
+    if (propfilterOpt[i].toUpperCase().indexOf(filter) > -1) {
       $(".filter-list").prepend(
         `
       <li class="filter-item">
@@ -409,30 +472,10 @@ function filterProperty() {
       );
     }
   }
-  if (filter.length < 0) {
-    for (let i = 0; i < li.length; i++) {
-      li[i].style.display = "block";
-    }
-    for (let j = 0; j < filterList.length; i++) {
-      filterList[i].style.display = "none";
-    }
+  if (filter.length === 0) {
+    mainList.style.display = "";
+    filterList.style.display = "none";
   }
-
-  // for (i = 0; i < li.length; i++) {
-  //   if (li[i].childNodes) {
-  //     let innerUL = li[i].childNodes[1];
-  //     console.log(innerUL);
-  //   }
-  //   //   let span = li[i].getElementsByTagName("span");
-  //   //   if (span.length > 0) {
-  //   //     let txtValue = span.item(0).textContent;
-  //   //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-  //   //       li[i].style.display = "";
-  //   //     } else {
-  //   //       li[i].style.display = "none";
-  //   //     }
-  //   //   }
-  // }
 }
 
 //serch filter
@@ -483,7 +526,7 @@ $(document).ready(() => {
       $(".amenities-opt-conatiner").append(`
       <li>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="${prop}" id="flexCheckIndeterminate">
+          <input class="form-check-input" type="checkbox" value="${prop}" id="amenities-check">
           <label class="form-check-label" for="flexCheckIndeterminate">
             <span>  
             ${prop}
@@ -495,6 +538,7 @@ $(document).ready(() => {
     )
     .join("");
 });
+
 $(".property-banner").click(function () {
   $(".banner-area").addClass("banner-one");
   $(".banner-area").removeClass("banner-two banner-three");
@@ -774,9 +818,125 @@ $(".dealers-banner").click(function () {
   });
 })();
 
-//form submit
+// form submit
 function submitFormHandler(e) {
   e.preventDefault();
+  // options
+  let purpose = [];
+  let amenities = [];
+
+  // purpose
   var purpose_drop = document.querySelectorAll("#purpose-check");
-  console.log(purpose_drop[0].value);
+  for (let i = 0; i < purpose_drop.length; i++) {
+    if ($(purpose_drop[i]).is(":checked")) {
+      purpose.push(purpose_drop[i].value);
+    }
+  }
+
+  //amenities
+  var amenities_drop = document.querySelectorAll("#amenities-check");
+  for (let i = 0; i < amenities_drop.length; i++) {
+    if ($(amenities_drop[i]).is(":checked")) {
+      amenities.push(amenities_drop[i].value);
+    }
+  }
+
+  //slider values
+  let min_price = document.querySelectorAll("#price-value")[0].value;
+  let max_price = document.querySelectorAll("#price-value")[1].value;
+  let min_area = document.querySelectorAll("#area-value")[0].value;
+  let max_area = document.querySelectorAll("#area-value")[1].value;
+  let area_type = document.querySelector(".current").innerHTML;
+
+  // property dropdown
+  let property_drop = getChecks("property-type");
+
+  let residential = getChecks("residential");
+
+  let appartment = getChecks("apartment-floor");
+
+  let home = getChecks("home");
+
+  let classic_luxury = getChecks("classic_luxury");
+
+  let advanced_luxury = getChecks("advanced_luxury");
+
+  let plot = getChecks("plot");
+
+  let island = getChecks("island");
+
+  let shared = getChecks("shared");
+
+  let commercial = getChecks("commercial");
+
+  let retail = getChecks("retail");
+
+  let office = getChecks("office");
+
+  let hospitality = getChecks("hospitality");
+
+  let others = getChecks("others");
+
+  let industrial = getChecks("industrial");
+
+  let institutional = getChecks("institutional");
+  let agricultural = getChecks("agricultural");
+  console.log(office);
+  window.location.href = `http://127.0.0.1:5500/property-right-sidebar.html?
+  search=purpose=${formatArr(purpose)}
+  &location=&amenities=${formatArr(amenities)}
+  &propert_type=
+  @residential=@appartment=${appartment}@home=${home}@classic_luxury=${classic_luxury}@advanced_luxury=${advanced_luxury}@plot=${plot}@island=${island}@shared=${shared},
+  @commercial=@office=${office}@retail=${retail}@hospitality=${hospitality}@others=${others},
+  @industrial=${industrial},
+  @institutional=${institutional},
+  @agriculture=${agricultural}
+  &min_area=${min_area}
+  &max_area=${max_area},
+  &area_type=${area_type},
+  &min_price=${min_price},
+  &max_price=${max_price}`;
+
+  // console.log(min_price, max_price, min_area, max_area, area_type);
+  // console.log(amenities.join(",").replaceAll(" ", "_").replaceAll("-", "+"));
+}
+
+//services
+function getChecks(id) {
+  let return_arr = [];
+  let ckecks = document.querySelectorAll(`.${id}`);
+  for (let i = 0; i < ckecks.length; i++) {
+    if (ckecks[i].checked === true) {
+      return_arr.push(ckecks[i].value);
+    }
+  }
+  return formatArr(return_arr);
+}
+
+function formatArr(arr) {
+  return arr
+    .join(",")
+    .toLowerCase()
+    .replaceAll(" ", "_")
+    .replaceAll("/", "$")
+    .replaceAll("-", "+");
+}
+
+//whishlist option
+function addToWhislist(event) {
+  let superParent = event.currentTarget.parentNode.parentNode;
+  let Children = superParent.childNodes;
+  console.log(Children[3]);
+  let location = Children[1].getElementsByTagName("span")[0].innerText;
+  let property_type = Children[1].getElementsByTagName("span")[1].innerText;
+  let property_image_url = Children[1].getElementsByTagName("img")[0].src;
+  let price = Children[3].getElementsByTagName("span")[0].innerText;
+
+  var ouputObj = {
+    location,
+    property_type,
+    property_image_url,
+    price,
+  };
+  localStorage.setItem("whislist", JSON.stringify(ouputObj));
 }
