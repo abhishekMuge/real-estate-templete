@@ -512,13 +512,13 @@ $(".advanced-option-btn").click(() => {
   }
 });
 
-// $(".hide-btn").click(() => {
-//   if ($(".advanced-option-list").is(":visible")) {
-//     $(".advanced-option-list").toggle();
-//     $(".slider").hide();
-//     $(".advanced-option").toggle();
-//   }
-// });
+$(".hide-btn").click(() => {
+  if ($(".advanced-option-list").is(":visible")) {
+    $(".advanced-option-list").toggle();
+    $(".slider").hide();
+    $(".advanced-option").toggle();
+  }
+});
 
 $(document).ready(() => {
   amenitiesProps
@@ -882,7 +882,7 @@ function submitFormHandler(e) {
   let institutional = getChecks("institutional");
   let agricultural = getChecks("agricultural");
   console.log(office);
-  window.location.href = `http://127.0.0.1:5500/property-right-sidebar.html?
+  window.location.href = `/property-right-sidebar.html?
   search=purpose=${formatArr(purpose)}
   &location=&amenities=${formatArr(amenities)}
   &propert_type=
@@ -915,7 +915,7 @@ function getChecks(id) {
 
 function formatArr(arr) {
   return arr
-    .join(",")
+    .join("+")
     .toLowerCase()
     .replaceAll(" ", "_")
     .replaceAll("/", "$")
