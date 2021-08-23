@@ -453,11 +453,19 @@ function filterProperty() {
   var filter = input.value.toUpperCase();
   var mainList = document.querySelector(".main-list");
   let filterList = document.querySelector(".filter-list");
-  mainList.style.display = "none";
-  for (let i = 0; i < propfilterOpt.length; i++) {
-    if (propfilterOpt[i].toUpperCase().indexOf(filter) > -1) {
-      $(".filter-list").prepend(
-        `
+
+  let qw = mainList.getElementsByTagName("li");
+  for (let j = 0; j < qw.length; j++) {
+    console.log(qw[j].getElementsByTagName("span")[0].textContent);
+  }
+  filterList.style.display = "none";
+  for (let i = 0; i < qw.length; i++) {
+    if (filter.length > 1) {
+      filterList.style.display = "block";
+      mainList.style.display = "none";
+      if (propfilterOpt[i].toUpperCase().indexOf(filter) > -1) {
+        $(".filter-list").prepend(
+          `
       <li class="filter-item">
         <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="filter-opt">
@@ -469,11 +477,12 @@ function filterProperty() {
         </div>
         </li>
       `
-      );
+        );
+      }
     }
   }
   if (filter.length === 0) {
-    mainList.style.display = "";
+    mainList.style.display = "block";
     filterList.style.display = "none";
   }
 }

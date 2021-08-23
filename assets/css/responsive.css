@@ -924,8 +924,11 @@
     height: 320px;
     overflow-y: scroll;
   }
+  .banner-content-heading {
+    margin-top: 60px !important;
+  }
   .banner-area {
-    height: 160vh;
+    height: 130vh;
   }
 }
 

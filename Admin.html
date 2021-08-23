@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Box Icon CSS -->
+    <link rel="stylesheet" href="assets/css/boxicons.min.css" />
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- Mean Menu CSS -->
+    <link rel="stylesheet" href="assets/css/meanmenu.css" />
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <!-- Flat Icon CSS -->
+    <link rel="stylesheet" href="assets/fonts/flaticon.css" />
+    <!-- Odometer CSS -->
+    <link rel="stylesheet" href="assets/css/odometer.min.css" />
+    <!-- Modal Video CSS -->
+    <link rel="stylesheet" href="assets/css/modal-video.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/Admin.css" />
+    <title>Snifty - Real Estate Group HTML Template</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header mt-4">
+        <h2>Welcome Admin</h2>
+      </div>
+      <form>
+        <div class="property-form mt-5">
+          <h3>Basic Property Details</h3>
+          <br />
+          <div class="row property-form-base">
+            <div class="col-lg-4 mt-4">
+              <label for="contact">Enter Contact</label>
+              <input
+                type="text"
+                id="contact"
+                class="form-control"
+                placeholder="contact"
+                aria-label="contact"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="title">Enter Property title</label>
+              <input
+                type="text"
+                id="title"
+                class="form-control"
+                placeholder="title"
+                aria-label="title"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="description">Enter Property description</label>
+              <input
+                type="text"
+                id="title"
+                class="form-control"
+                placeholder="description"
+                aria-label="description"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="property-type">Enter Property type</label>
+              <input
+                type="text"
+                id="property-type"
+                class="form-control"
+                placeholder="description"
+                aria-label="description"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="ownership">Enter Ownership</label>
+              <input
+                type="text"
+                id="ownership"
+                class="form-control"
+                placeholder="description"
+                aria-label="description"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="avabilities">Avabilities and Possession</label>
+              <br />
+              <select class="form-select col-lg-12" id="inlineFormSelectPref">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="area">Area</label>
+              <input
+                type="text"
+                id="area"
+                class="form-control"
+                placeholder="area"
+                aria-label="area"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <label for="price">Enter Price/Rate</label>
+              <input
+                type="range"
+                id="price"
+                class="form-control"
+                placeholder="price"
+                aria-label="price"
+              />
+            </div>
+            <div class="col-lg-2 mt-4">
+              <label for="tax">Include Tax</label>
+              <br />
+              <div class="d-inline-flex align-items-center">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineFormCheck"
+                  />
+                  <label class="form-check-label" for="inlineFormCheck">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineFormCheck"
+                  />
+                  <label class="form-check-label" for="inlineFormCheck">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 mt-4">
+              <label for="tax">Price Negotiatiable</label>
+              <br />
+              <div class="d-inline-flex align-items-center">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineFormCheck"
+                  />
+                  <label class="form-check-label" for="inlineFormCheck">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineFormCheck"
+                  />
+                  <label class="form-check-label" for="inlineFormCheck">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+              <label for="location">Enter Location</label>
+              <input
+                type="text"
+                id="location"
+                class="form-control"
+                placeholder="location"
+                aria-label="location"
+              />
+            </div>
+            <div class="col-lg-4 mt-4">
+              <div class="dropdown bg-black">
+                <button
+                  class="
+                    d-inline-flex
+                    align-items-center
+                    justify-content-between
+                    p-3
+                    border
+                    btn btn-default
+                    dropdown-toggle
+                  "
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  <a>Amenities</a>
+                </button>
+                <ul
+                  class="dropdown-menu amenities-opt-conatiner"
+                  id="amenities-optionList"
+                >
+                  <li class="m-2">
+                    <input
+                      class="form-control"
+                      type="text"
+                      value=""
+                      autocomplete="off"
+                      onkeyup="filterList('amenities')"
+                      id="amenities-optionList-input"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+              <label for="tags">Enter Tags</label>
+              <input
+                type="text"
+                id="tags"
+                class="form-control"
+                placeholder="tags"
+                aria-label="tags"
+              />
+            </div>
+
+            <div class="col-lg-4 mt-4">
+              <div class="dropdown bg-black">
+                <button
+                  class="
+                    d-inline-flex
+                    align-items-center
+                    justify-content-between
+                    p-3
+                    border
+                    btn btn-default
+                    dropdown-toggle
+                  "
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  <a>Views</a>
+                </button>
+                <ul
+                  class="dropdown-menu amenities-opt-conatiner"
+                  id="amenities-optionList"
+                >
+                  <li class="m-2">
+                    <input
+                      class="form-control"
+                      type="text"
+                      value=""
+                      autocomplete="off"
+                      onkeyup="filterList('amenities')"
+                      id="amenities-optionList-input"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+              <label for="date">Date of Submission</label>
+              <input
+                type="date"
+                id="date"
+                class="form-control"
+                placeholder="date"
+                aria-label="date"
+              />
+            </div>
+
+            <div class="col-lg-4 mt-4">
+              <br />
+              <div class="d-inline-flex align-items-center">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="inlineFormCheck"
+                  />
+                  <label class="form-check-label" for="inlineFormCheck">
+                    RERA Approved
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Essential JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Form Validator JS -->
+    <script src="assets/js/form-validator.min.js"></script>
+    <!-- Contact JS -->
+    <script src="assets/js/contact-form-script.js"></script>
+    <!-- Ajax Chip JS -->
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Mean Menu JS -->
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <link
+      rel="stylesheet"
+      href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css"
+    />
+    <script src="assets/js/jquery-stack-menu.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".dropdown-submenu a.test").on("click", function (e) {
+          $(this).next("ul").toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+    </script>
+
+    <!-- Owl Carousel JS -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Modal Video JS -->
+    <script src="assets/js/jquery-modal-video.min.js"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- price-range assets -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
+
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/Site.js"></script>
+    <!-- google autocomplete place api integration -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzUoJf3-d6ufuLkNxrZ09T_wXbhm0Dl9Y&libraries=places&callback=initMap"
+    ></script>
+  </body>
+</html>
