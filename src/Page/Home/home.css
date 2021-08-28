@@ -1,0 +1,11 @@
+.home-option {
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
+  padding: 40px;
+  border-radius: 20px;
+  margin: 30px;
+}

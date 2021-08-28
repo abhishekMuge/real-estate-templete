@@ -29,28 +29,28 @@ This files table contents are outlined below>>>>>
 */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
 /*----- Default CSS -----*/
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #5d6678;
   background-color: #fff;
   font-size: 16px;
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: red;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 /* Handle on hover */
@@ -66,7 +66,6 @@ h5,
 h6 {
   font-weight: 700;
   color: #18253e;
-  font-family: "Playfair Display", serif;
 }
 a {
   text-decoration: none;
@@ -6259,19 +6258,11 @@ blockquote i {
 }
 
 /* post-property styles */
-.post-property-area {
-  width: 400px;
-  text-align: center;
-  border: 1px solid #555;
-  background-color: #18253e;
-  color: white;
-  margin-top: 30px;
+.step-form-1 {
+  margin-left: 50px;
 }
 .breadcrumb {
   color: #3f383f;
-}
-.option {
-  background-color: #18253e;
 }
 .btn-main {
   background-color: #000 !important;
