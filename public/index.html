@@ -151,5 +151,15 @@
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzUoJf3-d6ufuLkNxrZ09T_wXbhm0Dl9Y&libraries=places&callback=initMap"
     ></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./serviceworker.js")
+            .then((reg) => console.log("Success: ", reg.scope))
+            .catch((err) => console.log("Failure: ", err));
+        });
+      }
+    </script>
   </body>
 </html>

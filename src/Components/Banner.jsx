@@ -1,13 +1,42 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
+import NestedDropDown from "./NestedDropDown";
+import SliderComp from "./Slider";
+import Slider from "@material-ui/core/Slider";
+import RcDropDown from "react-dropdown";
+import "react-dropdown/style.css";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-export default function Banner({ amenities }) {
+export default function Banner({ amenities, propertySearch }) {
   const [advancedOpt, showAdvancedOpt] = useState(false);
-  const [tabIndex, changeIndex] = useState("one");
-  const [activeTab, setTabActive] = useState("project");
+  const [tabIndex, changeIndex] = useState("two");
+  const [activeTab, setTabActive] = useState("property");
   const [dropPurposeno, setDropPurposeno] = useState(3);
   const [amenitiesKey, setAmenitiesKey] = useState("");
-  const [amenitiesDropData, setAmenitiesDropData] = useState(amenities.data);
+  const [amenitiesDropData, setAmenitiesDropData] = useState([]);
+  const [areaInputs, setArea] = useState({
+    min: 0,
+    max: 0,
+  });
+  const [priceInputs, setPrice] = useState({
+    min: 0,
+    max: 0,
+  });
+
+  // const handleSlider = (forValue, min, max) => {
+  //   if (forValue === "price") {
+  //     setPrice({
+  //       min: min,
+  //       max: max,
+  //     });
+  //   } else {
+  //     setArea({
+  //       min,
+  //       max,
+  //     });
+  //   }
+  // };
 
   const displayAdvancedOption = (e) => {
     e.preventDefault();
@@ -33,6 +62,20 @@ export default function Banner({ amenities }) {
     }
   };
 
+  const formatRangeValue = (number) => {
+    setArea({
+      min: number[0],
+      max: number[1],
+    });
+  };
+
+  const formatPriceValue = (min, max) => {
+    setPrice({
+      min: min,
+      max: max,
+    });
+  };
+
   return (
     <div>
       {/* Banner */}
@@ -42,21 +85,25 @@ export default function Banner({ amenities }) {
             <div className="d-table">
               <div className="d-table-cell">
                 <div className="container">
-                  <div className="banner-content">
-                    <h1>
-                      {tabIndex == "one" &&
-                        "uild Your Aspiration With Buildano".toUpperCase()}
-                      {tabIndex == "two" &&
-                        "Find Your Dream Property".toUpperCase()}
-                      {tabIndex == "three" && "rust Your Trustee".toUpperCase()}
-                    </h1>
+                  <div
+                    className="banner-content"
+                    style={{
+                      marginTop: tabIndex % 2 === 0 ? "" : "50px",
+                    }}
+                  >
+                    {tabIndex === "one" && (
+                      <h1>uild Your Aspiration With Buildano</h1>
+                    )}
+                    {tabIndex === "two" && <h1>Find Your Dream Property</h1>}
+                    {tabIndex === "three" && <h1>rust Your Trustee</h1>}
                     <div className="tab slides-category-list-tab">
                       <form>
                         <ul className="tabs banner-form-tag">
                           <li>
                             <a
+                              href="/#"
                               className={`property-banner ${
-                                activeTab == "property" ? "active-pill" : ""
+                                activeTab === "property" ? "active-pill" : ""
                               }`}
                               onClick={() => handleTabs("two", "property", 3)}
                             >
@@ -65,8 +112,9 @@ export default function Banner({ amenities }) {
                           </li>
                           <li>
                             <a
+                              href="/#"
                               className={`project-banner ${
-                                activeTab == "project" ? "active-pill" : ""
+                                activeTab === "project" ? "active-pill" : ""
                               }`}
                               onClick={() => handleTabs("one", "project", 5)}
                             >
@@ -75,8 +123,9 @@ export default function Banner({ amenities }) {
                           </li>
                           <li>
                             <a
+                              href="/#"
                               className={`dealers-banner ${
-                                activeTab == "dealers" ? "active-pill" : ""
+                                activeTab === "dealers" ? "active-pill" : ""
                               }`}
                               onClick={() => handleTabs("three", "dealers", 7)}
                             >
@@ -92,20 +141,43 @@ export default function Banner({ amenities }) {
                                   <Dropdown
                                     forDrop="Purpose"
                                     data={[
-                                      "New Booking(New Launch)",
-                                      "Pre Booking(Under Construction)",
-                                      "Ready To Move",
-                                      "Rent",
-                                      "Leave",
-                                      "Invesment",
-                                      "Consultancy",
+                                      {
+                                        value: "New Booking",
+                                        label: "(New Launch)",
+                                      },
+                                      {
+                                        value: "Pre Booking",
+                                        label: "(Under Construction)",
+                                      },
+                                      {
+                                        value: "Ready To Move",
+                                        label: "",
+                                      },
+                                      {
+                                        value: "Rent",
+                                        label: "",
+                                      },
+                                      {
+                                        value: "Leave",
+                                        label: "",
+                                      },
+                                      {
+                                        value: "Invesment",
+                                        label: "",
+                                      },
+                                      {
+                                        value: "Consultancy",
+                                        label: "",
+                                      },
                                     ]}
                                     dropListShowIndex={dropPurposeno}
                                   />
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <Dropdown forDrop="Property Type" />
+                                  <NestedDropDown
+                                    OptionData={propertySearch.data}
+                                  />
                                 </div>
 
                                 <div className="col-lg-6">
@@ -147,63 +219,51 @@ export default function Banner({ amenities }) {
                                               >
                                                 Area
                                               </label>
-                                              <select>
-                                                <option value="square metre">
-                                                  square metre
-                                                </option>
-                                                <option value="square metre">
-                                                  acre
-                                                </option>
-                                                <option value="square metre">
-                                                  square metre
-                                                </option>
-                                              </select>
-                                              <div
-                                                style={{ marginLeft: "20px" }}
-                                              >
-                                                <span>
-                                                  <b>Min: </b>
-                                                </span>
-                                                <span className="min-span-area" />
-                                                <span className="ml-2">
-                                                  <b>Max: </b>
-                                                </span>
-                                                <span className="max-span-area mb-6" />
-                                              </div>
+                                              <RcDropDown
+                                                options={[
+                                                  "Sq.Yard",
+                                                  "Sq.Feet",
+                                                  "Sq.meter",
+                                                  "Marla",
+                                                  "Kanel",
+                                                  "Acre",
+                                                ]}
+                                                value={"Sq.Yard"}
+                                                placeholder="Select an option"
+                                              />
                                               <br />
+                                              <div className="d-flex">
+                                                <input
+                                                  type="text"
+                                                  className="form-control"
+                                                  style={{
+                                                    width: "100px",
+                                                    marginLeft: "10px",
+                                                  }}
+                                                  value={areaInputs.min}
+                                                />
+                                                <input
+                                                  type="text"
+                                                  className="col-1 form-control"
+                                                  style={{
+                                                    width: "100px",
+                                                    marginLeft: "10px",
+                                                  }}
+                                                  value={areaInputs.max}
+                                                />
+                                              </div>
                                             </div>
-                                            <input
-                                              id="area-value"
-                                              type="number"
-                                              defaultValue={5000}
-                                              min={0}
-                                              max={120000}
-                                              readOnly
-                                            />
-                                            <input
-                                              id="area-value"
-                                              type="number"
-                                              defaultValue={50000}
-                                              min={0}
-                                              max={120000}
-                                              readOnly
-                                            />
                                             <br />
-                                            <input
-                                              id="area-ranger"
-                                              defaultValue={150}
-                                              min={0}
+                                            <Slider
+                                              defaultValue={[100, 300]}
+                                              aria-labelledby="renge-slider"
+                                              valueLabelDisplay="auto"
                                               max={5000}
-                                              step={50}
-                                              type="range"
-                                            />
-                                            <input
-                                              id="area-ranger"
-                                              defaultValue={150}
-                                              min={0}
-                                              max={5000}
-                                              step={50}
-                                              type="range"
+                                              min={100}
+                                              onChangeCommitted={(
+                                                event,
+                                                number
+                                              ) => formatRangeValue(number)}
                                             />
                                           </div>
                                         </div>
@@ -225,58 +285,30 @@ export default function Banner({ amenities }) {
                                               >
                                                 Price
                                               </label>
-                                              <div
-                                                style={{ marginLeft: "20px" }}
-                                              >
-                                                <span>
-                                                  <b>Min: </b>
-                                                </span>
-                                                <span className="min-span-price">
-                                                  $0
-                                                </span>
-                                                <span className="ml-2">
-                                                  <b>Max: </b>
-                                                </span>
-                                                <span className="max-span-price mb-6">
-                                                  $0
-                                                </span>
+                                              <div className="d-flex">
+                                                <input
+                                                  type="text"
+                                                  className="form-control"
+                                                  style={{
+                                                    width: "100px",
+                                                    marginLeft: "10px",
+                                                  }}
+                                                  value={priceInputs.min}
+                                                />
+                                                <input
+                                                  type="text"
+                                                  className="col-1 form-control"
+                                                  style={{
+                                                    width: "100px",
+                                                    marginLeft: "10px",
+                                                  }}
+                                                  value={priceInputs.max}
+                                                />
                                               </div>
                                               <br />
                                             </div>
-                                            {/* <label for="price">Price</label> */}
-                                            <br />
-                                            <input
-                                              id="price-value"
-                                              type="number"
-                                              defaultValue={5000}
-                                              min={0}
-                                              max={120000}
-                                              readOnly
-                                            />
-                                            <input
-                                              id="price-value"
-                                              type="number"
-                                              defaultValue={50000}
-                                              min={0}
-                                              max={120000}
-                                              readOnly
-                                            />
-                                            <br />
-                                            <input
-                                              id="price-ranger"
-                                              defaultValue={25000}
-                                              min={0}
-                                              max={120000}
-                                              step={500}
-                                              type="range"
-                                            />
-                                            <input
-                                              id="price-ranger"
-                                              defaultValue={50000}
-                                              min={0}
-                                              max={1200000}
-                                              step={500}
-                                              type="range"
+                                            <SliderComp
+                                              StateHandle={formatPriceValue}
                                             />
                                           </div>
                                         </div>
@@ -302,11 +334,14 @@ export default function Banner({ amenities }) {
                                         type="button"
                                         data-toggle="dropdown"
                                       >
-                                        <a>Amenities</a>
+                                        <a href="/#">Amenities</a>
                                       </button>
                                       <ul
                                         className="dropdown-menu amenities-opt-conatiner"
                                         id="amenities-optionList"
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                        }}
                                       >
                                         <li className="m-2">
                                           <input
@@ -318,26 +353,21 @@ export default function Banner({ amenities }) {
                                             id="amenities-optionList-input"
                                           />
                                         </li>
-                                        {amenitiesDropData &&
+                                        {amenities &&
                                           amenitiesDropData.map((item) => (
-                                            <li>
-                                              <div
-                                                className="form-check"
-                                                data-item-id="new booking"
-                                              >
-                                                <input
-                                                  className="form-check-input"
-                                                  type="checkbox"
-                                                  defaultValue="New_Booking"
-                                                  id="purpose-check"
-                                                />
-                                                <label
-                                                  className="form-check-label"
-                                                  htmlFor="purpose-check"
-                                                >
-                                                  <span>{item}</span>
-                                                </label>
-                                              </div>
+                                            <li
+                                              style={{
+                                                margin: "0 10px",
+                                              }}
+                                            >
+                                              <FormControlLabel
+                                                value={item}
+                                                control={
+                                                  <Checkbox color="secondary" />
+                                                }
+                                                label={item}
+                                                labelPlacement="end"
+                                              />
                                             </li>
                                           ))}
                                       </ul>

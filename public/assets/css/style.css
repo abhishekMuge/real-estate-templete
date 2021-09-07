@@ -209,10 +209,6 @@ span.caret {
   padding: 5px;
 }
 
-.parent-container {
-  position: relative;
-}
-
 .hidden-container ul {
   position: absolute;
   /* padding: 20px; */
@@ -845,7 +841,9 @@ span.caret {
   color: #fff;
   background-color: #f93e45;
 }
-
+.drop-item-label {
+  color: rgb(70, 61, 61);
+}
 /*-- Banner --*/
 
 /* //slider */
@@ -1050,8 +1048,8 @@ input[type="range"]::-ms-thumb {
   background-position: center center;
   /* background-color: rgba(0, 0, 0, 1);
   background-image: url("../images/banner/banner1.jpg"); */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/banner/banner1.jpg) center/cover;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/banner/banner1.jpg) center/cover; */
   background-repeat: no-repeat;
   position: relative;
   text-align: center;
@@ -4211,7 +4209,7 @@ input[type="range"]::-ms-thumb {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  height: 400px;
+  height: 500px;
 }
 
 .page-title-area:before {
@@ -4221,11 +4219,7 @@ input[type="range"]::-ms-thumb {
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.991126) 0%,
-    rgba(255, 255, 255, 0.387194) 100%
-  );
+  /* background: url(../images/imagecollege.png); */
 }
 
 .page-title-area .title-content {
@@ -6314,5 +6308,11 @@ blockquote i {
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.label-placement {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: 22px;
+  color: #555;
 }
 /*# sourceMappingURL=style.css.map */

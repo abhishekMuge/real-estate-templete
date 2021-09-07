@@ -1,0 +1,146 @@
+.tables {
+  display: flex;
+}
+
+.table1,
+.table2 {
+  flex: 50%;
+  padding: 5px;
+}
+
+.amenities {
+  display: block;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.amen {
+  display: inline-block;
+  /* margin: 15px; */
+  /* width: 25%; */
+}
+.bx-square {
+  font-size: 2rem;
+  line-height: 10rem;
+}
+
+.imageCollage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.imageCollage_text {
+  padding: 20px;
+  background: #e6e6e6;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  width: 300px;
+  margin: 2px;
+}
+.imageCollage img {
+  flex-grow: 1;
+  object-fit: cover;
+  margin: 2px;
+}
+
+.MuiButton-root {
+  margin: 10px;
+}
+.tables {
+  display: flex;
+}
+
+.table1,
+.table2 {
+  flex: 50%;
+  padding: 5px;
+}
+
+.amenities {
+  display: block;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.amen {
+  display: inline-block;
+  margin: 15px;
+  width: 25%;
+}
+.amen i {
+  font-size: 10rem;
+  vertical-align: middle;
+  line-height: 10rem;
+  margin-right: 2rem;
+}
+
+.gallery-title {
+  font-size: 36px;
+  color: black;
+  text-align: left;
+  font-weight: 500;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.gallery-title:after {
+  content: "";
+  position: absolute;
+  width: 7.5%;
+  left: 46.5%;
+  height: 45px;
+}
+
+.gallery_product {
+  margin-bottom: 30px;
+}
+.banner {
+  width: 100%;
+}
+.banner div {
+  margin: 0;
+  padding: 0;
+}
+.img1,
+.img3 {
+  margin-top: 4.1rem;
+  padding: 0;
+}
+.img3 {
+  height: 83.5%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 15px;
+}
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+.gallery__item--2 {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery__item--3 {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
