@@ -26,7 +26,7 @@ export default function Banner({ amenities, propertySearch }) {
 
   useEffect(() => {
     setAmenitiesDropData(amenities.data);
-  }, []);
+  }, [amenities.data]);
 
   const displayAdvancedOption = (e) => {
     e.preventDefault();
