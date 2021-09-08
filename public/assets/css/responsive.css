@@ -139,8 +139,11 @@
   }
   .banner-area .banner-slider-item {
     height: 100%;
-    padding-top: 180px;
+    padding-top: 20px;
     padding-bottom: 170px;
+  }
+  .price-slider {
+    margin-top: 20px;
   }
   .banner-content {
     margin-top: 0;
@@ -928,7 +931,7 @@
     margin-top: 60px !important;
   }
   .banner-area {
-    height: 130vh;
+    height: 135vh;
   }
 }
 

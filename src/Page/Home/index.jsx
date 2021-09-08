@@ -27,12 +27,14 @@ export default class Home extends Component {
   }
   render() {
     return (
-      <div>
-        <Banner
-          tagLine={this.state.tagLine}
-          amenities={this.state.amenities}
-          propertySearch={this.state.property_type}
-        />
+      <div clasName="container">
+        <div className="row">
+          <Banner
+            tagLine={this.state.tagLine}
+            amenities={this.state.amenities}
+            propertySearch={this.state.property_type}
+          />
+        </div>
         {/* Apartment start here */}
         <section className="apartment-area pt-100 pb-70">
           <div className="container-fluid">
@@ -46,6 +48,17 @@ export default class Home extends Component {
               margin={10}
               nav
               dots={false}
+              responsive={{
+                0: {
+                  items: 1,
+                },
+                768: {
+                  items: 3,
+                },
+                992: {
+                  items: 4,
+                },
+              }}
             >
               <div className="apartment-item item">
                 <img
@@ -542,6 +555,17 @@ export default class Home extends Component {
               dots={false}
               nav
               margin={10}
+              responsive={{
+                0: {
+                  items: 1,
+                },
+                768: {
+                  items: 3,
+                },
+                992: {
+                  items: 4,
+                },
+              }}
             >
               <div className="property-item">
                 <div className="top">
@@ -725,6 +749,17 @@ export default class Home extends Component {
               margin={10}
               dots={false}
               nav
+              responsive={{
+                0: {
+                  items: 1,
+                },
+                768: {
+                  items: 3,
+                },
+                992: {
+                  items: 4,
+                },
+              }}
             >
               <div className="team-item item">
                 <div className="top">

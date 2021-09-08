@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import logo from "../assests/images/logo.png";
 export default function Navbar() {
+  const [Mmenu, setMmenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <div>
       <div className="navbar-area sticky-top">
@@ -12,6 +14,9 @@ export default function Navbar() {
               href="/#"
               className="meanmenu-reveal"
               style={{ background: "", color: "", right: 0, left: "auto" }}
+              onClick={() => {
+                setMmenu(!Mmenu);
+              }}
             >
               <span>
                 <span>
@@ -35,97 +40,13 @@ export default function Navbar() {
             </a> */}
 
             <nav className="mean-nav">
-              <ul className="navbar-nav" style={{ display: "none" }}>
+              <ul
+                className="navbar-nav"
+                style={{ display: Mmenu ? "block" : "none" }}
+              >
                 <li className="nav-item">
                   <a href="/#" className="nav-link dropdown-toggle active">
                     Home <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link active">
-                        Home Demo One
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="/#" className="nav-link dropdown-toggle">
-                    Pages <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link dropdown-toggle">
-                        Users <i className="bx bx-chevron-down" />
-                      </a>
-                      <ul className="dropdown-menu" style={{ display: "none" }}>
-                        <li className="nav-item">
-                          <a href="login.html" className="nav-link">
-                            Login
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a href="register.html" className="nav-link">
-                            Register
-                          </a>
-                        </li>
-                      </ul>
-                      <a
-                        className="mean-expand"
-                        href="/#"
-                        style={{ fontSize: "18px" }}
-                      >
-                        +
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="team.html" className="nav-link">
-                        Team
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="portfolio.html" className="nav-link">
-                        Portfolio
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="faq.html" className="nav-link">
-                        FAQ
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="coming-soon.html" className="nav-link">
-                        Coming Soon
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="404.html" className="nav-link">
-                        404 Error Page
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="privacy-policy.html" className="nav-link">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="terms-conditions.html" className="nav-link">
-                        Terms &amp; Conditions
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
                   </a>
                 </li>
                 <li className="nav-item">
@@ -137,100 +58,15 @@ export default function Navbar() {
                   <a href="/#" className="nav-link dropdown-toggle">
                     Services <i className="bx bx-chevron-down" />
                   </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
-                    <li className="nav-item">
-                      <a href="services.html" className="nav-link">
-                        Services
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="service-details.html" className="nav-link">
-                        Service Details
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
                 </li>
                 <li className="nav-item">
                   <a href="/#" className="nav-link dropdown-toggle">
                     Properties <i className="bx bx-chevron-down" />
                   </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
-                    <li className="nav-item">
-                      <a href="properties.html" className="nav-link">
-                        Properties
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="property-right-sidebar.html"
-                        className="nav-link"
-                      >
-                        Property Right Sidebar
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="property-left-sidebar.html" className="nav-link">
-                        Property Left Sidebar
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="property-details.html" className="nav-link">
-                        Property Details
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="apartments.html" className="nav-link">
-                        Apartments
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
                 </li>
                 <li className="nav-item">
                   <a href="/#" className="nav-link dropdown-toggle">
                     Blog <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
-                    <li className="nav-item">
-                      <a href="blog.html" className="nav-link">
-                        Blog
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="blog-left-sidebar.html" className="nav-link">
-                        Blog Left Sidebar
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="blog-right-sidebar.html" className="nav-link">
-                        Blog Right Sidebar
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="blog-details.html" className="nav-link">
-                        Blog Details
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
                   </a>
                 </li>
                 <li className="nav-item">
@@ -248,11 +84,14 @@ export default function Navbar() {
                     Sales Or Rent
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={() => setOpenMenu(!openMenu)}>
                   <a href="/#" className="nav-link dropdown-toggle">
                     More <i className="bx bx-chevron-down" />
                   </a>
-                  <ul className="dropdown-menu" style={{ display: "none" }}>
+                  <ul
+                    className="dropdown-menu"
+                    style={{ display: openMenu ? "block" : "none" }}
+                  >
                     <li className="nav-item">
                       <a href="index.html" className="nav-link active">
                         Wishlist
