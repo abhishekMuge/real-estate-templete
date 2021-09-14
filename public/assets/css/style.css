@@ -6315,4 +6315,7 @@ blockquote i {
   margin-left: 22px;
   color: #555;
 }
+.text-bold{
+  font-weight: bold;
+}
 /*# sourceMappingURL=style.css.map */

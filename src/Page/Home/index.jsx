@@ -1,39 +1,27 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
+import { initialDataFetch } from "../../Redux/Actions/InitialAction";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Banner from "../../Components/Banner";
 
-export default class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      amenities: {},
-      tagLine: {},
-      property_type: {},
-    };
-  }
+class Home extends Component {
   async componentDidMount() {
-    const response = await axios.get(
-      "https://ybxt58cet4.execute-api.ap-south-1.amazonaws.com/Stage/search-data"
-    );
-    console.log(response.data);
-    this.setState({
-      amenities: response.data[0],
-      tagLine: response.data[1],
-      property_type: response.data[3],
-    });
+    await this.props.initialDataFetch();
   }
   render() {
     return (
       <div clasName="container">
         <div className="row">
-          <Banner
-            tagLine={this.state.tagLine}
-            amenities={this.state.amenities}
-            propertySearch={this.state.property_type}
-          />
+          {this.props.initalData && (
+            <Banner
+              tagLine={this.props.initalData[1]}
+              amenities={this.props.initalData[0]}
+              propertySearch={this.props.initalData[3]}
+            />
+          )}
         </div>
         {/* Apartment start here */}
         <section className="apartment-area pt-100 pb-70">
@@ -1002,3 +990,9 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  initalData: state.initalData.initialFetchData,
+});
+
+export default connect(mapStateToProps, { initialDataFetch })(Home);

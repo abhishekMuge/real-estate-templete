@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-export default function Dropdown({ forDrop, data, dropListShowIndex }) {
+export default function Dropdown({
+  forDrop,
+  data,
+  dropListShowIndex,
+  HandleChecks,
+}) {
   const [dropState, setDropState] = useState(false);
   const [dropData, setDropData] = useState(data);
   const [keyWord, setKey] = useState("");
+  const [selectedProps, setSelected] = useState([]);
   const filter = (e) => {
     let keyWord = e.target.value;
     setKey(keyWord);
@@ -19,6 +25,9 @@ export default function Dropdown({ forDrop, data, dropListShowIndex }) {
       setDropData(data);
     }
   };
+  useEffect(async () => {
+    await HandleChecks(selectedProps);
+  }, [selectedProps]);
 
   return (
     <div>
@@ -59,27 +68,19 @@ export default function Dropdown({ forDrop, data, dropListShowIndex }) {
                 >
                   <FormControlLabel
                     value={item ? item.value : item}
-                    control={<Checkbox color="secondary" />}
+                    control={
+                      <Checkbox
+                        color="secondary"
+                        onChange={(event) =>
+                          setSelected([...selectedProps, item.value])
+                        }
+                      />
+                    }
                     label={item.value ? `${item.value}` : item}
                     labelPlacement="end"
                   />
                   <br />
                   <label className="label-placement">{item.label}</label>
-                  {/* <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue="New_Booking"
-                      id="purpose-check"
-                    />
-                    <label className="form-check-label" htmlFor="purpose-check">
-                      <span>{item.value ? item.value : item}</span>
-                      <br />
-                      <span className="drop-item-label">
-                        {item.label ? item.label : ""}
-                      </span>
-                    </label>
-                  </div> */}
                 </li>
               ))}
           </ul>

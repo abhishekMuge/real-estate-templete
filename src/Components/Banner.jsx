@@ -23,6 +23,8 @@ export default function Banner({ amenities, propertySearch }) {
     min: 0,
     max: 0,
   });
+  const [selectedPurposeProps, setselectedPurposeProps] = useState([]);
+  const [selectedamenitiesProps, setselectedamenitiesProps] = useState([]);
 
   useEffect(() => {
     setAmenitiesDropData(amenities.data);
@@ -82,10 +84,16 @@ export default function Banner({ amenities, propertySearch }) {
                     }}
                   >
                     {tabIndex === "one" && (
-                      <h1>uild Your Aspiration With Buildano</h1>
+                      <h1>
+                        {"Wuild Your Aspiration With Buildano".toLocaleUpperCase()}
+                      </h1>
                     )}
-                    {tabIndex === "two" && <h1>Find Your Dream Property</h1>}
-                    {tabIndex === "three" && <h1>rust Your Trustee</h1>}
+                    {tabIndex === "two" && (
+                      <h1>{"Find Your Dream Property".toLocaleUpperCase()}</h1>
+                    )}
+                    {tabIndex === "three" && (
+                      <h1>{"rust Your Trustee".toLocaleUpperCase()}</h1>
+                    )}
                     <div className="tab slides-category-list-tab">
                       <form>
                         <ul className="tabs banner-form-tag">
@@ -161,6 +169,7 @@ export default function Banner({ amenities, propertySearch }) {
                                       },
                                     ]}
                                     dropListShowIndex={dropPurposeno}
+                                    HandleChecks={setselectedPurposeProps}
                                   />
                                 </div>
 
@@ -242,7 +251,21 @@ export default function Banner({ amenities, propertySearch }) {
                                               <FormControlLabel
                                                 value={item}
                                                 control={
-                                                  <Checkbox color="secondary" />
+                                                  <Checkbox
+                                                    color="secondary"
+                                                    onChange={(event) => {
+                                                      if (
+                                                        event.target.checked
+                                                      ) {
+                                                        setselectedamenitiesProps(
+                                                          [
+                                                            ...selectedamenitiesProps,
+                                                            item,
+                                                          ]
+                                                        );
+                                                      }
+                                                    }}
+                                                  />
                                                 }
                                                 label={item}
                                                 labelPlacement="end"
@@ -254,7 +277,7 @@ export default function Banner({ amenities, propertySearch }) {
                                   </div>
                                   {/* //amenities-dropdown */}
                                 </div>
-                                <div className="col-lg-5 col-sm-3">
+                                <div className="col-lg-5">
                                   <div className=" area-slider mt-3 mb-4">
                                     <div className="area-range">
                                       <div>

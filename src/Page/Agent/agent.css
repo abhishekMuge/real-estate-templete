@@ -1,0 +1,23 @@
+.social-container {
+  padding: 7px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #d42222;
+  color: white;
+  box-shadow: -2px 7px 16px 0px rgba(198, 198, 198, 0.64);
+  -webkit-box-shadow: -2px 7px 16px 0px rgba(198, 198, 198, 0.64);
+  -moz-box-shadow: -2px 7px 16px 0px rgba(198, 198, 198, 0.64);
+}
+.agent-banner {
+  padding-top: 60px;
+}
+.agent-overview-tab {
+  border: 1px solid #494d49;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.agent-image-banner {
+  width: 100%;
+}
