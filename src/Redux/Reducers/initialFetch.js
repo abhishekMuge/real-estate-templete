@@ -3,7 +3,7 @@ import { GET_ERRORS, SET_INITIAL_STATE } from "../Actions/Types";
 const initialState = {
   siteStaus: "live",
 };
-
+// eslint-disable-next-line
 export default function (state = initialState, action) {
   switch (action.type) {
     case SET_INITIAL_STATE:

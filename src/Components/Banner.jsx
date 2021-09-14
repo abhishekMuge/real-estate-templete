@@ -170,6 +170,7 @@ export default function Banner({ amenities, propertySearch }) {
                                     ]}
                                     dropListShowIndex={dropPurposeno}
                                     HandleChecks={setselectedPurposeProps}
+                                    props={selectedPurposeProps}
                                   />
                                 </div>
 

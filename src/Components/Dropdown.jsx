@@ -25,9 +25,9 @@ export default function Dropdown({
       setDropData(data);
     }
   };
-  useEffect(async () => {
-    await HandleChecks(selectedProps);
-  }, [selectedProps]);
+  useEffect(() => {
+    HandleChecks(selectedProps);
+  });
 
   return (
     <div>
