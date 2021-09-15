@@ -36,19 +36,31 @@ export default function SideBarItems() {
       <div className="navlink">
         <ul>
           <li>
-            <a href="/#">Profile</a>
+            <Link to="/dashboard">Home</Link>
           </li>
           <li>
             <Link to="/post-property">Post Property</Link>
           </li>
           <li>
-            <a href="/#">Post Project</a>
-          </li>
-          <li>
-            <a href="/#">Register Business</a>
+            <Link to="/post-project">Post Project</Link>
           </li>
           <li>
             <a href="/#">Show All Post</a>
+          </li>
+          <li>
+            <a href="/#">Post Requirements</a>
+          </li>
+          <li>
+            <a href="/#">Service Directory</a>
+          </li>
+          <li>
+            <a href="/#">Forum Support</a>
+          </li>
+          <li>
+            <a href="/#">Custome Messages</a>
+          </li>
+          <li>
+            <a href="/#">Settings</a>
           </li>
         </ul>
       </div>

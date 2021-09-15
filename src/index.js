@@ -6,6 +6,9 @@ import axios from "axios";
 import reportWebVitals from "./reportWebVitals";
 axios.defaults.baseURL =
   "https://ybxt58cet4.execute-api.ap-south-1.amazonaws.com/Stage";
+axios.defaults.headers = {
+  "Access-Control-Allow-Origin": "*",
+};
 ReactDOM.render(
   <React.StrictMode>
     <App />

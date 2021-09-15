@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "react-dropdown";
+import FormCheckGroup from "../../Components/FormComponent/FormCheckGroup";
 
 export default function FormTwo({
   Possession,
@@ -9,6 +10,15 @@ export default function FormTwo({
   activeAvability,
   handleClick,
   views,
+  setPropType,
+  setGroupPropType,
+  ownerShipProp,
+  facingProp,
+  viewsProps,
+  selectedUnit,
+  totalArea,
+  carpetArea,
+  buildUpArea,
 }) {
   return (
     <div>
@@ -22,14 +32,14 @@ export default function FormTwo({
             <div className="d-flex flex-wrap mt-3">
               <button
                 className="btn option-pill rounded-pill common-btn m-2"
-                name="underconst"
+                name="Under_Construction"
                 onClick={renderAvability}
               >
                 Under Construction
               </button>
               <button
                 className="btn option-pill rounded-pill common-btn m-2"
-                name="rtm"
+                name="Ready_To_Move"
                 onClick={renderAvability}
               >
                 Ready To Move
@@ -37,24 +47,32 @@ export default function FormTwo({
             </div>
             <div className="d-inline-flex  flex-column align-item-center text-black">
               <span className="fs-4 mt-4">
-                {activeAvability === "rtm" ? "Age Of Property*" : ""}
-                {activeAvability === "underconst" ? "Possession time*" : ""}
+                {activeAvability === "Ready_To_Move" ? "Age Of Property*" : ""}
+                {activeAvability === "Under_Construction"
+                  ? "Possession time*"
+                  : ""}
               </span>
               <br />
-              {activeAvability === "underconst" && (
+              {activeAvability === "Under_Construction" && (
                 <Dropdown
                   className=""
                   options={Possession}
                   value={Possession[0]}
                   placeholder="Select an option"
+                  onChange={(selected) =>
+                    setPropType("viewTime", selected.value)
+                  }
                 />
               )}
-              {activeAvability === "rtm" && (
+              {activeAvability === "Ready_To_Move" && (
                 <Dropdown
                   className=""
                   options={PropertyAge}
                   value={PropertyAge[0]}
                   placeholder="Select an option"
+                  onChange={(selected) =>
+                    setPropType("viewTime", selected.value)
+                  }
                 />
               )}
             </div>
@@ -68,16 +86,14 @@ export default function FormTwo({
               <span className="mt-2">Click the Options to select</span>
             </div>
             <div className="d-flex flex-wrap mt-3">
-              {["free-hold", "lease-hold", "co-operative soc"].map((item) => (
-                <button
-                  className="btn option-pill rounded-pill common-btn m-2"
-                  name="unconstState"
-                  style={{ backgroundColor: "" }}
-                  onClick={handleClick}
-                >
-                  {item.toLocaleUpperCase()}
-                </button>
-              ))}
+              <FormCheckGroup
+                groupItem={["free-hold", "lease-hold", "co-operative soc"]}
+                checkedValue={ownerShipProp}
+                handleClick={(event) => {
+                  console.log(event.target.value);
+                  setPropType("ownerShip", event.target.name);
+                }}
+              />
             </div>
           </div>
         </div>
@@ -101,9 +117,15 @@ export default function FormTwo({
               ].map((item) => (
                 <button
                   className="btn option-pill rounded-pill common-btn m-2"
-                  name="unconstState"
-                  style={{ backgroundColor: "" }}
-                  onClick={handleClick}
+                  name={item}
+                  style={{
+                    backgroundColor: facingProp.includes(item)
+                      ? "red"
+                      : "black",
+                  }}
+                  onClick={() => {
+                    setGroupPropType("facing", item);
+                  }}
                 >
                   {item.toLocaleUpperCase()}
                 </button>
@@ -124,8 +146,14 @@ export default function FormTwo({
                   <button
                     className="btn option-pill rounded-pill common-btn m-2"
                     name="unconstState"
-                    style={{ backgroundColor: "" }}
-                    onClick={handleClick}
+                    style={{
+                      backgroundColor: viewsProps.includes(item)
+                        ? "red"
+                        : "black",
+                    }}
+                    onClick={() => {
+                      setGroupPropType("views", item);
+                    }}
                   >
                     {item.toLocaleUpperCase()}
                   </button>
@@ -147,15 +175,24 @@ export default function FormTwo({
                   type="text"
                   className="form-control"
                   id="totalarea"
+                  value={totalArea}
                   placeholder="Enter Total area"
+                  onChange={(event) => {
+                    setPropType("totalArea", event.target.value);
+                  }}
                 />
               </div>
               <div className="col-1">
                 <Dropdown
-                  className=""
                   options={areaOptions}
-                  value={areaOptions[0]}
+                  value={areaOptions[selectedUnit]}
                   placeholder="Select an option"
+                  onChange={(selected) => {
+                    setPropType(
+                      "selectedUnit",
+                      areaOptions.indexOf(selected.value)
+                    );
+                  }}
                 />
               </div>
             </div>
@@ -171,16 +208,26 @@ export default function FormTwo({
                 <input
                   type="text"
                   className="form-control"
-                  id="totalarea"
+                  id="buildarea"
                   placeholder="Enter Built-up Area"
+                  value={buildUpArea}
+                  onChange={(event) => {
+                    setPropType("buildUpArea", event.target.value);
+                  }}
                 />
               </div>
               <div className="col-1">
                 <Dropdown
                   className=""
                   options={areaOptions}
-                  value={areaOptions[0]}
+                  value={areaOptions[selectedUnit]}
                   placeholder="Select an option"
+                  onChange={(selected) => {
+                    setPropType(
+                      "selectedUnit",
+                      areaOptions.indexOf(selected.value)
+                    );
+                  }}
                 />
               </div>
             </div>
@@ -196,16 +243,26 @@ export default function FormTwo({
                 <input
                   type="text"
                   className="form-control"
-                  id="totalarea"
+                  id="carpetarea"
                   placeholder="Enter Carpet Area"
+                  value={carpetArea}
+                  onChange={(event) => {
+                    setPropType("carpetArea", event.target.value);
+                  }}
                 />
               </div>
               <div className="col-1">
                 <Dropdown
                   className=""
                   options={areaOptions}
-                  value={areaOptions[0]}
+                  value={areaOptions[selectedUnit]}
                   placeholder="Select an option"
+                  onChange={(selected) => {
+                    setPropType(
+                      "selectedUnit",
+                      areaOptions.indexOf(selected.value)
+                    );
+                  }}
                 />
               </div>
             </div>
@@ -222,13 +279,13 @@ export default function FormTwo({
             </div>
             <div className="mt-3">
               <div class="form-group">
-                <label for="exampleFormControlTextarea1">
-                  Example textarea
-                </label>
                 <textarea
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
+                  onChange={(event) => {
+                    setPropType("specialDesc", event.target.value);
+                  }}
                 ></textarea>
               </div>
             </div>

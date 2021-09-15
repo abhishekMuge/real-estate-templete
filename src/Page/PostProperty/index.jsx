@@ -1,47 +1,90 @@
-import axios from "axios";
 import React, { Component } from "react";
 import "react-dropdown/style.css";
 import { Stepper } from "react-form-stepper";
-import FormFour from "./FormFour";
+import { connect } from "react-redux";
+import {
+  getSearchData,
+  loginUser,
+  getPropertyID,
+} from "../../Redux_config/Actions/propertyAction";
 //libraries
-
 import FormOne from "./FormOne";
-import FormThree from "./FormThree";
 import FormTwo from "./FormTwo";
-export default class PostProperty extends Component {
+import FormThree from "./FormThree";
+import FormFour from "./FormFour";
+class PostProperty extends Component {
   constructor() {
     super();
     this.state = {
-      dataOptions: [],
-      residential: [],
-      commercial: [],
-      industrial: [],
-      institutional: [],
-      agricultural: [],
       amenities: [],
       view: [],
+      dataOptions: [],
       customeKey: [],
       customeKeyName: "",
       customeKeyVal: "",
       rentView: false,
       formIndex: 1,
       activeAvability: "",
+      purposeType: "",
+      propertyType: "",
+      viewTime: "",
+      ownerShip: "",
+      facing: [],
+      views: [],
+      selectedUnit: 0,
+      totalArea: "",
+      carpetArea: "",
+      buildUpArea: "",
+      amenitiesSelected: [],
     };
   }
   async componentDidMount() {
-    const { data } = await axios.get("/search-data");
-    this.setState({ dataOptions: data });
-    this.setState({
-      residential: data[3].data["property-type"][0].data,
-      commercial: data[3].data["property-type"][1].data,
-      industrial: data[3].data["property-type"][2].data[0].data,
-      institutional: data[3].data["property-type"][3].data[0].data,
-      agricultural: data[3].data["property-type"][4].data[0].data,
-      view: data[2].data,
-      amenities: data[0].data,
-    });
-    // console.log(this.state.industrial);
+    await this.props.getSearchData();
+    await this.setState({ dataOptions: this.props.searchData });
   }
+
+  // async createID() {
+  //   const res = await axios.get("/property", {
+  //     headers: { "Access-Control-Allow-Origin": "*" },
+  //   });
+  //   console.log(res);
+  // }
+
+  handlePropSubmit = () => {
+    const dataObj = {
+      purpose: this.state.purposeType,
+      property_type: this.state.propertyType,
+      avability: this.state.activeAvability,
+      timeProp: this.state.viewTime,
+      ownership: this.state.ownerShip,
+      facing: this.state.facing,
+      views: this.state.views,
+      areaUnitParam: "Sq.Yard",
+      totalArea: this.state.totalArea,
+      buildUpArea: this.state.buildUpArea,
+      carpetArea: this.state.carpetArea,
+      specialDescription: this.state.specialDesc,
+      rentPerArea: this.state.rate,
+      totalPrice: this.state.totalArea * this.state.rate,
+      includeAllTaxes: this.state.include_all_taxes
+        ? this.state.include_all_taxes
+        : "false",
+      priceNegotiable: this.state.price_negotiable
+        ? this.state.price_negotiable
+        : "false",
+      reraApprovedProperty: this.state.rera_approved_property
+        ? this.state.rera_approved_property
+        : "false",
+      amenities: this.state.amenitiesSelected,
+    };
+    let data = JSON.parse(JSON.stringify(dataObj));
+    console.log(data);
+
+    //req
+    this.props.loginUser();
+    this.props.getPropertyID();
+  };
+
   handleRentView = () => {
     this.setState({
       rentView: !this.state.rentView,
@@ -117,6 +160,22 @@ export default class PostProperty extends Component {
     });
   };
 
+  handlePurposeType = (e) => {
+    this.setState({
+      purposeType: e.target.name,
+    });
+  };
+
+  setPropType = (forObj, value) => {
+    this.setState({
+      [forObj]: value,
+    });
+  };
+  setGroupPropType = (forObj, value) => {
+    this.setState({
+      [forObj]: [...this.state[forObj], value],
+    });
+  };
   render() {
     const Possession = [
       "within 3 months",
@@ -148,61 +207,96 @@ export default class PostProperty extends Component {
       <div className="container-fluid">
         <br />
         <br />
-        <div className="container-fluid post-property-area text-center">
-          <h2 className="mt-2">Post Property</h2>
-          <Stepper
-            steps={[
-              { label: "Select Property Type" },
-              { label: "Fill Property Overviews" },
-              { label: "Fill Property Infomation" },
-              { label: "Upload Property Photos" },
-            ]}
-            activeStep={this.state.formIndex - 1}
-          />
-        </div>{" "}
-        {/* Header Text
+        {this.props.searchData && (
+          <div>
+            <div className="container-fluid post-property-area text-center">
+              <h2 className="mt-2">Post Property</h2>
+              <Stepper
+                steps={[
+                  { label: "Select Property Type" },
+                  { label: "Fill Property Overviews" },
+                  { label: "Fill Property Infomation" },
+                  { label: "Upload Property Photos" },
+                ]}
+                activeStep={this.state.formIndex - 1}
+              />
+            </div>{" "}
+            {/* Header Text
 
         {/* form start here */}
-        {this.state.formIndex === 1 && (
-          <FormOne
-            handleClick={this.handleClick}
-            optionsList={this.state.dataOptions[3]}
-          />
-        )}
-        {this.state.formIndex === 2 && (
-          <FormTwo
-            PropertyAge={PropertyAge}
-            areaOptions={areaOptions}
-            Possession={Possession}
-            renderAvability={this.renderAvability}
-            activeAvability={this.state.activeAvability}
-            handleClick={this.handleClick}
-            views={this.state.view}
-          />
-        )}
-        {this.state.formIndex === 3 && (
-          <FormThree
-            amenities={this.state.amenities}
-            handleFilter={this.handleFilter}
-            handleClick={this.handleClick}
-            customeKey={this.state.customeKey}
-            customeKeyName={this.state.customeKeyName}
-            customeKeyVal={this.state.customeKeyVal}
-            addCustomKey={this.addCustomKey}
-            rentView={this.state.rentView}
-          />
-        )}
-        {this.state.formIndex === 4 && <FormFour />}
-        <div className="d-flex justify-content-between align-items-center">
-          <button className="btn m-4 common-btn" onClick={this.handleBack}>
-            back
-          </button>
+            {this.state.formIndex === 1 && (
+              <FormOne
+                handleClick={this.handleClick}
+                optionsList={this.state.dataOptions[3]}
+                purposeTypeCheckValue={this.state.purposeType}
+                handleCheckGroup={this.handlePurposeType}
+                setPropType={this.setPropType}
+              />
+            )}
+            {this.state.formIndex === 2 && (
+              <FormTwo
+                PropertyAge={PropertyAge}
+                areaOptions={areaOptions}
+                Possession={Possession}
+                renderAvability={this.renderAvability}
+                activeAvability={this.state.activeAvability}
+                handleClick={this.handleClick}
+                views={this.state.dataOptions[2].data}
+                setPropType={this.setPropType}
+                ownerShipProp={this.state.ownerShip}
+                setGroupPropType={this.setGroupPropType}
+                facingProp={this.state.facing}
+                viewsProps={this.state.views}
+                selectedUnit={this.state.selectedUnit}
+                totalArea={this.state.totalArea}
+                carpetArea={this.state.carpetArea}
+                buildUpArea={this.state.buildUpArea}
+              />
+            )}
+            {this.state.formIndex === 3 && (
+              <FormThree
+                amenities={this.state.dataOptions[0].data}
+                handleFilter={this.handleFilter}
+                handleClick={this.handleClick}
+                customeKey={this.state.customeKey}
+                customeKeyName={this.state.customeKeyName}
+                customeKeyVal={this.state.customeKeyVal}
+                addCustomKey={this.addCustomKey}
+                rentView={this.state.rentView}
+                setPropType={this.setPropType}
+                amenitiesSelected={this.state.amenitiesSelected}
+                setGroupPropType={this.setGroupPropType}
+              />
+            )}
+            {this.state.formIndex === 4 && <FormFour />}
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn m-4 common-btn" onClick={this.handleBack}>
+                {this.state.formIndex === 1 ? "Cancel Property" : "Back"}
+              </button>
 
-          <button className="btn m-4 common-btn" onClick={this.handleNext}>
-            next
-          </button>
-        </div>
+              <button
+                className="btn m-4 common-btn"
+                onClick={
+                  this.state.formIndex === 4
+                    ? this.handlePropSubmit
+                    : this.handleNext
+                }
+              >
+                {this.state.formIndex === 4 ? "Submit Property" : "Next"}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  searchData: state.property.searchData,
+});
+export default connect(mapStateToProps, {
+  loginUser,
+  getSearchData,
+  getPropertyID,
+})(PostProperty);

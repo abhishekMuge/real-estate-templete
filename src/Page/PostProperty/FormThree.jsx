@@ -9,6 +9,9 @@ export default function FormThree({
   customeKeyName,
   customeKeyVal,
   addCustomKey,
+  setPropType,
+  amenitiesSelected,
+  setGroupPropType,
 }) {
   return (
     <div>
@@ -28,6 +31,9 @@ export default function FormThree({
                   id="areaRate"
                   data-for={rentView ? "rent" : "rate"}
                   placeholder="Enter Carpet Area"
+                  onChange={(event) => {
+                    setPropType(rentView ? "rent" : "rate", event.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -62,6 +68,10 @@ export default function FormThree({
                   className="form-check-input"
                   type="checkbox"
                   id="inlineFormCheck"
+                  name={item.toLowerCase().replaceAll(" ", "_")}
+                  onClick={(event) => {
+                    setPropType(event.target.name, event.target.checked);
+                  }}
                 />
                 <label className="form-check-label" htmlFor="inlineFormCheck">
                   {item.toLocaleUpperCase()}
@@ -218,8 +228,14 @@ export default function FormThree({
                   <button
                     className="btn option-pill rounded-pill common-btn m-2"
                     key={index}
-                    style={{ backgroundColor: "" }}
-                    onClick={handleClick}
+                    style={{
+                      backgroundColor: amenitiesSelected.includes(item)
+                        ? "red"
+                        : "black",
+                    }}
+                    onClick={() => {
+                      setGroupPropType("amenitiesSelected", item);
+                    }}
                   >
                     {item.toLocaleUpperCase()}
                   </button>

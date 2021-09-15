@@ -1,11 +1,26 @@
-.home-option {
-  width: 300px;
-  height: auto;
-  background-color: #fff;
-  box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
-  -webkit-box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 2px 3px 5px 5px rgba(0, 0, 0, 0.36);
-  padding: 40px;
-  border-radius: 20px;
-  margin: 30px;
+.left h1 {
+  margin-top: -10px;
+  color: #464146;
+  text-transform: uppercase;
+}
+.left span {
+  color: darkgray;
+  margin-left: 10px;
+}
+.user-card {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  background: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=659&q=80")
+    center/cover;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.box-option {
+  margin-top: 30px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #464146;
 }

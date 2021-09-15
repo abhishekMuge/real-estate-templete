@@ -126,6 +126,9 @@ img {
 .mb-100 {
   margin-bottom: 100px;
 }
+.mr-5{
+  margin-right: 50px;
+}
 
 .ptb-100 {
   padding-top: 100px;
@@ -137,6 +140,10 @@ img {
   text-align: left;
   background-color: #db3236 !important;
   color: white !important;
+}
+.bold-text {
+  font-weight: bold;
+  color: #18253e;
 }
 
 .pt-100 {
@@ -6270,6 +6277,7 @@ blockquote i {
 .scroll-div {
   max-height: 300px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 .option-pill {
   padding: 10px 30px !important;

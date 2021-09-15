@@ -6,44 +6,57 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
+import { Provider } from "react-redux";
+import Store from "./Redux_config";
 import Sidebar from "react-sidebar";
 import SideBarItems from "./Components/Navbar/Index";
 import Register from "./Components/UserForm/Register";
 import Home from "./Page/Home";
 import Login from "./Components/UserForm/Login";
-function App({ history }) {
+import PostProject from "./Page/PostProject";
+import Marketing from "./Page/Marketing";
+import OrderData from "./Page/OrderData";
+function App() {
   const [sidebarOpen, setsidebarOpen] = useState(true);
-  const [userLoggedin, setUserLoggedin] = useState(false);
   const onSetSidebarOpen = () => {
     setsidebarOpen(!sidebarOpen);
   };
 
-  const handleUserLoggin = () => {
-    setUserLoggedin(!userLoggedin);
-  };
-
   return (
     <div className="App">
-      <Router>
-        <Sidebar
-          sidebar={<SideBarItems />}
-          open={false}
-          docked={userLoggedin}
-          onSetOpen={onSetSidebarOpen}
-          styles={{ sidebar: { background: "black" } }}
-        >
-          <Switch>
-            <Route exact path="/">
-              {!userLoggedin ? <Redirect to="/login" /> : <Home />}
-            </Route>
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login">
-              <Login setUserLoggedin={handleUserLoggin} />
-            </Route>
-            <Route exact path="/post-property" component={PostProperty} />
-          </Switch>
-        </Sidebar>
-      </Router>
+      <Provider store={Store}>
+        <Router>
+          <Sidebar
+            sidebar={<SideBarItems />}
+            open={true}
+            docked={true}
+            onSetOpen={onSetSidebarOpen}
+            styles={{ sidebar: { background: "black" } }}
+          >
+            <Switch>
+              <Route exact path="/">
+                {!localStorage.getItem("userStatus") ? (
+                  <Redirect to="/login" />
+                ) : (
+                  <Redirect to="/dashboard" />
+                )}
+              </Route>
+              <Route exact path="/dashboard" component={Home} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/post-property">
+                <PostProperty />
+              </Route>
+              <Route path="/marketing" component={Marketing} />
+              <Route exact path="/post-project" component={PostProject} />
+              <Route exact path="/order-data" component={OrderData} />
+            </Switch>
+          </Sidebar>
+        </Router>
+      </Provider>
     </div>
   );
 }

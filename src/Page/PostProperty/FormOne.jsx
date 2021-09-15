@@ -1,6 +1,13 @@
 import React from "react";
 import NestedPropertyOpt from "./NestedPropertyOpt";
-export default function FormOne({ handleClick, optionsList }) {
+import FormCheckGroup from "../../Components/FormComponent/FormCheckGroup";
+export default function FormOne({
+  handleClick,
+  optionsList,
+  purposeTypeCheckValue,
+  handleCheckGroup,
+  setPropType,
+}) {
   return (
     <div>
       <div className="step-form step-form-1">
@@ -14,26 +21,19 @@ export default function FormOne({ handleClick, optionsList }) {
               className="d-flex flex-wrap mt-2"
               style={{ marginLeft: "40px" }}
             >
-              <button
-                className="btn option-pill rounded-pill common-btn"
-                style={{ backgroundColor: "", marginRight: "30px" }}
-                name="rent"
-                onClick={handleClick}
-              >
-                Rent
-              </button>
-              <button
-                className="btn option-pill rounded-pill common-btn"
-                style={{ backgroundColor: "", marginRight: "30px" }}
-                onClick={handleClick}
-              >
-                For Sales
-              </button>
+              <FormCheckGroup
+                groupItem={["Rent", "Sale"]}
+                handleClick={handleCheckGroup}
+                checkedValue={purposeTypeCheckValue}
+              />
             </div>
           </div>
         </div>
         {optionsList && (
-          <NestedPropertyOpt option={optionsList.data["property-type"]} />
+          <NestedPropertyOpt
+            setPropType={(event) => setPropType("propertyType", event)}
+            option={optionsList.data["property-type"]}
+          />
         )}
       </div>
     </div>
