@@ -17,7 +17,7 @@ class Login extends Component {
     return (
       <div className="row login-form">
         <div
-          className="left col-7 d-flex justify-content-center align-items-center"
+          className="left col-lg-7 d-md-none d-flex justify-content-center align-items-center"
           style={{
             background:
               "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1582647509711-c8aa8a8bda71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=375&q=80) center/cover",
@@ -27,7 +27,7 @@ class Login extends Component {
             {/* <h1 className="text-white fs-4">Login In Into Account</h1> */}
           </div>
         </div>
-        <div className="right col-5  d-flex mt-100 justify-content-center flex-column">
+        <div className="right col-lg-5 col-md-14  d-flex mt-100 justify-content-center flex-column">
           <div className="text-center">
             <h1 className="fs-5 text-center">Login In Into Account</h1>
           </div>

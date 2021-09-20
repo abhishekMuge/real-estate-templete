@@ -12,7 +12,7 @@ export default function FormOne({
     <div>
       <div className="step-form step-form-1">
         <div className="=option mb-4 mt-4">
-          <div className="d-inline-flex align-items-center">
+          <div className="d-inline-flex flex-wrap align-items-center">
             <div className="purpose-option-header">
               <h3 className="fs-4 -mb-5 text-uppercase">Purpose*</h3>
               <span>Click the Options to select</span>

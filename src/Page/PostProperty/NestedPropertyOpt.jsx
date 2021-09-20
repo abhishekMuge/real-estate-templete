@@ -14,12 +14,12 @@ export default function NestedPropertyOpt({ option, setPropType }) {
 
   return (
     <div className="property-type">
-      <div className="d-inline-flex flex-column">
+      <div className="d-flex flex-wrap flex-column">
         <div className="header">
           <h3 className="-mb-5 fs-4 text-uppercase">Property Type*</h3>
           <span className="mt-2">Click the any Options to see sub Options</span>
         </div>
-        <div className="options-main d-inline-flex">
+        <div className="options-main d-inline-flex flex-wrap">
           {option &&
             // eslint-disable-next-line
             option.map((item, index) => (

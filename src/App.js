@@ -1,5 +1,5 @@
 import PostProperty from "./Page/PostProperty";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,10 +17,23 @@ import Login from "./Components/UserForm/Login";
 import PostProject from "./Page/PostProject";
 import Marketing from "./Page/Marketing";
 import OrderData from "./Page/OrderData";
+import UserEdit from "./Page/EditProfile";
+
+const mql = window.matchMedia(`(min-width: 800px)`);
 function App() {
-  const [sidebarOpen, setsidebarOpen] = useState(true);
+  const [sidebarOpen, setsidebarOpen] = useState(false);
+  const [sidebarDocked, setsidebarDocked] = useState(mql.matches);
   const onSetSidebarOpen = () => {
     setsidebarOpen(!sidebarOpen);
+  };
+
+  useEffect(() => {
+    mql.addListener(mediaQueryChanged);
+  });
+
+  const mediaQueryChanged = () => {
+    setsidebarDocked(mql.matches);
+    setsidebarOpen(false);
   };
 
   return (
@@ -29,8 +42,8 @@ function App() {
         <Router>
           <Sidebar
             sidebar={<SideBarItems />}
-            open={true}
-            docked={true}
+            open={sidebarOpen}
+            docked={sidebarDocked}
             onSetOpen={onSetSidebarOpen}
             styles={{ sidebar: { background: "black" } }}
           >
@@ -42,7 +55,9 @@ function App() {
                   <Redirect to="/dashboard" />
                 )}
               </Route>
-              <Route exact path="/dashboard" component={Home} />
+              <Route path="/dashboard">
+                <Home setsidebarOpen={setsidebarOpen} navStaus={sidebarOpen} />
+              </Route>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login">
                 <Login />
@@ -53,6 +68,7 @@ function App() {
               <Route path="/marketing" component={Marketing} />
               <Route exact path="/post-project" component={PostProject} />
               <Route exact path="/order-data" component={OrderData} />
+              <Route exact path="/user-edit" component={UserEdit} />
             </Switch>
           </Sidebar>
         </Router>

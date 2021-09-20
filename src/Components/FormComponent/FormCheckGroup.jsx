@@ -6,7 +6,7 @@ export default function FormCheckGroup({
   checkedValue,
 }) {
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-wrap">
       {groupItem.map((item) => (
         <div className="form-check mb-2">
           <input

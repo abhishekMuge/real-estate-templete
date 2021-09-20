@@ -1,0 +1,58 @@
+.form {
+  width: 200vw;
+  border: solid 1px black;
+  background-color: rgb(236, 214, 156);
+}
+.form button {
+  width: 98%;
+  background-color: rgb(129, 122, 104);
+  margin: 10px;
+}
+.form div {
+  margin: 10px;
+}
+.edit {
+  text-align: center;
+  margin: 20px;
+}
+.profile {
+  width: 150vw;
+  height: 30vh;
+  margin: 2vw;
+  background-color: rgb(231, 227, 227);
+  margin-left: 5vw;
+}
+.icon {
+  margin: 2px;
+}
+.heading {
+  text-align: center;
+}
+.navbar {
+  margin: 15px;
+}
+.social-icons {
+  margin: 20px 5px 2px 2px;
+}
+.phone-icon {
+  color: blue;
+}
+.mail-icon {
+  color: blue;
+  margin-right: 5px;
+}
+.loc-icon {
+  color: red;
+}
+.email {
+  text-decoration: none;
+}
+.user {
+  padding-top: 20px;
+}
+.right {
+  padding: 10px;
+}
+.left {
+  padding: 5px;
+}
