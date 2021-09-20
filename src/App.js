@@ -1,11 +1,6 @@
 import PostProperty from "./Page/PostProperty";
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import Store from "./Redux_config";
@@ -48,27 +43,27 @@ function App() {
             styles={{ sidebar: { background: "black" } }}
           >
             <Switch>
-              <Route exact path="/">
+              {/* <Route exact path="/">
                 {!localStorage.getItem("userStatus") ? (
                   <Redirect to="/login" />
                 ) : (
                   <Redirect to="/dashboard" />
                 )}
-              </Route>
-              <Route path="/dashboard">
+              </Route> */}
+              <Route exact path="/">
                 <Home setsidebarOpen={setsidebarOpen} navStaus={sidebarOpen} />
               </Route>
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login">
+              <Route path="/register" component={Register} />
+              <Route path="/login">
                 <Login />
               </Route>
-              <Route exact path="/post-property">
+              <Route path="/post-property">
                 <PostProperty />
               </Route>
               <Route path="/marketing" component={Marketing} />
-              <Route exact path="/post-project" component={PostProject} />
-              <Route exact path="/order-data" component={OrderData} />
-              <Route exact path="/user-edit" component={UserEdit} />
+              <Route path="/post-project" component={PostProject} />
+              <Route path="/order-data" component={OrderData} />
+              <Route path="/user-edit" component={UserEdit} />
             </Switch>
           </Sidebar>
         </Router>

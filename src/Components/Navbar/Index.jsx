@@ -36,7 +36,7 @@ export default function SideBarItems() {
       <div className="navlink">
         <ul>
           <li>
-            <Link to="/dashboard">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/post-property">Post Property</Link>
