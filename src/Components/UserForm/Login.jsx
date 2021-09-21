@@ -10,7 +10,7 @@ class Login extends Component {
     this.props.loginUser();
     if (this.props.auth.LoginStatus) {
       localStorage.setItem("userStatus", this.props.auth.LoginStatus.status);
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     }
   };
   render() {
