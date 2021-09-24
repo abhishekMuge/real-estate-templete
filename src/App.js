@@ -15,6 +15,9 @@ import AgentDetails from "./Page/Agent/AgentDetails";
 import Property from "./Page/PropertDetails/Property";
 import BlogsDetails from "./Page/Blog/BlogsDetails";
 import ScrollToTop from "./Components/ScrollToTop";
+import TellMeNedd from "./Page/TellMeNeed";
+import Comparison from "./Page/Comparison";
+import Wishlist from "./Page/Wishlist";
 function App() {
   return (
     <Router>
@@ -38,6 +41,10 @@ function App() {
               <Route exact path="/blog-details" component={BlogsDetails} />
               <Route exact path="/agents" component={Agent} />
               <Route exact path="/agents-details" component={AgentDetails} />
+              <Route exact path="/tell-me-your-needs" component={TellMeNedd} />
+              <Route exact path="/comparison" component={Comparison} />
+
+              <Route exact path="/wishlist" component={Wishlist} />
             </Switch>
           </div>
           <Footer />

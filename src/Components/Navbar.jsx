@@ -205,9 +205,13 @@ export default function Navbar() {
                     <Link to="/contact">Contact</Link>
                   </li>
                   <li className="nav-item right-nav">
-                    <a href="/#" type="button" className="nav-link">
+                    <Link
+                      to="/tell-me-your-needs"
+                      type="button"
+                      className="nav-link"
+                    >
                       Tell Me your needs
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="/#" type="button" className="nav-link">
@@ -220,14 +224,14 @@ export default function Navbar() {
                     </a>
                     <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <a href="/#" className="nav-link active">
-                          Wishlist
-                        </a>
+                        <Link to="/comparison" className="nav-link ">
+                          Comparison
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="/#" className="nav-link active">
-                          Camparison
-                        </a>
+                        <Link to="/wishlist" className="nav-link active">
+                          Wishlist
+                        </Link>
                       </li>
                     </ul>
                   </li>

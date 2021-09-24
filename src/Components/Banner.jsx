@@ -85,7 +85,7 @@ export default function Banner({ amenities, propertySearch }) {
                   >
                     {tabIndex === "one" && (
                       <h1>
-                        {"Wuild Your Aspiration With Buildano".toLocaleUpperCase()}
+                        {"uild Your Aspiration With Buildano".toLocaleUpperCase()}
                       </h1>
                     )}
                     {tabIndex === "two" && (

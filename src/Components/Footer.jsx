@@ -224,6 +224,10 @@ export default function Footer() {
         </div>
       </footer>
       {/* End Footer */}
+      <div className="go-top">
+        <i className="bx bx-arrow-to-top" />
+        <i className="bx bx-arrow-to-top" />
+      </div>
     </div>
   );
 }
