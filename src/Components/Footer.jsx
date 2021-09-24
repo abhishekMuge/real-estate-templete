@@ -224,12 +224,6 @@ export default function Footer() {
         </div>
       </footer>
       {/* End Footer */}
-      {/* Go Top */}
-      <div className="go-top">
-        <i className="bx bxs-arrow-to-top" />
-        <i className="bx bxs-arrow-to-top" />
-      </div>
-      {/* End Go Top */}
     </div>
   );
 }

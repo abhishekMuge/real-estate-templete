@@ -12,11 +12,15 @@ import Service from "./Page/Services";
 import Blogs from "./Page/Blog";
 import Agent from "./Page/Agent";
 import AgentDetails from "./Page/Agent/AgentDetails";
+import Property from "./Page/PropertDetails/Property";
+import BlogsDetails from "./Page/Blog/BlogsDetails";
+import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <Router>
       <Provider store={store}>
         <div>
+          <ScrollToTop />
           <Navbar />
           <div>
             <Switch>
@@ -26,10 +30,12 @@ function App() {
                 path="/property-details"
                 component={PropertyDeatils}
               />
+              <Route path="/properties" component={Property} />
               <Route exact path="/about-us" component={AboutUs} />
               <Route exact path="/contact" component={ContactMe} />
               <Route exact path="/service" component={Service} />
               <Route exact path="/blogs" component={Blogs} />
+              <Route exact path="/blog-details" component={BlogsDetails} />
               <Route exact path="/agents" component={Agent} />
               <Route exact path="/agents-details" component={AgentDetails} />
             </Switch>

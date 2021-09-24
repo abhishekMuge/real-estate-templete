@@ -122,12 +122,18 @@ export default function Navbar() {
         {/* Menu For Desktop Device */}
         <div className="main-nav">
           <div className="container-fluid">
-            <nav className="navbar navbar-expand-md navbar-light">
+            <nav
+              className="navbar navbar-expand-md navbar-light d-flex justify-content-center"
+              style={{
+                position: "fixed",
+                width: "100%",
+              }}
+            >
               <div
                 className="collapse navbar-collapse mean-menu"
                 id="navbarSupportedContent"
               >
-                <ul className="navbar-nav">
+                <ul className="navbar-nav text-center">
                   <li className="nav-item">
                     <Link to="/" className="nav-link active">
                       Home
@@ -156,61 +162,44 @@ export default function Navbar() {
                     </ul> */}
                   </li>
                   <li className="nav-item">
-                    <Link to="/property-details">Properties</Link>
-                    {/* <ul className="dropdown-menu">
+                    <a href="/#" class="nav-link dropdown-toggle">
+                      Properties <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <a href="/#" className="nav-link">
+                        <Link to="/properties" className="nav-link">
                           Properties
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="/#" className="nav-link">
-                          Property Right Sidebar
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="/#" className="nav-link">
-                          Property Left Sidebar
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="/#" className="nav-link">
+                        <Link to="/property-details" className="nav-link">
                           Property Details
-                        </a>
+                        </Link>
                       </li>
-                      <li className="nav-item">
+                      {/* <li className="nav-item">
                         <a href="/#" className="nav-link">
                           Apartments
                         </a>
-                      </li>
-                    </ul> */}
+                      </li> */}
+                    </ul>
                   </li>
                   <li className="nav-item">
-                    <Link to="/blogs" className="nav-link">
-                      Blog
-                    </Link>
-                    {/* <ul className="dropdown-menu">
+                    <a href="/#" class="nav-link dropdown-toggle">
+                      Blog <i class="bx bx-chevron-down"></i>
+                    </a>
+
+                    <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <a href="/#" className="nav-link">
+                        <Link to="/blogs" className="nav-link">
                           Blog
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="/#" className="nav-link">
-                          Blog Left Sidebar
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="/#" className="nav-link">
-                          Blog Right Sidebar
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="/#" className="nav-link">
+                        <Link to="/blog-details" className="nav-link">
                           Blog Details
-                        </a>
+                        </Link>
                       </li>
-                    </ul> */}
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <Link to="/contact">Contact</Link>
