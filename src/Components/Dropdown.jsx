@@ -44,6 +44,9 @@ export default function Dropdown({
           </button>
           <ul
             className="dropdown-menu"
+            style={{
+              overflowY: "scroll",
+            }}
             onClick={(e) => {
               e.stopPropagation();
             }}

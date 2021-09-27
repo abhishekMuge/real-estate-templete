@@ -928,7 +928,7 @@
     overflow-y: scroll;
   }
   .banner-content-heading {
-    margin-top: 60px !important;
+    /* margin-top: 60px !important; */
   }
   .banner-area {
     height: 135vh;
@@ -937,6 +937,9 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /*----- Default CSS -----*/
+  .banner-top-container {
+    margin-top: 0 !important;
+  }
   body {
     font-size: 15px;
   }
@@ -1056,7 +1059,6 @@
   }
   .banner-area .banner-slider-item {
     height: 100%;
-    padding-top: 140px;
     padding-bottom: 170px;
   }
   .banner-content {
@@ -1621,6 +1623,9 @@
   .footer-item .footer-contact .top ul li p {
     font-size: 15px;
   }
+  .banner-top-container {
+    margin-top: 0 !important;
+  }
   .banner-area.two .banner-slider-item {
     height: 635px;
   }
@@ -1729,8 +1734,16 @@
     right: -5px;
   }
 }
+@media only screen and (min-width: 1200px) and (max-width: 1800px) {
+  .banner-top-container {
+    margin-top: 20px !important;
+  }
+}
 
 @media only screen and (min-width: 1800px) {
+  .banner-top-container {
+    margin-top: 0 !important;
+  }
   .apartment-area .container-fluid {
     max-width: 1540px;
   }

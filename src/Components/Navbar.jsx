@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import logo from "../assests/images/logo.png";
 export default function Navbar() {
   const [Mmenu, setMmenu] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState("");
   return (
     <div>
       <div className="navbar-area sticky-top">
@@ -54,14 +54,83 @@ export default function Navbar() {
                     About Us
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a href="/#" className="nav-link dropdown-toggle">
-                    Services <i className="bx bx-chevron-down" />
+                <li
+                  className="nav-item"
+                  onClick={() => setOpenMenu("services")}
+                >
+                  <a href="/#" className="nav-link">
+                    Services
+                    <i className="bx bx-chevron-down" />
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    style={{
+                      display: openMenu === "services" ? "block" : "none",
+                    }}
+                  >
+                    <li className="nav-item">
+                      <a href="/#" className="nav-link">
+                        Business Lines
+                        <i className="bx bx-chevron-down" />
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/#" className="nav-link">
+                        Industries {"&"} Specialities
+                        <i className="bx bx-chevron-down" />
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/#" className="nav-link">
+                        Services for Investors
+                        <i className="bx bx-chevron-down" />
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/#" className="nav-link">
+                        Services for Occupiers
+                        <i className="bx bx-chevron-down" />
+                      </a>
+                    </li>
+                  </ul>
+                  <a
+                    className="mean-expand"
+                    href="/#"
+                    style={{ fontSize: "18px" }}
+                  >
+                    +
                   </a>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  onClick={() => setOpenMenu("property")}
+                >
                   <a href="/#" className="nav-link dropdown-toggle">
                     Properties <i className="bx bx-chevron-down" />
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    style={{
+                      display: openMenu === "property" ? "block" : "none",
+                    }}
+                  >
+                    <li className="nav-item">
+                      <Link to="/properties" className="nav-link">
+                        Properties
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to="/property-details" className="nav-link">
+                        Property Details
+                      </Link>
+                    </li>
+                  </ul>
+                  <a
+                    className="mean-expand"
+                    href="/#"
+                    style={{ fontSize: "18px" }}
+                  >
+                    +
                   </a>
                 </li>
                 <li className="nav-item">
@@ -84,13 +153,13 @@ export default function Navbar() {
                     Sales Or Rent
                   </a>
                 </li>
-                <li className="nav-item" onClick={() => setOpenMenu(!openMenu)}>
+                <li className="nav-item" onClick={() => setOpenMenu("more")}>
                   <a href="/#" className="nav-link dropdown-toggle">
                     More <i className="bx bx-chevron-down" />
                   </a>
                   <ul
                     className="dropdown-menu"
-                    style={{ display: openMenu ? "block" : "none" }}
+                    style={{ display: openMenu === "more" ? "block" : "none" }}
                   >
                     <li className="nav-item">
                       <a href="index.html" className="nav-link active">
@@ -145,21 +214,271 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/service" className="nav-link">
+                    <a href="/#" className="nav-link">
                       Services
-                    </Link>
-                    {/* <ul className="dropdown-menu">
+                      <i className="bx bx-chevron-down" />
+                    </a>
+                    <ul className="dropdown-menu">
                       <li className="nav-item">
                         <a href="/#" className="nav-link">
-                          Services
+                          Business Lines
+                          <i className="bx bx-chevron-down" />
                         </a>
+                        <ul
+                          className="dropdown-menu"
+                          style={{
+                            overflowY: "scroll",
+                          }}
+                        >
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Advisory {"&"} Transaction Services
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Capital Markets
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Global Workplace Solutions
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Property Management
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Residential
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Valuation {"&"} Advisory Services
+                            </a>
+                          </li>
+                        </ul>
                       </li>
                       <li className="nav-item">
                         <a href="/#" className="nav-link">
-                          Service Details
+                          Industries {"&"} Specialities
+                          <i className="bx bx-chevron-down" />
                         </a>
+                        <ul
+                          className="dropdown-menu"
+                          style={{
+                            overflowY: "scroll",
+                          }}
+                        >
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Office
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Retail
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Industrial {"&"} Logistics
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Alternative Invesments
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Data Centers
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Financial Services
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Government Practice
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Healthcare
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Life Sciences
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Hostel
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Residential
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Sustainability
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Flexible Workspace
+                            </a>
+                          </li>
+                        </ul>
                       </li>
-                    </ul> */}
+                      <li className="nav-item">
+                        <a href="/#" className="nav-link">
+                          Services for Investors
+                          <i className="bx bx-chevron-down" />
+                        </a>
+                        <ul
+                          className="dropdown-menu"
+                          style={{
+                            overflowY: "scroll",
+                          }}
+                        >
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Capital Markets
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Consulting
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Host
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Investment Accounting {"&"}
+                              <br />
+                              Reporting Solutions
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Investment Risk Monitoring
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Leasing {"&"} Advisory
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Masterplanning
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Property Management
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Valuation {"&"} Advisory Services
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Hostel
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Residential
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Sustainability
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Flexible Workspace
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="nav-item">
+                        <a href="/#" className="nav-link">
+                          Services for Occupiers
+                          <i className="bx bx-chevron-down" />
+                        </a>
+                        <ul
+                          className="dropdown-menu"
+                          style={{
+                            overflowY: "scroll",
+                          }}
+                        >
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Consulting
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Enterprise Facilities Management
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Host
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Leasing {"&"} Advisory
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Portfolio Services
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Project Management
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Transaction Management
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Valuation {"&"} Advisory Services
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a href="/#" className="nav-link">
+                              Workplace
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="/#" class="nav-link dropdown-toggle">
@@ -176,11 +495,6 @@ export default function Navbar() {
                           Property Details
                         </Link>
                       </li>
-                      {/* <li className="nav-item">
-                        <a href="/#" className="nav-link">
-                          Apartments
-                        </a>
-                      </li> */}
                     </ul>
                   </li>
                   <li className="nav-item">

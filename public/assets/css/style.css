@@ -238,8 +238,10 @@ span.caret {
 .dropdown-menu {
   max-height: 200px;
   width: 100%;
-  overflow-y: scroll;
   padding: 5px;
+}
+.dropdown-menu.scroll {
+  overflow-y: scroll;
 }
 
 .hidden-container ul {
@@ -808,7 +810,7 @@ span.caret {
 
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
   left: unset;
-  right: -100%;
+  right: -100% !important;
   top: 15px;
 }
 
@@ -1124,7 +1126,7 @@ input[type="range"]::-ms-thumb {
 .banner-content {
   position: relative;
   z-index: 1;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
 .banner-content .banner-span {

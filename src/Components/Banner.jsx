@@ -76,7 +76,7 @@ export default function Banner({ amenities, propertySearch }) {
           <div className="banner-slider-item">
             <div className="d-table">
               <div className="d-table-cell">
-                <div className="container">
+                <div className="container banner-top-container mt-100">
                   <div
                     className="banner-content"
                     style={{

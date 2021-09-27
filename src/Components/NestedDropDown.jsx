@@ -54,6 +54,9 @@ export default class NestedDropDown extends Component {
           </button>
           <ul
             className="dropdown-menu"
+            style={{
+              overflowY: "scroll",
+            }}
             onClick={(event) => {
               event.stopPropagation();
             }}
