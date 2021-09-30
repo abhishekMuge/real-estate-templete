@@ -6,6 +6,7 @@ export default class NestedDropDown extends Component {
   constructor() {
     super();
     this.state = {
+      inputText: "",
       listOptions: [],
       residential: "none",
       commercial: "none",
@@ -26,6 +27,12 @@ export default class NestedDropDown extends Component {
       others: "none",
     };
   }
+
+  handleInput = (e) => {
+    this.setState({
+      inputText: e.target.value,
+    });
+  };
 
   showOption = (e) => {
     let keyName = e.target.value;
@@ -69,6 +76,8 @@ export default class NestedDropDown extends Component {
                 autoComplete="off"
                 onkeyup="filterProperty()"
                 id="property-type-optionList-input"
+                value={this.state.inputText}
+                onChange={this.handleInput}
               />
             </li>
             <div className="filter-list" />
@@ -83,21 +92,6 @@ export default class NestedDropDown extends Component {
                       }}
                       key={item + index}
                     >
-                      {/* <div className="form-check">
-                        <input
-                          className="form-check-input property-type"
-                          type="checkbox"
-                          defaultValue="Residential"
-                          name={item.title.toLowerCase()}
-                          onClick={this.showOption}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexCheckIndeterminate"
-                        >
-                          <span>{item.title}</span>
-                        </label>
-                      </div> */}
                       <FormControlLabel
                         value={item.title.toLowerCase()}
                         control={<Checkbox color="secondary" />}

@@ -1,1 +1,0 @@
-thirdchild.replace(' ','-').replace('/','_').replace('&','@')
