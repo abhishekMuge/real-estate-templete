@@ -18,6 +18,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import TellMeNedd from "./Page/TellMeNeed";
 import Comparison from "./Page/Comparison";
 import Wishlist from "./Page/Wishlist";
+import MobileService from "./Page/Services/MobileService";
 function App() {
   return (
     <Router>
@@ -43,8 +44,8 @@ function App() {
               <Route exact path="/agents-details" component={AgentDetails} />
               <Route exact path="/tell-me-your-needs" component={TellMeNedd} />
               <Route exact path="/comparison" component={Comparison} />
-
               <Route exact path="/wishlist" component={Wishlist} />
+              <Route exact path="/services-mobile" component={MobileService} />
             </Switch>
           </div>
           <Footer />

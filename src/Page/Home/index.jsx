@@ -5,11 +5,13 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Banner from "../../Components/Banner";
+import Counter from "../../Components/Counter";
 
 class Home extends Component {
   async componentDidMount() {
     await this.props.initialDataFetch();
   }
+
   render() {
     return (
       // {this.props.initalData && (
@@ -259,8 +261,8 @@ class Home extends Component {
               </h2>
               <div className="counter-item">
                 <h3>
-                  <span className="odometer" data-count={129}>
-                    00
+                  <span className="odometer">
+                    <Counter />
                   </span>
                   <span className="target">+</span>
                 </h3>
@@ -430,7 +432,7 @@ class Home extends Component {
               <div className="counter-item">
                 <h3>
                   <span className="odometer" data-count={15}>
-                    00
+                    <Counter />
                   </span>
                   <span className="target">+</span>
                 </h3>
@@ -726,7 +728,7 @@ class Home extends Component {
               <div className="counter-item">
                 <h3>
                   <span className="odometer" data-count={54}>
-                    00
+                    <Counter />
                   </span>
                   <span className="target">+</span>
                 </h3>

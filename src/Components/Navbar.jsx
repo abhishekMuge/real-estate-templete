@@ -1,11 +1,8 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { animated, useTransition, config } from "react-spring";
 
 export default function Navbar() {
-  const [Mmenu, setMmenu] = useState(false);
-  const [openMenu, setOpenMenu] = useState("");
-
   return (
     <div>
       <div className="navbar-area sticky-top">
@@ -42,7 +39,12 @@ export default function Navbar() {
                       Services
                       <i className="bx bx-chevron-down" />
                     </a>
-                    <ul className="dropdown-menu">
+                    <ul
+                      className="dropdown-menu"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
                       <li className="nav-item">
                         <a href="/#" className="nav-link">
                           Business Lines
@@ -53,41 +55,63 @@ export default function Navbar() {
                           style={{
                             overflowY: "scroll",
                           }}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
                         >
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Advisory {"&"} Transaction Services
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Capital Markets
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Global Workplace Solutions
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Property Management
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Residential
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Valuation {"&"} Advisory Services
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a href="/#" className="nav-link">
+                        {/* eslint-disable-next-line */}
+                        <a herf="/#" className="nav-link">
                           Industries {"&"} Specialities
                           <i className="bx bx-chevron-down" />
                         </a>
@@ -96,71 +120,113 @@ export default function Navbar() {
                           style={{
                             overflowY: "scroll",
                           }}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
                         >
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Office
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Retail
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Industrial {"&"} Logistics
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Alternative Invesments
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Data Centers
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Financial Services
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Government Practice
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Healthcare
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Life Sciences
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Hostel
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Residential
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Sustainability
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Flexible Workspace
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -174,73 +240,115 @@ export default function Navbar() {
                           style={{
                             overflowY: "scroll",
                           }}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
                         >
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Capital Markets
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Consulting
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Host
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Investment Accounting {"&"}
                               <br />
                               Reporting Solutions
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Investment Risk Monitoring
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Leasing {"&"} Advisory
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Masterplanning
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Property Management
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Valuation {"&"} Advisory Services
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Hostel
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Residential
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Sustainability
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Flexible Workspace
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -254,51 +362,81 @@ export default function Navbar() {
                           style={{
                             overflowY: "scroll",
                           }}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
                         >
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Consulting
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Enterprise Facilities Management
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Host
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Leasing {"&"} Advisory
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Portfolio Services
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Project Management
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Transaction Management
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Valuation {"&"} Advisory Services
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-item">
-                            <a href="/#" className="nav-link">
+                            <Link
+                              to="/service?title=business-lines"
+                              className="nav-link"
+                            >
                               Workplace
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -308,7 +446,12 @@ export default function Navbar() {
                     <a href="/#" class="nav-link dropdown-toggle">
                       Properties <i class="bx bx-chevron-down"></i>
                     </a>
-                    <ul className="dropdown-menu">
+                    <ul
+                      className="dropdown-menu"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
                       <li className="nav-item">
                         <Link to="/properties" className="nav-link">
                           Properties
@@ -326,7 +469,12 @@ export default function Navbar() {
                       Blog <i class="bx bx-chevron-down"></i>
                     </a>
 
-                    <ul className="dropdown-menu">
+                    <ul
+                      className="dropdown-menu"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
                       <li className="nav-item">
                         <Link to="/blogs" className="nav-link">
                           Blog
@@ -360,7 +508,12 @@ export default function Navbar() {
                     <a href="/#" className="nav-link dropdown-toggle">
                       More <i className="bx bx-chevron-down" />
                     </a>
-                    <ul className="dropdown-menu">
+                    <ul
+                      className="dropdown-menu"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
                       <li className="nav-item">
                         <Link to="/comparison" className="nav-link ">
                           Comparison
@@ -444,7 +597,8 @@ export function MobileNav() {
                       Home <i className="bx bx-chevron-down" />
                     </Link>
                   </li>
-                  <li className="nav-item">
+
+                  <li className="nav-item" onClick={showMenu}>
                     <Link to="/about-us" className="nav-link">
                       About Us
                     </Link>
@@ -453,7 +607,11 @@ export function MobileNav() {
                     className="nav-item"
                     onClick={() => setOpenMenu("services")}
                   >
-                    <a onClick={(e) => e.preventDefault()} className="nav-link">
+                    <a
+                      href="/#"
+                      onClick={(e) => e.preventDefault()}
+                      className="nav-link"
+                    >
                       Services
                       <i className="bx bx-chevron-down" />
                     </a>
@@ -463,23 +621,35 @@ export function MobileNav() {
                         display: openMenu === "services" ? "block" : "none",
                       }}
                     >
-                      <li className="nav-item">
-                        <Link to="/service" className="nav-link">
+                      <li className="nav-item" onClick={showMenu}>
+                        <Link
+                          to="/services-mobile?title=services-title"
+                          className="nav-link"
+                        >
                           Business Lines
                         </Link>
                       </li>
-                      <li className="nav-item">
-                        <Link to="/service" className="nav-link">
+                      <li className="nav-item" onClick={showMenu}>
+                        <Link
+                          to="/services-mobile?title=services-title"
+                          className="nav-link"
+                        >
                           Industries {"&"} Specialities
                         </Link>
                       </li>
-                      <li className="nav-item">
-                        <Link to="/service" className="nav-link">
+                      <li className="nav-item" onClick={showMenu}>
+                        <Link
+                          to="/services-mobile?title=services-title"
+                          className="nav-link"
+                        >
                           Services for Investors
                         </Link>
                       </li>
-                      <li className="nav-item">
-                        <Link to="/service" className="nav-link">
+                      <li className="nav-item" onClick={showMenu}>
+                        <Link
+                          to="/services-mobile?title=services-title"
+                          className="nav-link"
+                        >
                           Services for Occupiers
                         </Link>
                       </li>
@@ -509,12 +679,12 @@ export function MobileNav() {
                         display: openMenu === "property" ? "block" : "none",
                       }}
                     >
-                      <li className="nav-item">
+                      <li className="nav-item" onClick={showMenu}>
                         <Link to="/properties" className="nav-link">
                           Properties
                         </Link>
                       </li>
-                      <li className="nav-item">
+                      <li className="nav-item" onClick={showMenu}>
                         <Link to="/property-details" className="nav-link">
                           Property Details
                         </Link>
@@ -528,22 +698,22 @@ export function MobileNav() {
                       +
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item" onClick={showMenu}>
                     <Link to="/blogs" className="nav-link dropdown-toggle">
                       Blog <i className="bx bx-chevron-down" />
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item" onClick={showMenu}>
                     <Link to="/contact" className="nav-link">
                       Contact
                     </Link>
                   </li>
-                  <li className="nav-item right-nav">
+                  <li className="nav-item right-nav" onClick={showMenu}>
                     <Link to="/tell-me-your-needs" className="nav-link">
                       Tell Me your needs
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item" onClick={showMenu}>
                     <Link href="/#" className="nav-link">
                       Sales Or Rent
                     </Link>
@@ -562,12 +732,12 @@ export function MobileNav() {
                         display: openMenu === "more" ? "block" : "none",
                       }}
                     >
-                      <li className="nav-item">
+                      <li className="nav-item" onClick={showMenu}>
                         <Link to="/wishlist" className="nav-link active">
                           Wishlist
                         </Link>
                       </li>
-                      <li className="nav-item mean-last">
+                      <li className="nav-item " onClick={showMenu}>
                         <Link to="/comparison" className="nav-link active">
                           Camparison
                         </Link>
