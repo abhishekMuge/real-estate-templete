@@ -7,6 +7,7 @@ import RcDropDown from "react-dropdown";
 import "react-dropdown/style.css";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { useSpring, animated } from "react-spring";
 
 export default function Banner({ amenities, propertySearch }) {
   const [advancedOpt, showAdvancedOpt] = useState(false);
@@ -25,7 +26,10 @@ export default function Banner({ amenities, propertySearch }) {
   });
   const [selectedPurposeProps, setselectedPurposeProps] = useState([]);
   const [selectedamenitiesProps, setselectedamenitiesProps] = useState([]);
-
+  const styles = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  });
   useEffect(() => {
     setAmenitiesDropData(amenities.data);
   }, [amenities.data]);
@@ -85,7 +89,7 @@ export default function Banner({ amenities, propertySearch }) {
                   >
                     {tabIndex === "one" && (
                       <h1>
-                        {"uild Your Aspiration With Buildano".toLocaleUpperCase()}
+                        {"Build Your Aspiration With Buildano".toLocaleUpperCase()}
                       </h1>
                     )}
                     {tabIndex === "two" && (
@@ -132,7 +136,12 @@ export default function Banner({ amenities, propertySearch }) {
                           </li>
                         </ul>
                         <div className="tab_content">
-                          <div className="tabs_item">
+                          <animated.div
+                            className="tabs_item"
+                            style={{
+                              ...styles,
+                            }}
+                          >
                             <div className="banner-form-area">
                               <div className="row">
                                 <div className="col-lg-3">
@@ -416,7 +425,7 @@ export default function Banner({ amenities, propertySearch }) {
                                 </div>
                               </div>
                             )}
-                          </div>
+                          </animated.div>
                         </div>
                       </form>
                     </div>

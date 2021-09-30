@@ -1078,30 +1078,19 @@ input[type="range"]::-ms-thumb {
 }
 
 .banner-area {
-  height: 90vh;
-  background-size: cover;
-  background-position: center center;
-  /* background-color: rgba(0, 0, 0, 1);
-  background-image: url("../images/banner/banner1.jpg"); */
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/banner/banner1.jpg) center/cover; */
-  background-repeat: no-repeat;
-  position: relative;
+  height: 100vh;
   text-align: center;
+  position: relative;
 }
-/* .banner-area .banner-slider-item:before {
+.banner-area .banner-slider-item:before {
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #18253e;
+  background-color: #616263;
   opacity: 0.8;
-} */
-
-.banner-area .tab .tabs_item {
-  display: none;
 }
 
 .banner-area .tab .tabs_item:first-child {

@@ -1,192 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-// import logo from "../assests/images/logo.png";
+import { animated, useTransition, config } from "react-spring";
+
 export default function Navbar() {
   const [Mmenu, setMmenu] = useState(false);
   const [openMenu, setOpenMenu] = useState("");
+
   return (
     <div>
       <div className="navbar-area sticky-top">
         {/* Menu For Mobile Device */}
-        <div className="mobile-nav mean-container">
-          <div className="mean-bar">
-            <a
-              href="/#"
-              className="meanmenu-reveal"
-              style={{ background: "", color: "", right: 0, left: "auto" }}
-              onClick={() => {
-                setMmenu(!Mmenu);
-              }}
-            >
-              <span>
-                <span>
-                  <span />
-                </span>
-              </span>
-            </a>
-
-            {/* <a
-              href="#nav"
-              className="meanmenu-reveal meanclose"
-              style={{
-                right: "0px",
-                left: "auto",
-                textAlign: "center",
-                textIndent: "0px",
-                fontSize: "18px",
-              }}
-            >
-              X
-            </a> */}
-
-            <nav className="mean-nav">
-              <ul
-                className="navbar-nav"
-                style={{ display: Mmenu ? "block" : "none" }}
-              >
-                <li className="nav-item">
-                  <a href="/#" className="nav-link dropdown-toggle active">
-                    Home <i className="bx bx-chevron-down" />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="about.html" className="nav-link">
-                    About Us
-                  </a>
-                </li>
-                <li
-                  className="nav-item"
-                  onClick={() => setOpenMenu("services")}
-                >
-                  <a href="/#" className="nav-link">
-                    Services
-                    <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    style={{
-                      display: openMenu === "services" ? "block" : "none",
-                    }}
-                  >
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link">
-                        Business Lines
-                        <i className="bx bx-chevron-down" />
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link">
-                        Industries {"&"} Specialities
-                        <i className="bx bx-chevron-down" />
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link">
-                        Services for Investors
-                        <i className="bx bx-chevron-down" />
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#" className="nav-link">
-                        Services for Occupiers
-                        <i className="bx bx-chevron-down" />
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
-                </li>
-                <li
-                  className="nav-item"
-                  onClick={() => setOpenMenu("property")}
-                >
-                  <a href="/#" className="nav-link dropdown-toggle">
-                    Properties <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    style={{
-                      display: openMenu === "property" ? "block" : "none",
-                    }}
-                  >
-                    <li className="nav-item">
-                      <Link to="/properties" className="nav-link">
-                        Properties
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link to="/property-details" className="nav-link">
-                        Property Details
-                      </Link>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="/#" className="nav-link dropdown-toggle">
-                    Blog <i className="bx bx-chevron-down" />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="contact.html" className="nav-link">
-                    Contact
-                  </a>
-                </li>
-                <li className="nav-item right-nav">
-                  <a href="/#" type="button" className="nav-link">
-                    Tell Me your needs
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="/#" type="button" className="nav-link">
-                    Sales Or Rent
-                  </a>
-                </li>
-                <li className="nav-item" onClick={() => setOpenMenu("more")}>
-                  <a href="/#" className="nav-link dropdown-toggle">
-                    More <i className="bx bx-chevron-down" />
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    style={{ display: openMenu === "more" ? "block" : "none" }}
-                  >
-                    <li className="nav-item">
-                      <a href="index.html" className="nav-link active">
-                        Wishlist
-                      </a>
-                    </li>
-                    <li className="nav-item mean-last">
-                      <a href="index.html" className="nav-link active">
-                        Camparison
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="mean-expand"
-                    href="/#"
-                    style={{ fontSize: "18px" }}
-                  >
-                    +
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <a href="index.html" className="logo">
-            <img src="assets/images/logo-two.png" alt="Logo" />
-          </a>
-        </div>
+        <MemorizedNav />
 
         {/* Menu For Desktop Device */}
         <div className="main-nav">
@@ -518,7 +342,7 @@ export default function Navbar() {
                   <li className="nav-item">
                     <Link to="/contact">Contact</Link>
                   </li>
-                  <li className="nav-item right-nav">
+                  <li className="nav-item">
                     <Link
                       to="/tell-me-your-needs"
                       type="button"
@@ -543,7 +367,7 @@ export default function Navbar() {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link to="/wishlist" className="nav-link active">
+                        <Link to="/wishlist" className="nav-link">
                           Wishlist
                         </Link>
                       </li>
@@ -558,3 +382,216 @@ export default function Navbar() {
     </div>
   );
 }
+
+export function MobileNav() {
+  const [Mmenu, setMmenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState("");
+
+  const transitions = useTransition(Mmenu, {
+    from: { opacity: 0, transform: "translateY(-100px)" },
+    enter: { opacity: 1, transform: "translateY(0)" },
+    leave: { opacity: 0, transform: "translateY(-10000px)" },
+    reverse: Mmenu,
+    config: config.molasses,
+    // onRest: () => setMmenu(!Mmenu),
+  });
+
+  const showMenu = (e) => {
+    e.preventDefault();
+    setMmenu(!Mmenu);
+  };
+
+  return (
+    <div className="mobile-nav mean-container">
+      <div className="mean-bar">
+        <a
+          href="/#"
+          className="meanmenu-reveal"
+          style={{ background: "", color: "", right: 0, left: "auto" }}
+          onClick={showMenu}
+        >
+          <span>
+            <span>
+              <span />
+            </span>
+          </span>
+        </a>
+
+        {/* <a
+              href="#nav"
+              className="meanmenu-reveal meanclose"
+              style={{
+                right: "0px",
+                left: "auto",
+                textAlign: "center",
+                textIndent: "0px",
+                fontSize: "18px",
+              }}
+            >
+              X
+            </a> */}
+
+        {transitions((styles, item, key) => {
+          return (
+            item && (
+              <animated.nav className="mean-nav" style={styles} key={key}>
+                <ul
+                  className="navbar-nav"
+                  // style={{ display: Mmenu ? "block" : "none" }}
+                >
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                      Home <i className="bx bx-chevron-down" />
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/about-us" className="nav-link">
+                      About Us
+                    </Link>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={() => setOpenMenu("services")}
+                  >
+                    <a onClick={(e) => e.preventDefault()} className="nav-link">
+                      Services
+                      <i className="bx bx-chevron-down" />
+                    </a>
+                    <ul
+                      className="dropdown-menu"
+                      style={{
+                        display: openMenu === "services" ? "block" : "none",
+                      }}
+                    >
+                      <li className="nav-item">
+                        <Link to="/service" className="nav-link">
+                          Business Lines
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/service" className="nav-link">
+                          Industries {"&"} Specialities
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/service" className="nav-link">
+                          Services for Investors
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/service" className="nav-link">
+                          Services for Occupiers
+                        </Link>
+                      </li>
+                    </ul>
+                    <a
+                      className="mean-expand"
+                      href="/#"
+                      style={{ fontSize: "18px" }}
+                    >
+                      +
+                    </a>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={() => setOpenMenu("property")}
+                  >
+                    <a
+                      href="/#"
+                      onClick={(e) => e.preventDefault()}
+                      className="nav-link dropdown-toggle"
+                    >
+                      Properties <i className="bx bx-chevron-down" />
+                    </a>
+                    <ul
+                      className="dropdown-menu"
+                      style={{
+                        display: openMenu === "property" ? "block" : "none",
+                      }}
+                    >
+                      <li className="nav-item">
+                        <Link to="/properties" className="nav-link">
+                          Properties
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/property-details" className="nav-link">
+                          Property Details
+                        </Link>
+                      </li>
+                    </ul>
+                    <a
+                      className="mean-expand"
+                      href="/#"
+                      style={{ fontSize: "18px" }}
+                    >
+                      +
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/blogs" className="nav-link dropdown-toggle">
+                      Blog <i className="bx bx-chevron-down" />
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/contact" className="nav-link">
+                      Contact
+                    </Link>
+                  </li>
+                  <li className="nav-item right-nav">
+                    <Link to="/tell-me-your-needs" className="nav-link">
+                      Tell Me your needs
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/#" className="nav-link">
+                      Sales Or Rent
+                    </Link>
+                  </li>
+                  <li className="nav-item" onClick={() => setOpenMenu("more")}>
+                    <a
+                      href="/#"
+                      onClick={(e) => e.preventDefault()}
+                      className="nav-animateda dropdown-toggle"
+                    >
+                      More <i className="bx bx-chevron-down" />
+                    </a>
+                    <ul
+                      className="dropdown-menu"
+                      style={{
+                        display: openMenu === "more" ? "block" : "none",
+                      }}
+                    >
+                      <li className="nav-item">
+                        <Link to="/wishlist" className="nav-link active">
+                          Wishlist
+                        </Link>
+                      </li>
+                      <li className="nav-item mean-last">
+                        <Link to="/comparison" className="nav-link active">
+                          Camparison
+                        </Link>
+                      </li>
+                    </ul>
+                    <a
+                      className="mean-expand"
+                      href="/#"
+                      style={{ fontSize: "18px" }}
+                    >
+                      +
+                    </a>
+                  </li>
+                </ul>
+              </animated.nav>
+            )
+          );
+        })}
+      </div>
+      <a href="index.html" className="logo">
+        <img src="assets/images/logo-two.png" alt="Logo" />
+      </a>
+    </div>
+  );
+}
+
+export const MemorizedNav = React.memo(MobileNav);

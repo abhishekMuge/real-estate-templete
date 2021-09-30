@@ -12,14 +12,17 @@ class Home extends Component {
   }
   render() {
     return (
+      // {this.props.initalData && (
       <div clasName="container">
-        <div className="row">
+        <div>
           {this.props.initalData && (
-            <Banner
-              tagLine={this.props.initalData[1]}
-              amenities={this.props.initalData[0]}
-              propertySearch={this.props.initalData[3]}
-            />
+            <div className="row">
+              <Banner
+                tagLine={this.props.initalData[1]}
+                amenities={this.props.initalData[0]}
+                propertySearch={this.props.initalData[3]}
+              />
+            </div>
           )}
         </div>
         {/* Apartment start here */}
@@ -986,6 +989,7 @@ class Home extends Component {
           {/* End Subscribe */}
         </div>
       </div>
+      // )}
     );
   }
 }
