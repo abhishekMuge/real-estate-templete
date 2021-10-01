@@ -62,8 +62,9 @@ export default function Dropdown({
               />
             </li>
             {dropData &&
-              dropData.slice(0, dropListShowIndex).map((item) => (
+              dropData.slice(0, dropListShowIndex).map((item, key) => (
                 <li
+                  key={`${item}-${key}`}
                   style={{
                     margin: "0 10px",
                     position: "relative",

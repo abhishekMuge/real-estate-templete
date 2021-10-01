@@ -557,32 +557,37 @@ export function MobileNav() {
   return (
     <div className="mobile-nav mean-container">
       <div className="mean-bar">
-        <a
-          href="/#"
-          className="meanmenu-reveal"
-          style={{ background: "", color: "", right: 0, left: "auto" }}
-          onClick={showMenu}
-        >
-          <span>
+        {!Mmenu && (
+          <a
+            href="/#"
+            className="meanmenu-reveal"
+            style={{ background: "", color: "", right: 0, left: "auto" }}
+            onClick={showMenu}
+          >
             <span>
-              <span />
+              <span>
+                <span />
+              </span>
             </span>
-          </span>
-        </a>
+          </a>
+        )}
 
-        {/* <a
-              href="#nav"
-              className="meanmenu-reveal meanclose"
-              style={{
-                right: "0px",
-                left: "auto",
-                textAlign: "center",
-                textIndent: "0px",
-                fontSize: "18px",
-              }}
-            >
-              X
-            </a> */}
+        {Mmenu && (
+          <a
+            href="/#"
+            className="meanmenu-reveal meanclose"
+            onClick={showMenu}
+            style={{
+              right: "0px",
+              left: "auto",
+              textAlign: "center",
+              textIndent: "0px",
+              fontSize: "18px",
+            }}
+          >
+            X
+          </a>
+        )}
 
         {transitions((styles, item, key) => {
           return (
@@ -592,7 +597,7 @@ export function MobileNav() {
                   className="navbar-nav"
                   // style={{ display: Mmenu ? "block" : "none" }}
                 >
-                  <li className="nav-item">
+                  <li className="nav-item" onClick={showMenu}>
                     <Link to="/" className="nav-link">
                       Home <i className="bx bx-chevron-down" />
                     </Link>

@@ -33,17 +33,18 @@ export default class Comparison extends Component {
                 <div className="features">
                   <div className="top-info">Models</div>
                   <ul className="cd-features-list">
-                    <li>Price</li>
-                    <li>Customer Rating</li>
-                    <li>Resolution</li>
-                    <li>Screen Type</li>
-                    <li>Display Size</li>
-                    <li>Refresh Rate</li>
-                    <li>Model Year</li>
-                    <li>Tuner Technology</li>
-                    <li>Ethernet Input</li>
-                    <li>USB Input</li>
-                    <li>Scart Input</li>
+                    <li className="text-wrap">Title</li>
+                    <li className="text-wrap">Price</li>
+                    <li className="text-wrap">Customer Rating</li>
+                    <li className="text-wrap">Resolution</li>
+                    <li className="text-wrap">Screen Type</li>
+                    <li className="text-wrap">Display Size</li>
+                    <li className="text-wrap">Refresh Rate</li>
+                    <li className="text-wrap">Model Year</li>
+                    <li className="text-wrap">Tuner Technology</li>
+                    <li className="text-wrap">Ethernet Input</li>
+                    <li className="text-wrap">USB Input</li>
+                    <li className="text-wrap">Scart Input</li>
                   </ul>
                 </div>{" "}
                 {/* .features */}
@@ -53,10 +54,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -77,10 +78,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -101,10 +102,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -125,10 +126,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -149,10 +150,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -173,10 +174,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -197,10 +198,10 @@ export default class Comparison extends Component {
                       <div className="top-info">
                         <div className="check" />
                         <img alt="product-img" src={ProductImg} />
-                        <h3>Sumsung Series 6 J6300</h3>
                       </div>{" "}
                       {/* .top-info */}
                       <ul className="cd-features-list">
+                        <li>Sumsung Series 6 J6300</li>
                         <li>$600</li>
                         <li className="rate">
                           <span>5/5</span>
@@ -222,18 +223,6 @@ export default class Comparison extends Component {
                   {/* .cd-products-columns */}
                 </div>{" "}
                 {/* .cd-products-wrapper */}
-                <ul className="cd-table-navigation">
-                  <li>
-                    <a href="#0" className="prev inactive">
-                      Prev
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0" className="next">
-                      Next
-                    </a>
-                  </li>
-                </ul>
               </div>{" "}
               {/* .cd-products-table */}
             </section>{" "}

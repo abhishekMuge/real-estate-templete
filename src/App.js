@@ -14,7 +14,6 @@ import Agent from "./Page/Agent";
 import AgentDetails from "./Page/Agent/AgentDetails";
 import Property from "./Page/PropertDetails/Property";
 import BlogsDetails from "./Page/Blog/BlogsDetails";
-import ScrollToTop from "./Components/ScrollToTop";
 import TellMeNedd from "./Page/TellMeNeed";
 import Comparison from "./Page/Comparison";
 import Wishlist from "./Page/Wishlist";
@@ -24,7 +23,6 @@ function App() {
     <Router>
       <Provider store={store}>
         <div>
-          <ScrollToTop />
           <Navbar />
           <div>
             <Switch>

@@ -56,7 +56,7 @@ a.meanmenu-reveal {
   width: 100%;
   border: none;
   list-style-type: none;
-  /* height: 295px; */
+  height: 295px;
 }
 .mean-container .mean-nav ul li {
   position: relative;

@@ -64,7 +64,7 @@ export default class Wishlist extends Component {
                               <i className="fas fa-envelope-square share-options-item" />
                             </div>
                           </div>
-                          <div className="bottom d-flex justify-content-between">
+                          <div className="bottom text-left d-flex justify-content-between">
                             <div className="left-bottom">
                               <span>From $12,000.00</span>
                               <h3>
@@ -104,7 +104,7 @@ export default class Wishlist extends Component {
                               alt="Property"
                             />
                           </div>
-                          <div className="bottom d-flex justify-content-between">
+                          <div className="bottom text-left d-flex justify-content-between">
                             <div className="left-bottom">
                               <span>$11,000.00/Month</span>
                               <h3>
@@ -141,7 +141,7 @@ export default class Wishlist extends Component {
                               alt="Property"
                             />
                           </div>
-                          <div className="bottom">
+                          <div className="bottom text-left">
                             <span>$10,000.00/Month</span>
                             <h3>
                               <a href="property-details.html">
@@ -171,7 +171,7 @@ export default class Wishlist extends Component {
                               alt="Property"
                             />
                           </div>
-                          <div className="bottom">
+                          <div className="bottom text-left">
                             <span>From $9,000.00</span>
                             <h3>
                               <a href="property-details.html">Titan House</a>
@@ -199,7 +199,7 @@ export default class Wishlist extends Component {
                               alt="Property"
                             />
                           </div>
-                          <div className="bottom">
+                          <div className="bottom text-left">
                             <span>From $8,000.00</span>
                             <h3>
                               <a href="property-details.html">Royal House</a>
@@ -227,7 +227,7 @@ export default class Wishlist extends Component {
                               alt="Property"
                             />
                           </div>
-                          <div className="bottom">
+                          <div className="bottom text-left">
                             <span>From $7,000.00</span>
                             <h3>
                               <a href="property-details.html">
@@ -267,21 +267,14 @@ export default class Wishlist extends Component {
                               alt="Property"
                               className="property-item-img"
                             />
-                            <div
-                              className="
-                  share-options
-                  d-inline-flex
-                  align-items-center
-                  justify-content-around
-                "
-                            >
+                            <div className="share-options d-inline-flex align-items-center justify-content-around">
                               <i className="fas fa-phone-square-alt share-options-item" />
                               <i className="fab fa-whatsapp-square share-options-item" />
                               <i className="fas fa-envelope-square share-options-item" />
                             </div>
                           </div>
-                          <div className="bottom d-flex justify-content-between">
-                            <div className="left-bottom">
+                          <div className="bottom d-flex justify-content-between text-left">
+                            <div className="left-bottom text-left">
                               <span>From $12,000.00</span>
                               <h3>
                                 <a href="property-details.html">
@@ -292,12 +285,15 @@ export default class Wishlist extends Component {
                                 <i className="bx bx-current-location" />
                                 300 B 1st View Road, New York
                               </a>
-                              <ul>
-                                <li>5 BD</li>
-                                <li>2 BA</li>
-                                <li>1800 SF</li>
-                                <li>6 RM</li>
-                              </ul>
+                              <a className="unit fs-3" href="/#">
+                                Unit: 120 Sq.feet
+                              </a>
+                              <br />
+                              <a className="type fs-3" href="/#">
+                                Residential Type: Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Suscipit ut illum,
+                                tempore est asperiores, id totam explicabo
+                              </a>
                             </div>
                             <div className="right-bottom">
                               <span>
@@ -313,35 +309,47 @@ export default class Wishlist extends Component {
                       <div className="col-sm-6 col-lg-6">
                         <div className="property-item">
                           <div className="top">
-                            <span>New York</span>
-                            <span>For Rent</span>
+                            <span> New York </span>
+                            <span>For Sell</span>
                             <img
-                              src="assets/images/property/property2.jpg"
+                              src="assets/images/property/property1.jpg"
                               alt="Property"
+                              className="property-item-img"
                             />
+                            <div className="share-options d-inline-flex align-items-center justify-content-around">
+                              <i className="fas fa-phone-square-alt share-options-item" />
+                              <i className="fab fa-whatsapp-square share-options-item" />
+                              <i className="fas fa-envelope-square share-options-item" />
+                            </div>
                           </div>
-                          <div className="bottom d-flex justify-content-between">
-                            <div className="left-bottom">
-                              <span>$11,000.00/Month</span>
+                          <div className="bottom d-flex justify-content-between text-left">
+                            <div className="left-bottom text-left">
+                              <span>From $12,000.00</span>
                               <h3>
                                 <a href="property-details.html">
-                                  Cascade Blocks Villa
+                                  Sag Harbor Cottage
                                 </a>
                               </h3>
                               <a className="location" href="/#">
                                 <i className="bx bx-current-location" />
                                 300 B 1st View Road, New York
                               </a>
-                              <ul>
-                                <li>5 BD</li>
-                                <li>2 BA</li>
-                                <li>1800 SF</li>
-                                <li>6 RM</li>
-                              </ul>
+                              <a className="unit fs-3" href="/#">
+                                Unit: 120 Sq.feet
+                              </a>
+                              <br />
+                              <a className="type fs-3" href="/#">
+                                Residential Type: Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Suscipit ut illum,
+                                tempore est asperiores, id totam explicabo
+                              </a>
                             </div>
                             <div className="right-bottom">
                               <span>
-                                <i className="far fa-heart" />
+                                <i
+                                  className="far fa-heart"
+                                  style={{ fontSize: "1.4rem" }}
+                                />
                               </span>
                             </div>
                           </div>
@@ -350,116 +358,147 @@ export default class Wishlist extends Component {
                       <div className="col-sm-6 col-lg-6">
                         <div className="property-item">
                           <div className="top">
-                            <span>New York</span>
-                            <span>For Rent</span>
+                            <span> New York </span>
+                            <span>For Sell</span>
                             <img
-                              src="assets/images/property/property3.jpg"
+                              src="assets/images/property/property1.jpg"
                               alt="Property"
+                              className="property-item-img"
                             />
+                            <div className="share-options d-inline-flex align-items-center justify-content-around">
+                              <i className="fas fa-phone-square-alt share-options-item" />
+                              <i className="fab fa-whatsapp-square share-options-item" />
+                              <i className="fas fa-envelope-square share-options-item" />
+                            </div>
                           </div>
-                          <div className="bottom">
-                            <span>$10,000.00/Month</span>
-                            <h3>
-                              <a href="property-details.html">
-                                Extension Haven
+                          <div className="bottom d-flex justify-content-between text-left">
+                            <div className="left-bottom text-left">
+                              <span>From $12,000.00</span>
+                              <h3>
+                                <a href="property-details.html">
+                                  Sag Harbor Cottage
+                                </a>
+                              </h3>
+                              <a className="location" href="/#">
+                                <i className="bx bx-current-location" />
+                                300 B 1st View Road, New York
                               </a>
-                            </h3>
-                            <a className="location" href="/#">
-                              <i className="bx bx-current-location" />
-                              300 B 1st View Road, New York
-                            </a>
-                            <ul>
-                              <li>5 BD</li>
-                              <li>2 BA</li>
-                              <li>1800 SF</li>
-                              <li>6 RM</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-6 col-lg-6">
-                        <div className="property-item">
-                          <div className="top">
-                            <span>New York</span>
-                            <span>For Sell</span>
-                            <img
-                              src="assets/images/property/property4.jpg"
-                              alt="Property"
-                            />
-                          </div>
-                          <div className="bottom">
-                            <span>From $9,000.00</span>
-                            <h3>
-                              <a href="property-details.html">Titan House</a>
-                            </h3>
-                            <a className="location" href="/#">
-                              <i className="bx bx-current-location" />
-                              300 B 1st View Road , New York
-                            </a>
-                            <ul>
-                              <li>5 BD</li>
-                              <li>2 BA</li>
-                              <li>1800 SF</li>
-                              <li>6 RM</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-6 col-lg-6">
-                        <div className="property-item">
-                          <div className="top">
-                            <span>New York</span>
-                            <span>For Sell</span>
-                            <img
-                              src="assets/images/property/property5.jpg"
-                              alt="Property"
-                            />
-                          </div>
-                          <div className="bottom">
-                            <span>From $8,000.00</span>
-                            <h3>
-                              <a href="property-details.html">Royal House</a>
-                            </h3>
-                            <a className="location" href="/#">
-                              <i className="bx bx-current-location" />
-                              300 B 1st View Road, New York
-                            </a>
-                            <ul>
-                              <li>5 BD</li>
-                              <li>2 BA</li>
-                              <li>1800 SF</li>
-                              <li>6 RM</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-6 col-lg-6">
-                        <div className="property-item">
-                          <div className="top">
-                            <span>New York</span>
-                            <span>For Sell</span>
-                            <img
-                              src="assets/images/property/property6.jpg"
-                              alt="Property"
-                            />
-                          </div>
-                          <div className="bottom">
-                            <span>From $7,000.00</span>
-                            <h3>
-                              <a href="property-details.html">
-                                Natural Cottage
+                              <a className="unit fs-3" href="/#">
+                                Unit: 120 Sq.feet
                               </a>
-                            </h3>
-                            <a className="location" href="/#">
-                              <i className="bx bx-current-location" />
-                              300 B 1st View Road, New York
-                            </a>
-                            <ul>
-                              <li>5 BD</li>
-                              <li>2 BA</li>
-                              <li>1800 SF</li>
-                              <li>6 RM</li>
-                            </ul>
+                              <br />
+                              <a className="type fs-3" href="/#">
+                                Residential Type: Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Suscipit ut illum,
+                                tempore est asperiores, id totam explicabo
+                              </a>
+                            </div>
+                            <div className="right-bottom">
+                              <span>
+                                <i
+                                  className="far fa-heart"
+                                  style={{ fontSize: "1.4rem" }}
+                                />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-lg-6">
+                        <div className="property-item">
+                          <div className="top">
+                            <span> New York </span>
+                            <span>For Sell</span>
+                            <img
+                              src="assets/images/property/property1.jpg"
+                              alt="Property"
+                              className="property-item-img"
+                            />
+                            <div className="share-options d-inline-flex align-items-center justify-content-around">
+                              <i className="fas fa-phone-square-alt share-options-item" />
+                              <i className="fab fa-whatsapp-square share-options-item" />
+                              <i className="fas fa-envelope-square share-options-item" />
+                            </div>
+                          </div>
+                          <div className="bottom d-flex justify-content-between text-left">
+                            <div className="left-bottom text-left">
+                              <span>From $12,000.00</span>
+                              <h3>
+                                <a href="property-details.html">
+                                  Sag Harbor Cottage
+                                </a>
+                              </h3>
+                              <a className="location" href="/#">
+                                <i className="bx bx-current-location" />
+                                300 B 1st View Road, New York
+                              </a>
+                              <a className="unit fs-3" href="/#">
+                                Unit: 120 Sq.feet
+                              </a>
+                              <br />
+                              <a className="type fs-3" href="/#">
+                                Residential Type: Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Suscipit ut illum,
+                                tempore est asperiores, id totam explicabo
+                              </a>
+                            </div>
+                            <div className="right-bottom">
+                              <span>
+                                <i
+                                  className="far fa-heart"
+                                  style={{ fontSize: "1.4rem" }}
+                                />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-lg-6">
+                        <div className="property-item">
+                          <div className="top">
+                            <span> New York </span>
+                            <span>For Sell</span>
+                            <img
+                              src="assets/images/property/property1.jpg"
+                              alt="Property"
+                              className="property-item-img"
+                            />
+                            <div className="share-options d-inline-flex align-items-center justify-content-around">
+                              <i className="fas fa-phone-square-alt share-options-item" />
+                              <i className="fab fa-whatsapp-square share-options-item" />
+                              <i className="fas fa-envelope-square share-options-item" />
+                            </div>
+                          </div>
+                          <div className="bottom d-flex justify-content-between text-left">
+                            <div className="left-bottom text-left">
+                              <span>From $12,000.00</span>
+                              <h3>
+                                <a href="property-details.html">
+                                  Sag Harbor Cottage
+                                </a>
+                              </h3>
+                              <a className="location" href="/#">
+                                <i className="bx bx-current-location" />
+                                300 B 1st View Road, New York
+                              </a>
+                              <a className="unit fs-3" href="/#">
+                                Unit: 120 Sq.feet
+                              </a>
+                              <br />
+                              <a className="type fs-3" href="/#">
+                                Residential Type: Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Suscipit ut illum,
+                                tempore est asperiores, id totam explicabo
+                              </a>
+                            </div>
+                            <div className="right-bottom">
+                              <span>
+                                <i
+                                  className="far fa-heart"
+                                  style={{ fontSize: "1.4rem" }}
+                                />
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>

@@ -121,24 +121,8 @@
   .banner-area {
     overflow: visible;
   }
-  .banner-area .owl-theme .owl-nav {
-    bottom: 75px;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-  .banner-area .owl-theme .owl-nav .owl-prev {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .banner-area .owl-theme .owl-nav .owl-next {
-    position: relative;
-    top: 0;
-    right: 0;
-  }
   .banner-area .banner-slider-item {
-    height: 100%;
+    height: 100vh;
     padding-top: 20px;
     padding-bottom: 170px;
   }
@@ -806,6 +790,11 @@
     left: 36%;
   }
 }
+@media only screen and (min-width: 200px) and (max-width: 461px) {
+  .banner-section {
+    height: 140vh !important;
+  }
+}
 
 @media only screen and (max-width: 274px) {
   .dropdown .dropdown-text {
@@ -927,11 +916,8 @@
     height: 320px;
     overflow-y: scroll;
   }
-  .banner-content-heading {
-    /* margin-top: 60px !important; */
-  }
   .banner-area {
-    height: 135vh;
+    height: 145vh !important;
   }
 }
 
@@ -1040,22 +1026,6 @@
   /*-- Banner --*/
   .banner-area {
     overflow: visible;
-  }
-  .banner-area .owl-theme .owl-nav {
-    bottom: 75px;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-  .banner-area .owl-theme .owl-nav .owl-prev {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .banner-area .owl-theme .owl-nav .owl-next {
-    position: relative;
-    top: 0;
-    right: 0;
   }
   .banner-area .banner-slider-item {
     height: 100%;

@@ -73,14 +73,18 @@ export default function Banner({ amenities, propertySearch }) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        overflow: "hidden",
+      }}
+    >
       {/* Banner */}
-      <div className={`banner-area banner-${tabIndex}`}>
+      <div className={`banner-area banner-section banner-${tabIndex}`}>
         <div className="banner-slider">
           <div className="banner-slider-item">
             <div className="d-table">
               <div className="d-table-cell">
-                <div className="container banner-top-container mt-100">
+                <div className="container banner-top-container ">
                   <div
                     className="banner-content"
                     style={{
@@ -212,9 +216,8 @@ export default function Banner({ amenities, propertySearch }) {
                                 </button>
                               </div>
                             </div>
-
                             {advancedOpt ? (
-                              <div className="row">
+                              <div className="row mb-4">
                                 <div className="col-lg-2 mt-3">
                                   <div className=" d-flex justify-content-end align-items-center">
                                     <button
@@ -406,7 +409,6 @@ export default function Banner({ amenities, propertySearch }) {
                                 </div>
                               </div>
                             ) : null}
-
                             {advancedOpt ? (
                               ""
                             ) : (
@@ -432,6 +434,7 @@ export default function Banner({ amenities, propertySearch }) {
                   </div>
                 </div>
               </div>
+              <div className="d-table-cell"></div>
             </div>
           </div>
         </div>

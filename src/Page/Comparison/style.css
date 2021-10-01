@@ -125,7 +125,8 @@ Main Components
   z-index: 1;
   top: 0;
   left: 0;
-  width: 120px;
+  width: 140px;
+  word-wrap: break-word;
   border-style: solid;
   border-color: #e6e6e6;
   border-top-width: 1px;
@@ -227,6 +228,7 @@ Main Components
   border-style: solid;
   border-top-width: 1px;
   border-right-width: 1px;
+  max-height: 300px;
 }
 .cd-features-list li.rate {
   /* rating stars */
@@ -257,6 +259,7 @@ Main Components
   line-height: 14px;
   padding: 25px 10px;
   text-align: left;
+  word-wrap: normal;
 }
 @media only screen and (min-width: 1170px) {
   .features .cd-features-list li,
@@ -596,4 +599,13 @@ No JS
 
 .no-js .cd-products-columns .check {
   display: none;
+}
+
+@media only screen and (min-width: 345px) and (max-width: 1160px) {
+  .cd-products-table .features .cd-features-list li {
+    height: 200px;
+  }
+  .product ul li {
+    height: 200px;
+  }
 }

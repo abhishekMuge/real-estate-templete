@@ -15,10 +15,15 @@ class Home extends Component {
   render() {
     return (
       // {this.props.initalData && (
-      <div clasName="container">
-        <div>
+      <div>
+        <div
+          style={{
+            width: "100%",
+            overflow: "hidden !important",
+          }}
+        >
           {this.props.initalData && (
-            <div className="row">
+            <div className="banner-section">
               <Banner
                 tagLine={this.props.initalData[1]}
                 amenities={this.props.initalData[0]}
@@ -261,9 +266,7 @@ class Home extends Component {
               </h2>
               <div className="counter-item">
                 <h3>
-                  <span className="odometer">
-                    <Counter />
-                  </span>
+                  <span className="odometer">100</span>
                   <span className="target">+</span>
                 </h3>
                 <p>Projects Completed</p>
