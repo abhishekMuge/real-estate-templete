@@ -58,6 +58,8 @@ export default function MobileService() {
                   Donec placerat, lectus sed mattis semper, neque lectus feugiat
                   lectus, varius pulvinar diam eros in elit. Pellentesque
                   convallis laoreet laoreet.
+                  <br />
+                  <Link to="/service?title=service 1">Service 1</Link>
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -79,6 +81,8 @@ export default function MobileService() {
                   Donec placerat, lectus sed mattis semper, neque lectus feugiat
                   lectus, varius pulvinar diam eros in elit. Pellentesque
                   convallis laoreet laoreet.
+                  <br />
+                  <Link to="/service?title=service 1">Service 1</Link>
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -100,6 +104,8 @@ export default function MobileService() {
                   Nunc vitae orci ultricies, auctor nunc in, volutpat nisl.
                   Integer sit amet egestas eros, vitae egestas augue. Duis vel
                   est augue.
+                  <br />
+                  <Link to="/service?title=service 1">Service 1</Link>
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -121,6 +127,8 @@ export default function MobileService() {
                   Nunc vitae orci ultricies, auctor nunc in, volutpat nisl.
                   Integer sit amet egestas eros, vitae egestas augue. Duis vel
                   est augue.
+                  <br />
+                  <Link to="/service?title=service 1">Service 1</Link>
                 </Typography>
               </AccordionDetails>
             </Accordion>

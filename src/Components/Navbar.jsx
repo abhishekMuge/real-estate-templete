@@ -552,6 +552,16 @@ export function MobileNav() {
   const showMenu = (e) => {
     e.preventDefault();
     setMmenu(!Mmenu);
+    setOpenMenu("");
+  };
+
+  const setOpenDrawer = (e, drawerItem) => {
+    e.preventDefault();
+    if (openMenu === drawerItem) {
+      setOpenMenu("");
+    } else {
+      setOpenMenu(drawerItem);
+    }
   };
 
   return (
@@ -610,7 +620,7 @@ export function MobileNav() {
                   </li>
                   <li
                     className="nav-item"
-                    onClick={() => setOpenMenu("services")}
+                    onClick={(e) => setOpenDrawer(e, "services")}
                   >
                     <a
                       href="/#"
@@ -669,7 +679,7 @@ export function MobileNav() {
                   </li>
                   <li
                     className="nav-item"
-                    onClick={() => setOpenMenu("property")}
+                    onClick={(e) => setOpenDrawer(e, "property")}
                   >
                     <a
                       href="/#"
